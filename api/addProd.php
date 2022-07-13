@@ -18,7 +18,7 @@ echo "<pre>";
 
 foreach ($arrAll['goods'] as $itemProd) {
 
-   // if ("ЕВТ 3078"!=$itemProd["good"]["article"]){continue;}
+
     $offers = [];
     //print_r($itemProd["good"]);
 
@@ -97,7 +97,7 @@ foreach ($arrAll['goods'] as $itemProd) {
     ];
 }
 
-print_r($arrProd);
+//print_r($arrProd);
 
 
 
@@ -123,6 +123,9 @@ $bs = new CIBlockSection;
 $arrAll = $arrProd;
 //перебор новых товаров
 foreach ($arrAll as $arr) {
+
+
+
 //print_r($arr);
     //Обработка регистра к чуствиетльным элементам.
    // $arr["params"]['HIT'] = mb_strtolower($arr["params"]['HIT']);
@@ -155,6 +158,8 @@ foreach ($arrAll as $arr) {
         }
     }
 // поиск товара по коду АРТИКЛУ!!!
+
+     if ("ЕВТ 3078"!=$arr["params"]['ARTICLE']){continue;}
     $arSelect = array("ID", "IBLOCK_ID", "NAME", "DATE_ACTIVE_FROM", "PROPERTY_*");//IBLOCK_ID и ID обязательно должны быть указаны, см. описание arSelectFields выше
     $arFilter = array("IBLOCK_ID" => IntVal($IBLOCK_ID), "PROPERTY_ARTNUMBER" => $arr["params"]['ARTICLE']);
     $res = CIBlockElement::GetList(array(), $arFilter, false, array(), $arSelect);
@@ -506,6 +511,8 @@ foreach ($arrAll as $arr) {
     } else {
 //такого товара не найдено
 //Определение Хит или не хит.
+
+     //   print_r($arr);
         $hitValuep = [];
         $property_enums = CIBlockPropertyEnum::GetList(array("DEF" => "DESC", "SORT" => "ASC"), array("IBLOCK_ID" => $IBLOCK_ID, "CODE" => "HIT"));
         while ($enum_fields = $property_enums->GetNext()) {
@@ -534,9 +541,19 @@ foreach ($arrAll as $arr) {
         $PROP[9] = $arr["params"]['ARTICLE'];
     //    $PROP[7701] = $arr["params"]['COMPOUND'];
         $PROP[29] = $arr["params"]['COUNTRY'];
-  //      $PROP[7653] = 8;
+        $PROP[5] = [8];
       //  $PROP[7652] = $hitValuep;
+        if ($arr["params"]['SEASON']=="весна-лето"){
+
+            $arr["params"]['SEASON']=18;
+
+        }
+        elseif ($arr["params"]['SEASON']=="осень-зима"){
+            $arr["params"]['SEASON']=19;
+        }
+
         $PROP[28] = $arr["params"]['SEASON'];
+
         $PROP[30] = $arr["params"]['POLOTNO'];
         $PROP[33] = $arr["params"]['YEAR'];
 //        if ($arr["params"]['BEZ_SHOV']==1) {
@@ -568,18 +585,18 @@ foreach ($arrAll as $arr) {
         );
 // проверка ошибки
         if (!empty($ciBlockElement->LAST_ERROR)) {
-            // echo "Ошибка добавления товара: " . $ciBlockElement->LAST_ERROR;
-//            $logJson[] = [
-//                "stat" => "error",
-//                "art" => $arr["params"]['ARTICLE'],
-//                "message" => $ciBlockElement->LAST_ERROR
-//            ];
+        //     echo "Ошибка добавления товара: " . $ciBlockElement->LAST_ERROR;
+           $logJson[] = [
+                "stat" => "error",
+                "art" => $arr["params"]['ARTICLE'],
+            "message" => $ciBlockElement->LAST_ERROR
+            ];
             continue;
         } else {
-//            $logJson[] = [
-//                "stat" => "success",
-//                "art" => $arr["params"]['ARTICLE'],
-//            ];
+            $logJson[] = [
+                "stat" => "success",
+                "art" => $arr["params"]['ARTICLE'],
+            ];
         }
 // добавляем торговых предложений
         foreach ($arr['offers'] as $offer) {
