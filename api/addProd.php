@@ -46,8 +46,8 @@ foreach ($arrAll['goods'] as $itemProd) {
                 $offers[] = [
                     "NAME" => $itemOffers["good"]["nameSite"],
                     "SIZE" => $itemSize["size"]["value"],
-                    "COLOR" => $itemOffers["good"]["color"],
-                    "REAL_COLOR" => $itemOffers["good"]["realColor"],
+                  //  "COLOR" => $itemOffers["good"]["color"],
+                    "COLOR" => $itemOffers["good"]["realColor"],
                     "PRICE" => "666",
                     "ORT" => "777",
                     "RETAIL" => "888",
@@ -67,7 +67,9 @@ foreach ($arrAll['goods'] as $itemProd) {
         $prodDub[$itemProd["good"]["article"]] = true;
     }
 
-
+$code=translit($itemProd["good"]["article"]);
+    $code = str_replace("/", "-", "$code");
+    $code = str_replace(" ", "-", "$code");
     $arrProd[] = [
         "section" => [
             $itemProd["good"]["parentCategory"],
@@ -78,7 +80,7 @@ foreach ($arrAll['goods'] as $itemProd) {
             "NAME" => $itemProd["good"]["nameSite"],
             "DETAIL_TEXT" => $itemProd["good"]["description"],
             "DIS" => $itemProd["good"]["artname"],
-            "CODE" => "",
+            "CODE" => $code,
             "BRAND" => $itemProd["good"]["brand"],
             //"HIT" => "Хит, Советуем",
             "ARTICLE" => $itemProd["good"]["article"],
@@ -160,6 +162,7 @@ foreach ($arrAll as $arr) {
 // поиск товара по коду АРТИКЛУ!!!
 
      if ("ЕВТ 3078"!=$arr["params"]['ARTICLE']){continue;}
+   // var_dump($SECTION_ID);
     $arSelect = array("ID", "IBLOCK_ID", "NAME", "DATE_ACTIVE_FROM", "PROPERTY_*");//IBLOCK_ID и ID обязательно должны быть указаны, см. описание arSelectFields выше
     $arFilter = array("IBLOCK_ID" => IntVal($IBLOCK_ID), "PROPERTY_ARTNUMBER" => $arr["params"]['ARTICLE']);
     $res = CIBlockElement::GetList(array(), $arFilter, false, array(), $arSelect);
@@ -452,6 +455,7 @@ foreach ($arrAll as $arr) {
                 $arLoadProductArray = array(
                     "IBLOCK_ID" => $IBLOCK_OFFERS_ID, // IBLOCK торговых предложений
                     "NAME" => $offer["NAME"],
+                 //   "CODE" => $offer["CODE"],
                     "ACTIVE" => "Y",
                     'DETAIL_TEXT' => $arr["params"]['DETAIL_TEXT'],
                     "ARTICLE" => $arr["params"]["ARTICLE"],
@@ -577,6 +581,7 @@ foreach ($arrAll as $arr) {
             array(
                 'IBLOCK_ID' => $IBLOCK_ID, // IBLOCK товаров
                 'NAME' => $arr["params"]['NAME'],
+                "CODE" => $arr["params"]['CODE'],
                 'DETAIL_TEXT' => $arr["params"]['DETAIL_TEXT'],
                 "ACTIVE" => "Y",
                 "PROPERTY_VALUES" => $PROP,
