@@ -8,6 +8,7 @@ use Bitrix\Main\Loader;
 use Bitrix\Highloadblock as HL;
 use Bitrix\Main\Entity;
 
+
 function translit($s)
 {
     $s = (string)$s; // преобразуем в строковое значение

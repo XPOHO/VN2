@@ -1,162 +1,893 @@
-<?
-require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Интернет-магазин \"Одежда\"");
-?>
-<?if (IsModuleInstalled("advertising")):?>
-	<div class="mb-5">
-		<?$APPLICATION->IncludeComponent(
-			"bitrix:advertising.banner",
-			"bootstrap_v4",
-			array(
-				"COMPONENT_TEMPLATE" => "bootstrap_v4",
-				"TYPE" => "MAIN",
-				"NOINDEX" => "Y",
-				"QUANTITY" => "3",
-				"BS_EFFECT" => "fade",
-				"BS_CYCLING" => "N",
-				"BS_WRAP" => "Y",
-				"BS_PAUSE" => "Y",
-				"BS_KEYBOARD" => "Y",
-				"BS_ARROW_NAV" => "Y",
-				"BS_BULLET_NAV" => "Y",
-				"BS_HIDE_FOR_TABLETS" => "N",
-				"BS_HIDE_FOR_PHONES" => "Y",
-				"CACHE_TYPE" => "A",
-				"CACHE_TIME" => "36000000",
-			),
-			false
-		);?>
-	</div>
-<?endif?>
-
-<?
-global $trendFilter;
-$trendFilter = array('PROPERTY_TREND' => '4');
-?>
-<h2>Тренды сезона</h2>
-<?$APPLICATION->IncludeComponent(
-	"bitrix:catalog.section",
-	"bootstrap_v4",
-	array(
-		"IBLOCK_TYPE_ID" => "catalog",
-		"IBLOCK_ID" => "2",
-		"BASKET_URL" => "/personal/cart/",
-		"COMPONENT_TEMPLATE" => "",
-		"IBLOCK_TYPE" => "catalog",
-		"SECTION_ID" => $_REQUEST["SECTION_ID"],
-		"SECTION_CODE" => "",
-		"SECTION_USER_FIELDS" => array(
-			0 => "",
-			1 => "",
-		),
-		"ELEMENT_SORT_FIELD" => "sort",
-		"ELEMENT_SORT_ORDER" => "desc",
-		"ELEMENT_SORT_FIELD2" => "id",
-		"ELEMENT_SORT_ORDER2" => "desc",
-		"FILTER_NAME" => "trendFilter",
-		"INCLUDE_SUBSECTIONS" => "Y",
-		"SHOW_ALL_WO_SECTION" => "Y",
-		"HIDE_NOT_AVAILABLE" => "N",
-		"PAGE_ELEMENT_COUNT" => "12",
-		"LINE_ELEMENT_COUNT" => "3",
-		"PROPERTY_CODE" => array(
-			0 => "NEWPRODUCT",
-			1 => "",
-		),
-		"OFFERS_FIELD_CODE" => array(
-			0 => "",
-			1 => "",
-		),
-		"OFFERS_PROPERTY_CODE" => array(
-			0 => "COLOR_REF",
-			1 => "SIZES_SHOES",
-			2 => "SIZES_CLOTHES",
-			3 => "",
-		),
-		"OFFERS_SORT_FIELD" => "sort",
-		"OFFERS_SORT_ORDER" => "desc",
-		"OFFERS_SORT_FIELD2" => "id",
-		"OFFERS_SORT_ORDER2" => "desc",
-		"TEMPLATE_THEME" => "site",
-		"PRODUCT_DISPLAY_MODE" => "Y",
-		"ADD_PICT_PROP" => "MORE_PHOTO",
-		"LABEL_PROP" => array(
-			0 => "NEWPRODUCT"
-		),
-		"OFFER_ADD_PICT_PROP" => "-",
-		"OFFER_TREE_PROPS" => array(
-			0 => "COLOR_REF",
-			1 => "SIZES_SHOES",
-			2 => "SIZES_CLOTHES",
-		),
-		"PRODUCT_SUBSCRIPTION" => "N",
-		"SHOW_DISCOUNT_PERCENT" => "N",
-		"SHOW_OLD_PRICE" => "Y",
-		"SHOW_CLOSE_POPUP" => "N",
-		"MESS_BTN_BUY" => "Купить",
-		"MESS_BTN_ADD_TO_BASKET" => "В корзину",
-		"MESS_BTN_SUBSCRIBE" => "Подписаться",
-		"MESS_BTN_DETAIL" => "Подробнее",
-		"MESS_NOT_AVAILABLE" => "Нет в наличии",
-		"SECTION_URL" => "",
-		"DETAIL_URL" => "",
-		"SECTION_ID_VARIABLE" => "SECTION_ID",
-		"SEF_MODE" => "N",
-		"AJAX_MODE" => "N",
-		"AJAX_OPTION_JUMP" => "N",
-		"AJAX_OPTION_STYLE" => "Y",
-		"AJAX_OPTION_HISTORY" => "N",
-		"AJAX_OPTION_ADDITIONAL" => "",
-		"CACHE_TYPE" => "A",
-		"CACHE_TIME" => "36000000",
-		"CACHE_GROUPS" => "Y",
-		"SET_TITLE" => "Y",
-		"SET_BROWSER_TITLE" => "Y",
-		"BROWSER_TITLE" => "-",
-		"SET_META_KEYWORDS" => "Y",
-		"META_KEYWORDS" => "-",
-		"SET_META_DESCRIPTION" => "Y",
-		"META_DESCRIPTION" => "-",
-		"SET_LAST_MODIFIED" => "N",
-		"USE_MAIN_ELEMENT_SECTION" => "N",
-		"ADD_SECTIONS_CHAIN" => "N",
-		"CACHE_FILTER" => "N",
-		"ACTION_VARIABLE" => "action",
-		"PRODUCT_ID_VARIABLE" => "id",
-		"PRICE_CODE" => array(
-			0 => "BASE",
-		),
-		"USE_PRICE_COUNT" => "N",
-		"SHOW_PRICE_COUNT" => "1",
-		"PRICE_VAT_INCLUDE" => "Y",
-		"CONVERT_CURRENCY" => "N",
-		"USE_PRODUCT_QUANTITY" => "N",
-		"PRODUCT_QUANTITY_VARIABLE" => "",
-		"ADD_PROPERTIES_TO_BASKET" => "Y",
-		"PRODUCT_PROPS_VARIABLE" => "prop",
-		"PARTIAL_PRODUCT_PROPERTIES" => "N",
-		"PRODUCT_PROPERTIES" => array(
-		),
-		"OFFERS_CART_PROPERTIES" => array(
-			0 => "COLOR_REF",
-			1 => "SIZES_SHOES",
-			2 => "SIZES_CLOTHES",
-		),
-		"ADD_TO_BASKET_ACTION" => "ADD",
-		"PAGER_TEMPLATE" => "round",
-		"DISPLAY_TOP_PAGER" => "N",
-		"DISPLAY_BOTTOM_PAGER" => "Y",
-		"PAGER_TITLE" => "Товары",
-		"PAGER_SHOW_ALWAYS" => "N",
-		"PAGER_DESC_NUMBERING" => "N",
-		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
-		"PAGER_SHOW_ALL" => "N",
-		"PAGER_BASE_LINK_ENABLE" => "N",
-		"SET_STATUS_404" => "N",
-		"SHOW_404" => "N",
-		"MESSAGE_404" => "",
-		"COMPATIBLE_MODE" => "N",
-	),
-	false
-);?>
-<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+<?php require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");?>
+       <!-- main content -->
+    <main class="mpage-main">
+        <div id="main-slider" class="main-slider swiper">
+            <div class="swiper-wrapper">
+                <div class="slide-item swiper-slide lazyload" data-bgset="images/main/main_page/main_slider/mobile/main_slide1.jpg [(max-width: 575px)] | images/main/main_page/main_slider/pad/main_slide1.jpg [(max-width: 1024px)] | images/main/main_page/main_slider/main_slide1.jpg [(min-width: 1025px)]">
+                    <div class="container">
+                        <div class="slide-info">
+                            <h2 class="slide-title">Зимняя коллекция</h2>
+                            <h3 class="slide-subtitle">Lorem ipsum is placeholder text commonly used -20%</h3>
+                        </div>
+                        <div class="slide-links">
+                            <a href="#" class="slide-btn">Повседневная одежда</a>
+                            <a href="#" class="slide-btn">Домашняя одежда</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide-item swiper-slide video-slide">
+                    <div class="video-wrapper">
+                        <video class="video-item" autoplay="autoplay" loop="loop" muted="muted" playsinline="1" preload="1" poster="">
+                            <source src="assets/videos/1.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="container">
+                        <div class="slide-info">
+                            <h2 class="slide-title">Зимняя коллекция</h2>
+                            <h3 class="slide-subtitle">Lorem ipsum is placeholder text commonly used -20%</h3>
+                        </div>
+                        <div class="slide-links">
+                            <a href="#" class="slide-btn">Повседневная одежда</a>
+                            <a href="#" class="slide-btn">Домашняя одежда</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide-item swiper-slide lazyload" data-bgset="images/main/main_page/main_slider/mobile/main_slide1.jpg [(max-width: 575px)] | images/main/main_page/main_slider/pad/main_slide1.jpg [(max-width: 1024px)] | images/main/main_page/main_slider/main_slide1.jpg [(min-width: 1025px)]">
+                    <div class="container">
+                        <div class="slide-info">
+                            <h2 class="slide-title">Зимняя коллекция</h2>
+                            <h3 class="slide-subtitle">Lorem ipsum is placeholder text commonly used -20%</h3>
+                        </div>
+                        <div class="slide-links">
+                            <a href="#" class="slide-btn">Повседневная одежда</a>
+                            <a href="#" class="slide-btn">Домашняя одежда</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </main>
+    <section class="mpage-banner full-banner">
+        <div class="banner-slide lazyload" data-bgset="images/main/main_page/banners/mobile/fullbanner_image1.jpg [(max-width: 575px)] | images/main/main_page/banners/pad/fullbanner_image1.jpg [(max-width: 1024px)] | images/main/main_page/banners/fullbanner_image1.jpg [(min-width: 1025px)]">
+            <div class="container">
+                <div class="banner-wrapper">
+                    <h3 class="banner-subtitle">Новый сезон</h3>
+                    <h2 class="banner-title">Повседневная одежда</h2>
+                    <div class="banner-btns">
+                        <a href="#" class="banner-link btn-outline-style white-style">Перейти в каталог</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="mpage-banner full-banner">
+        <div class="banner-slide white-slide lazyload" data-bgset="images/main/main_page/banners/mobile/fullbanner_image2.jpg [(max-width: 575px)] | images/main/main_page/banners/pad/fullbanner_image2.jpg [(max-width: 1024px)] | images/main/main_page/banners/fullbanner_image2.jpg [(min-width: 1025px)]">
+            <div class="container">
+                <div class="banner-wrapper">
+                    <h3 class="banner-subtitle">Новый сезон</h3>
+                    <h2 class="banner-title">Новая коллекция</h2>
+                    <div class="banner-btns">
+                        <a href="#" class="banner-link btn-fill-style">Перейти в каталог</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="mpage-banner side-banner">
+        <div class="banner-slide">
+            <div class="container">
+                <div class="banner-slide__info">
+                    <h3 class="banner-subtitle">Повседневная одежда</h3>
+                    <h2 class="banner-title">У нас новые модели</h2>
+                    <a href="#" class="banner-link btn-fill-style white-style">Перейти в каталог</a>
+                </div>
+                <div class="banner-slide__image lazyload" data-bgset="images/main/main_page/banners/mobile/sidebanner_image1.jpg [(max-width: 575px)] | images/main/main_page/banners/pad/sidebanner_image1.jpg [(max-width: 1024px)] | images/main/main_page/banners/sidebanner_image1.jpg [(min-width: 1025px)]"></div>
+            </div>
+        </div>
+    </section>
+    <section class="mpage-catalog catalog-section">
+        <h2 class="catalog-section__title section-title">Повседневная одежда</h2>
+        <div class="catalog-section__content">
+            <div class="catalog-slider swiper">
+                <div class="swiper-wrapper">
+                    <!-- if colors-slider -->
+                    <div class="slide-item swiper-slide colors-item">
+                        <div class="image-block">
+                            <div class="product-tags">
+                                <div class="product-tags__item sale-item">M, S — 20%</div>
+                                <div class="product-tags__item new-item">New</div>
+                            </div>
+                            <div class="colors-slider swiper">
+                                <div class="swiper-wrapper">
+                                    <a href="#" class="product-link swiper-slide" data-color="#AEB9A9">
+                                        <img src="images/main/main_page/catalogs/product_image1.jpg" alt="product" class="product-image">
+                                    </a>
+                                    <a href="#" class="product-link swiper-slide" data-color="#8ACAFF">
+                                        <img src="images/main/main_page/catalogs/product_image2.jpg" alt="product" class="product-image">
+                                    </a>
+                                    <a href="#" class="product-link swiper-slide" data-color="#252426">
+                                        <img src="images/main/main_page/catalogs/product_image3.jpg" alt="product" class="product-image">
+                                    </a>
+                                </div>
+                                <div class="colors-navigation">
+                                    <div class="colors-btn color-prev"><i class="icon icon-slider_arrow"></i></div>
+                                    <div class="colors-btn color-next"><i class="icon icon-slider_arrow"></i></div>
+                                </div>
+                            </div>
+                            <div class="product-btns">
+                                <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
+                                <a href="#" class="product-btn addcart-link"><i class="icon icon-cart"></i><span>В корзину</span></a>
+                            </div>
+                        </div>
+                        <div class="descr-block">
+                            <a href="#" class="product-name">Жакет женский</a>
+                            <span class="product-price">
+                                <span class="oldprice">1 749 ₽</span>
+                            <span class="price">1 749 ₽</span>
+                            </span>
+                            <div class="product-colors">
+                                <div class="colors-pagination"></div>
+                                <span class="product-colors__all">+19 цветов</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide-item swiper-slide colors-item">
+                        <div class="image-block">
+                            <div class="colors-slider swiper">
+                                <div class="swiper-wrapper">
+                                    <a href="#" class="product-link swiper-slide" data-color="#AEB9A9">
+                                        <img src="images/main/main_page/catalogs/product_image1.jpg" alt="product" class="product-image">
+                                    </a>
+                                    <a href="#" class="product-link swiper-slide" data-color="#8ACAFF">
+                                        <img src="images/main/main_page/catalogs/product_image2.jpg" alt="product" class="product-image">
+                                    </a>
+                                    <a href="#" class="product-link swiper-slide" data-color="#252426">
+                                        <img src="images/main/main_page/catalogs/product_image3.jpg" alt="product" class="product-image">
+                                    </a>
+                                </div>
+                                <div class="colors-navigation">
+                                    <div class="colors-btn color-prev"><i class="icon icon-slider_arrow"></i></div>
+                                    <div class="colors-btn color-next"><i class="icon icon-slider_arrow"></i></div>
+                                </div>
+                            </div>
+                            <div class="product-btns">
+                                <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
+                                <a href="#" class="product-btn addcart-link"><i class="icon icon-cart"></i><span>В корзину</span></a>
+                            </div>
+                        </div>
+                        <div class="descr-block">
+                            <a href="#" class="product-name">Жакет женский</a>
+                            <span class="product-price">
+                                <span class="oldprice">1 749 ₽</span>
+                            <span class="price">1 749 ₽</span>
+                            </span>
+                            <div class="product-colors">
+                                <div class="colors-pagination"></div>
+                                <span class="product-colors__all">+19 цветов</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end colors-slider -->
+                    <div class="slide-item swiper-slide">
+                        <div class="image-block">
+                            <div class="product-tags">
+                                <div class="product-tags__item sale-item">M, S — 20%</div>
+                                <div class="product-tags__item new-item">New</div>
+                            </div>
+                            <a href="#" class="product-link">
+                                <img src="images/main/main_page/catalogs/product_image1.jpg" alt="product" class="product-image">
+                            </a>
+                            <div class="product-btns">
+                                <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
+                                <a href="#" class="product-btn addcart-link"><i class="icon icon-cart"></i><span>В корзину</span></a>
+                            </div>
+                        </div>
+                        <div class="descr-block">
+                            <a href="#" class="product-name">Жакет женский</a>
+                            <span class="product-price">
+                                <span class="oldprice">1 749 ₽</span>
+                            <span class="price">1 749 ₽</span>
+                            </span>
+                            <div class="product-colors"></div>
+                        </div>
+                    </div>
+                    <div class="slide-item swiper-slide">
+                        <div class="image-block">
+                            <a href="#" class="product-link">
+                                <img src="images/main/main_page/catalogs/product_image3.jpg" alt="product" class="product-image">
+                            </a>
+                            <div class="product-btns">
+                                <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
+                                <a href="#" class="product-btn addcart-link"><i class="icon icon-cart"></i><span>В корзину</span></a>
+                            </div>
+                        </div>
+                        <div class="descr-block">
+                            <a href="#" class="product-name">Жакет женский</a>
+                            <span class="product-price">
+                                <span class="oldprice">1 749 ₽</span>
+                            <span class="price">1 749 ₽</span>
+                            </span>
+                            <div class="product-colors">
+                                <span class="product-colors__all">+19 цветов</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide-item swiper-slide">
+                        <div class="image-block">
+                            <a href="#" class="product-link">
+                                <img src="images/main/main_page/catalogs/product_image2.jpg" alt="product" class="product-image">
+                            </a>
+                            <div class="product-btns">
+                                <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
+                                <a href="#" class="product-btn addcart-link"><i class="icon icon-cart"></i><span>В корзину</span></a>
+                            </div>
+                        </div>
+                        <div class="descr-block">
+                            <a href="#" class="product-name">Жакет женский</a>
+                            <span class="product-price">
+                                <span class="oldprice">1 749 ₽</span>
+                            <span class="price">1 749 ₽</span>
+                            </span>
+                            <div class="product-colors"></div>
+                        </div>
+                    </div>
+                    <div class="slide-item swiper-slide">
+                        <div class="image-block">
+                            <a href="#" class="product-link">
+                                <img src="images/main/main_page/catalogs/product_image4.jpg" alt="product" class="product-image">
+                            </a>
+                            <div class="product-btns">
+                                <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
+                                <a href="#" class="product-btn addcart-link"><i class="icon icon-cart"></i><span>В корзину</span></a>
+                            </div>
+                        </div>
+                        <div class="descr-block">
+                            <a href="#" class="product-name">Жакет женский</a>
+                            <span class="product-price">
+                                <span class="oldprice">1 749 ₽</span>
+                            <span class="price">1 749 ₽</span>
+                            </span>
+                            <div class="product-colors">
+                                <span class="product-colors__all">+19 цветов</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-navigation">
+                    <div class="nav-btn btn-prev"><i class="icon icon-slider_arrow"></i></div>
+                    <div class="nav-btn btn-next"><i class="icon icon-slider_arrow"></i></div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+    <section class="mpage-banner side-banner reverse-style">
+        <div class="banner-slide">
+            <div class="container">
+                <div class="banner-slide__info">
+                    <h3 class="banner-subtitle">Новинки в каталоге</h3>
+                    <h2 class="banner-title">Black and white graphic</h2>
+                    <a href="#" class="banner-link btn-fill-style white-style">Перейти в каталог</a>
+                </div>
+                <div class="banner-slide__image lazyload" data-bgset="images/main/main_page/banners/mobile/sidebanner_image2.jpg [(max-width: 575px)] | images/main/main_page/banners/pad/sidebanner_image2.jpg [(max-width: 1024px)] | images/main/main_page/banners/sidebanner_image2.jpg [(min-width: 1025px)]"></div>
+            </div>
+        </div>
+    </section>
+    <section class="mpage-catalog catalog-section">
+        <h2 class="catalog-section__title section-title">Black and white graphic</h2>
+        <div class="catalog-section__content">
+            <div class="catalog-slider swiper">
+                <div class="swiper-wrapper">
+                    <!-- if colors-slider -->
+                    <div class="slide-item swiper-slide colors-item">
+                        <div class="image-block">
+                            <div class="colors-slider swiper">
+                                <div class="swiper-wrapper">
+                                    <a href="#" class="product-link swiper-slide" data-color="#AEB9A9">
+                                        <img src="images/main/main_page/catalogs/product_image21.jpg" alt="product" class="product-image">
+                                    </a>
+                                    <a href="#" class="product-link swiper-slide" data-color="#8ACAFF">
+                                        <img src="images/main/main_page/catalogs/product_image22.jpg" alt="product" class="product-image">
+                                    </a>
+                                    <a href="#" class="product-link swiper-slide" data-color="#252426">
+                                        <img src="images/main/main_page/catalogs/product_image23.jpg" alt="product" class="product-image">
+                                    </a>
+                                </div>
+                                <div class="colors-navigation">
+                                    <div class="colors-btn color-prev"><i class="icon icon-slider_arrow"></i></div>
+                                    <div class="colors-btn color-next"><i class="icon icon-slider_arrow"></i></div>
+                                </div>
+                            </div>
+                            <div class="product-btns">
+                                <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
+                                <a href="#" class="product-btn addcart-link"><i class="icon icon-cart"></i><span>В корзину</span></a>
+                            </div>
+                        </div>
+                        <div class="descr-block">
+                            <a href="#" class="product-name">Жакет женский</a>
+                            <span class="product-price">
+                                <span class="oldprice">1 749 ₽</span>
+                            <span class="price">1 749 ₽</span>
+                            </span>
+                            <div class="product-colors">
+                                <div class="colors-pagination"></div>
+                                <span class="product-colors__all">+19 цветов</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide-item swiper-slide colors-item">
+                        <div class="image-block">
+                            <div class="product-tags">
+                                <div class="product-tags__item sale-item">M, S — 20%</div>
+                                <div class="product-tags__item new-item">New</div>
+                            </div>
+                            <div class="colors-slider swiper">
+                                <div class="swiper-wrapper">
+                                    <a href="#" class="product-link swiper-slide" data-color="#AEB9A9">
+                                        <img src="images/main/main_page/catalogs/product_image21.jpg" alt="product" class="product-image">
+                                    </a>
+                                    <a href="#" class="product-link swiper-slide" data-color="#8ACAFF">
+                                        <img src="images/main/main_page/catalogs/product_image22.jpg" alt="product" class="product-image">
+                                    </a>
+                                    <a href="#" class="product-link swiper-slide" data-color="#252426">
+                                        <img src="images/main/main_page/catalogs/product_image23.jpg" alt="product" class="product-image">
+                                    </a>
+                                </div>
+                                <div class="colors-navigation">
+                                    <div class="colors-btn color-prev"><i class="icon icon-slider_arrow"></i></div>
+                                    <div class="colors-btn color-next"><i class="icon icon-slider_arrow"></i></div>
+                                </div>
+                            </div>
+                            <div class="product-btns">
+                                <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
+                                <a href="#" class="product-btn addcart-link"><i class="icon icon-cart"></i><span>В корзину</span></a>
+                            </div>
+                        </div>
+                        <div class="descr-block">
+                            <a href="#" class="product-name">Жакет женский</a>
+                            <span class="product-price">
+                                <span class="oldprice">1 749 ₽</span>
+                            <span class="price">1 749 ₽</span>
+                            </span>
+                            <div class="product-colors">
+                                <div class="colors-pagination"></div>
+                                <span class="product-colors__all">+19 цветов</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end colors-slider -->
+                    <div class="slide-item swiper-slide">
+                        <div class="image-block">
+                            <a href="#" class="product-link">
+                                <img src="images/main/main_page/catalogs/product_image21.jpg" alt="product" class="product-image">
+                            </a>
+                            <div class="product-btns">
+                                <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
+                                <a href="#" class="product-btn addcart-link"><i class="icon icon-cart"></i><span>В корзину</span></a>
+                            </div>
+                        </div>
+                        <div class="descr-block">
+                            <a href="#" class="product-name">Жакет женский</a>
+                            <span class="product-price">
+                                <span class="oldprice">1 749 ₽</span>
+                            <span class="price">1 749 ₽</span>
+                            </span>
+                            <div class="product-colors"></div>
+                        </div>
+                    </div>
+                    <div class="slide-item swiper-slide">
+                        <div class="image-block">
+                            <a href="#" class="product-link">
+                                <img src="images/main/main_page/catalogs/product_image23.jpg" alt="product" class="product-image">
+                            </a>
+                            <div class="product-btns">
+                                <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
+                                <a href="#" class="product-btn addcart-link"><i class="icon icon-cart"></i><span>В корзину</span></a>
+                            </div>
+                        </div>
+                        <div class="descr-block">
+                            <a href="#" class="product-name">Жакет женский</a>
+                            <span class="product-price">
+                                <span class="oldprice">1 749 ₽</span>
+                            <span class="price">1 749 ₽</span>
+                            </span>
+                            <div class="product-colors">
+                                <span class="product-colors__all">+19 цветов</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide-item swiper-slide">
+                        <div class="image-block">
+                            <div class="product-tags">
+                                <div class="product-tags__item sale-item">M, S — 20%</div>
+                                <div class="product-tags__item new-item">New</div>
+                            </div>
+                            <a href="#" class="product-link">
+                                <img src="images/main/main_page/catalogs/product_image22.jpg" alt="product" class="product-image">
+                            </a>
+                            <div class="product-btns">
+                                <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
+                                <a href="#" class="product-btn addcart-link"><i class="icon icon-cart"></i><span>В корзину</span></a>
+                            </div>
+                        </div>
+                        <div class="descr-block">
+                            <a href="#" class="product-name">Жакет женский</a>
+                            <span class="product-price">
+                                <span class="oldprice">1 749 ₽</span>
+                            <span class="price">1 749 ₽</span>
+                            </span>
+                            <div class="product-colors"></div>
+                        </div>
+                    </div>
+                    <div class="slide-item swiper-slide">
+                        <div class="image-block">
+                            <a href="#" class="product-link">
+                                <img src="images/main/main_page/catalogs/product_image21.jpg" alt="product" class="product-image">
+                            </a>
+                            <div class="product-btns">
+                                <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
+                                <a href="#" class="product-btn addcart-link"><i class="icon icon-cart"></i><span>В корзину</span></a>
+                            </div>
+                        </div>
+                        <div class="descr-block">
+                            <a href="#" class="product-name">Жакет женский</a>
+                            <span class="product-price">
+                                <span class="oldprice">1 749 ₽</span>
+                            <span class="price">1 749 ₽</span>
+                            </span>
+                            <div class="product-colors">
+                                <span class="product-colors__all">+19 цветов</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-navigation">
+                    <div class="nav-btn btn-prev"><i class="icon icon-slider_arrow"></i></div>
+                    <div class="nav-btn btn-next"><i class="icon icon-slider_arrow"></i></div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+    <section class="mpage-banner full-banner center-style">
+        <div class="banner-slide lazyload" data-bgset="images/main/main_page/banners/mobile/fullbanner_image3.jpg [(max-width: 575px)] | images/main/main_page/banners/pad/fullbanner_image3.jpg [(max-width: 1024px)] | images/main/main_page/banners/fullbanner_image3.jpg [(min-width: 1025px)]">
+            <div class="container">
+                <h3 class="banner-subtitle">Повседневная одежда</h3>
+                <h2 class="banner-title">Dusk in the valley</h2>
+                <div class="banner-btns inline-btns">
+                    <a href="#" class="banner-link btn-fill-style white-style">Перейти в каталог</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="mpage-catalog catalog-section">
+        <h2 class="catalog-section__title section-title">Black and white graphic</h2>
+        <div class="catalog-section__content">
+            <div class="catalog-slider swiper">
+                <div class="swiper-wrapper">
+                    <!-- if colors-slider -->
+                    <div class="slide-item swiper-slide colors-item">
+                        <div class="image-block">
+                            <div class="product-tags">
+                                <div class="product-tags__item sale-item">M, S — 20%</div>
+                                <div class="product-tags__item new-item">New</div>
+                            </div>
+                            <div class="colors-slider swiper">
+                                <div class="swiper-wrapper">
+                                    <a href="#" class="product-link swiper-slide" data-color="#AEB9A9">
+                                        <img src="images/main/main_page/catalogs/product_image21.jpg" alt="product" class="product-image">
+                                    </a>
+                                    <a href="#" class="product-link swiper-slide" data-color="#8ACAFF">
+                                        <img src="images/main/main_page/catalogs/product_image22.jpg" alt="product" class="product-image">
+                                    </a>
+                                    <a href="#" class="product-link swiper-slide" data-color="#252426">
+                                        <img src="images/main/main_page/catalogs/product_image23.jpg" alt="product" class="product-image">
+                                    </a>
+                                </div>
+                                <div class="colors-navigation">
+                                    <div class="colors-btn color-prev"><i class="icon icon-slider_arrow"></i></div>
+                                    <div class="colors-btn color-next"><i class="icon icon-slider_arrow"></i></div>
+                                </div>
+                            </div>
+                            <div class="product-btns">
+                                <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
+                                <a href="#" class="product-btn addcart-link"><i class="icon icon-cart"></i><span>В корзину</span></a>
+                            </div>
+                        </div>
+                        <div class="descr-block">
+                            <a href="#" class="product-name">Жакет женский</a>
+                            <span class="product-price">
+                                <span class="oldprice">1 749 ₽</span>
+                            <span class="price">1 749 ₽</span>
+                            </span>
+                            <div class="product-colors">
+                                <div class="colors-pagination"></div>
+                                <span class="product-colors__all">+19 цветов</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide-item swiper-slide colors-item">
+                        <div class="image-block">
+                            <div class="colors-slider swiper">
+                                <div class="swiper-wrapper">
+                                    <a href="#" class="product-link swiper-slide" data-color="#AEB9A9">
+                                        <img src="images/main/main_page/catalogs/product_image21.jpg" alt="product" class="product-image">
+                                    </a>
+                                    <a href="#" class="product-link swiper-slide" data-color="#8ACAFF">
+                                        <img src="images/main/main_page/catalogs/product_image22.jpg" alt="product" class="product-image">
+                                    </a>
+                                    <a href="#" class="product-link swiper-slide" data-color="#252426">
+                                        <img src="images/main/main_page/catalogs/product_image23.jpg" alt="product" class="product-image">
+                                    </a>
+                                </div>
+                                <div class="colors-navigation">
+                                    <div class="colors-btn color-prev"><i class="icon icon-slider_arrow"></i></div>
+                                    <div class="colors-btn color-next"><i class="icon icon-slider_arrow"></i></div>
+                                </div>
+                            </div>
+                            <div class="product-btns">
+                                <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
+                                <a href="#" class="product-btn addcart-link"><i class="icon icon-cart"></i><span>В корзину</span></a>
+                            </div>
+                        </div>
+                        <div class="descr-block">
+                            <a href="#" class="product-name">Жакет женский</a>
+                            <span class="product-price">
+                                <span class="oldprice">1 749 ₽</span>
+                            <span class="price">1 749 ₽</span>
+                            </span>
+                            <div class="product-colors">
+                                <div class="colors-pagination"></div>
+                                <span class="product-colors__all">+19 цветов</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end colors-slider -->
+                    <div class="slide-item swiper-slide">
+                        <div class="image-block">
+                            <a href="#" class="product-link">
+                                <img src="images/main/main_page/catalogs/product_image21.jpg" alt="product" class="product-image">
+                            </a>
+                            <div class="product-btns">
+                                <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
+                                <a href="#" class="product-btn addcart-link"><i class="icon icon-cart"></i><span>В корзину</span></a>
+                            </div>
+                        </div>
+                        <div class="descr-block">
+                            <a href="#" class="product-name">Жакет женский</a>
+                            <span class="product-price">
+                                <span class="oldprice">1 749 ₽</span>
+                            <span class="price">1 749 ₽</span>
+                            </span>
+                            <div class="product-colors"></div>
+                        </div>
+                    </div>
+                    <div class="slide-item swiper-slide">
+                        <div class="image-block">
+                            <div class="product-tags">
+                                <div class="product-tags__item sale-item">M, S — 20%</div>
+                                <div class="product-tags__item new-item">New</div>
+                            </div>
+                            <a href="#" class="product-link">
+                                <img src="images/main/main_page/catalogs/product_image23.jpg" alt="product" class="product-image">
+                            </a>
+                            <div class="product-btns">
+                                <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
+                                <a href="#" class="product-btn addcart-link"><i class="icon icon-cart"></i><span>В корзину</span></a>
+                            </div>
+                        </div>
+                        <div class="descr-block">
+                            <a href="#" class="product-name">Жакет женский</a>
+                            <span class="product-price">
+                                <span class="oldprice">1 749 ₽</span>
+                            <span class="price">1 749 ₽</span>
+                            </span>
+                            <div class="product-colors">
+                                <span class="product-colors__all">+19 цветов</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide-item swiper-slide">
+                        <div class="image-block">
+                            <a href="#" class="product-link">
+                                <img src="images/main/main_page/catalogs/product_image22.jpg" alt="product" class="product-image">
+                            </a>
+                            <div class="product-btns">
+                                <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
+                                <a href="#" class="product-btn addcart-link"><i class="icon icon-cart"></i><span>В корзину</span></a>
+                            </div>
+                        </div>
+                        <div class="descr-block">
+                            <a href="#" class="product-name">Жакет женский</a>
+                            <span class="product-price">
+                                <span class="oldprice">1 749 ₽</span>
+                            <span class="price">1 749 ₽</span>
+                            </span>
+                            <div class="product-colors"></div>
+                        </div>
+                    </div>
+                    <div class="slide-item swiper-slide">
+                        <div class="image-block">
+                            <a href="#" class="product-link">
+                                <img src="images/main/main_page/catalogs/product_image21.jpg" alt="product" class="product-image">
+                            </a>
+                            <div class="product-btns">
+                                <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
+                                <a href="#" class="product-btn addcart-link"><i class="icon icon-cart"></i><span>В корзину</span></a>
+                            </div>
+                        </div>
+                        <div class="descr-block">
+                            <a href="#" class="product-name">Жакет женский</a>
+                            <span class="product-price">
+                                <span class="oldprice">1 749 ₽</span>
+                            <span class="price">1 749 ₽</span>
+                            </span>
+                            <div class="product-colors">
+                                <span class="product-colors__all">+19 цветов</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-navigation">
+                    <div class="nav-btn btn-prev"><i class="icon icon-slider_arrow"></i></div>
+                    <div class="nav-btn btn-next"><i class="icon icon-slider_arrow"></i></div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+    <section class="mpage-banner full-banner left-center-style">
+        <div class="banner-slide lazyload" data-bgset="images/main/main_page/banners/mobile/fullbanner_image4.jpg [(max-width: 575px)] | images/main/main_page/banners/pad/fullbanner_image4.jpg [(max-width: 1024px)] | images/main/main_page/banners/fullbanner_image4.jpg [(min-width: 1025px)]">
+            <div class="container">
+                <h3 class="banner-subtitle">Новый сезон</h3>
+                <h2 class="banner-title">Irses flowers</h2>
+                <div class="banner-btns inline-btns">
+                    <a href="#" class="banner-link btn-outline-style white-style">Перейти в каталог</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="mpage-banner full-banner center-style">
+        <div class="banner-slide lazyload" data-bgset="images/main/main_page/banners/mobile/fullbanner_image5.jpg [(max-width: 575px)] | images/main/main_page/banners/pad/fullbanner_image5.jpg [(max-width: 1024px)] | images/main/main_page/banners/fullbanner_image5.jpg [(min-width: 1025px)]">
+            <div class="container">
+                <h3 class="banner-subtitle">Повседневная одежда</h3>
+                <h2 class="banner-title">Coffee with mint</h2>
+                <div class="banner-btns">
+                    <a href="#" class="banner-link btn-outline-style white-style">Перейти в каталог</a>
+                    <a href="#" class="banner-link btn-fill-style white-style">Перейти в каталог</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="mpage-banner side-banner">
+        <div class="banner-slide">
+            <div class="container">
+                <div class="banner-slide__info">
+                    <h3 class="banner-subtitle">Новый сезон</h3>
+                    <h2 class="banner-title">Tropical mood</h2>
+                    <a href="#" class="banner-link btn-fill-style white-style">Перейти в каталог</a>
+                </div>
+                <div class="banner-slide__image lazyload" data-bgset="images/main/main_page/banners/mobile/sidebanner_image3.jpg [(max-width: 575px)] | images/main/main_page/banners/pad/sidebanner_image3.jpg [(max-width: 1024px)] | images/main/main_page/banners/sidebanner_image3.jpg [(min-width: 1025px)]"></div>
+            </div>
+        </div>
+    </section>
+    <section class="mpage-banner side-banner reverse-style">
+        <div class="banner-slide">
+            <div class="container">
+                <div class="banner-slide__info">
+                    <h3 class="banner-subtitle">Новый сезон</h3>
+                    <h2 class="banner-title">Night garden</h2>
+                    <a href="#" class="banner-link btn-fill-style white-style">Перейти в каталог</a>
+                </div>
+                <div class="banner-slide__image lazyload" data-bgset="images/main/main_page/banners/mobile/sidebanner_image4.jpg [(max-width: 575px)] | images/main/main_page/banners/pad/sidebanner_image4.jpg [(max-width: 1024px)] | images/main/main_page/banners/sidebanner_image4.jpg [(min-width: 1025px)]"></div>
+            </div>
+        </div>
+    </section>
+    <section class="mpage-catalog catalog-section">
+        <h2 class="catalog-section__title section-title">Black and white graphic</h2>
+        <div class="catalog-section__content">
+            <div class="catalog-slider swiper">
+                <div class="swiper-wrapper">
+                    <!-- if colors-slider -->
+                    <div class="slide-item swiper-slide colors-item">
+                        <div class="image-block">
+                            <div class="product-tags">
+                                <div class="product-tags__item sale-item">M, S — 20%</div>
+                                <div class="product-tags__item new-item">New</div>
+                            </div>
+                            <div class="colors-slider swiper">
+                                <div class="swiper-wrapper">
+                                    <a href="#" class="product-link swiper-slide" data-color="#AEB9A9">
+                                        <img src="images/main/main_page/catalogs/product_image31.jpg" alt="product" class="product-image">
+                                    </a>
+                                    <a href="#" class="product-link swiper-slide" data-color="#8ACAFF">
+                                        <img src="images/main/main_page/catalogs/product_image32.jpg" alt="product" class="product-image">
+                                    </a>
+                                    <a href="#" class="product-link swiper-slide" data-color="#252426">
+                                        <img src="images/main/main_page/catalogs/product_image33.jpg" alt="product" class="product-image">
+                                    </a>
+                                </div>
+                                <div class="colors-navigation">
+                                    <div class="colors-btn color-prev"><i class="icon icon-slider_arrow"></i></div>
+                                    <div class="colors-btn color-next"><i class="icon icon-slider_arrow"></i></div>
+                                </div>
+                            </div>
+                            <div class="product-btns">
+                                <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
+                                <a href="#" class="product-btn addcart-link"><i class="icon icon-cart"></i><span>В корзину</span></a>
+                            </div>
+                        </div>
+                        <div class="descr-block">
+                            <a href="#" class="product-name">Жакет женский</a>
+                            <span class="product-price">
+                                <span class="oldprice">1 749 ₽</span>
+                            <span class="price">1 749 ₽</span>
+                            </span>
+                            <div class="product-colors">
+                                <div class="colors-pagination"></div>
+                                <span class="product-colors__all">+19 цветов</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide-item swiper-slide colors-item">
+                        <div class="image-block">
+                            <div class="colors-slider swiper">
+                                <div class="swiper-wrapper">
+                                    <a href="#" class="product-link swiper-slide" data-color="#AEB9A9">
+                                        <img src="images/main/main_page/catalogs/product_image31.jpg" alt="product" class="product-image">
+                                    </a>
+                                    <a href="#" class="product-link swiper-slide" data-color="#8ACAFF">
+                                        <img src="images/main/main_page/catalogs/product_image32.jpg" alt="product" class="product-image">
+                                    </a>
+                                    <a href="#" class="product-link swiper-slide" data-color="#252426">
+                                        <img src="images/main/main_page/catalogs/product_image33.jpg" alt="product" class="product-image">
+                                    </a>
+                                </div>
+                                <div class="colors-navigation">
+                                    <div class="colors-btn color-prev"><i class="icon icon-slider_arrow"></i></div>
+                                    <div class="colors-btn color-next"><i class="icon icon-slider_arrow"></i></div>
+                                </div>
+                            </div>
+                            <div class="product-btns">
+                                <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
+                                <a href="#" class="product-btn addcart-link"><i class="icon icon-cart"></i><span>В корзину</span></a>
+                            </div>
+                        </div>
+                        <div class="descr-block">
+                            <a href="#" class="product-name">Жакет женский</a>
+                            <span class="product-price">
+                                <span class="oldprice">1 749 ₽</span>
+                            <span class="price">1 749 ₽</span>
+                            </span>
+                            <div class="product-colors">
+                                <div class="colors-pagination"></div>
+                                <span class="product-colors__all">+19 цветов</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end colors-slider -->
+                    <div class="slide-item swiper-slide">
+                        <div class="image-block">
+                            <a href="#" class="product-link">
+                                <img src="images/main/main_page/catalogs/product_image31.jpg" alt="product" class="product-image">
+                            </a>
+                            <div class="product-btns">
+                                <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
+                                <a href="#" class="product-btn addcart-link"><i class="icon icon-cart"></i><span>В корзину</span></a>
+                            </div>
+                        </div>
+                        <div class="descr-block">
+                            <a href="#" class="product-name">Жакет женский</a>
+                            <span class="product-price">
+                                <span class="oldprice">1 749 ₽</span>
+                            <span class="price">1 749 ₽</span>
+                            </span>
+                            <div class="product-colors"></div>
+                        </div>
+                    </div>
+                    <div class="slide-item swiper-slide">
+                        <div class="image-block">
+                            <div class="product-tags">
+                                <div class="product-tags__item sale-item">M, S — 20%</div>
+                                <div class="product-tags__item new-item">New</div>
+                            </div>
+                            <a href="#" class="product-link">
+                                <img src="images/main/main_page/catalogs/product_image33.jpg" alt="product" class="product-image">
+                            </a>
+                            <div class="product-btns">
+                                <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
+                                <a href="#" class="product-btn addcart-link"><i class="icon icon-cart"></i><span>В корзину</span></a>
+                            </div>
+                        </div>
+                        <div class="descr-block">
+                            <a href="#" class="product-name">Жакет женский</a>
+                            <span class="product-price">
+                                <span class="oldprice">1 749 ₽</span>
+                            <span class="price">1 749 ₽</span>
+                            </span>
+                            <div class="product-colors">
+                                <span class="product-colors__all">+19 цветов</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide-item swiper-slide">
+                        <div class="image-block">
+                            <a href="#" class="product-link">
+                                <img src="images/main/main_page/catalogs/product_image32.jpg" alt="product" class="product-image">
+                            </a>
+                            <div class="product-btns">
+                                <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
+                                <a href="#" class="product-btn addcart-link"><i class="icon icon-cart"></i><span>В корзину</span></a>
+                            </div>
+                        </div>
+                        <div class="descr-block">
+                            <a href="#" class="product-name">Жакет женский</a>
+                            <span class="product-price">
+                                <span class="oldprice">1 749 ₽</span>
+                            <span class="price">1 749 ₽</span>
+                            </span>
+                            <div class="product-colors"></div>
+                        </div>
+                    </div>
+                    <div class="slide-item swiper-slide">
+                        <div class="image-block">
+                            <a href="#" class="product-link">
+                                <img src="images/main/main_page/catalogs/product_image31.jpg" alt="product" class="product-image">
+                            </a>
+                            <div class="product-btns">
+                                <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
+                                <a href="#" class="product-btn addcart-link"><i class="icon icon-cart"></i><span>В корзину</span></a>
+                            </div>
+                        </div>
+                        <div class="descr-block">
+                            <a href="#" class="product-name">Жакет женский</a>
+                            <span class="product-price">
+                                <span class="oldprice">1 749 ₽</span>
+                            <span class="price">1 749 ₽</span>
+                            </span>
+                            <div class="product-colors">
+                                <span class="product-colors__all">+19 цветов</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-navigation">
+                    <div class="nav-btn btn-prev"><i class="icon icon-slider_arrow"></i></div>
+                    <div class="nav-btn btn-next"><i class="icon icon-slider_arrow"></i></div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+    <section class="mpage-subscribe subscribe-section">
+        <div class="container">
+            <div class="subscribe-section__content">
+                <h2 class="form-title">Присоединяйтесь к нам!</h2>
+                <form action="" class="subscribe-form">
+                    <div class="input-group">
+                        <input type="email" name="email" placeholder="Ваш e-mail">
+                    </div>
+                    <div class="input-group check-group">
+                        <label>
+                            <input type="checkbox" name="check" required>
+                            <span>СОГЛАСЕН НА ОБРАБОТКУ ПЕРСОНАЛЬНЫХ ДАННЫХ, С <a href="#">ДОГОВОРОМ ПУБЛИЧНОЙ ОФЕРТЫ</a> И <a href="#">ПОЛИТИКОЙ КОНФИДЕНЦИАЛЬНОСТИ</a> ОЗНАКОМЛЕН И ПРИНИМАЮ</span>
+                        </label>
+                    </div>
+                    <div class="input-group btn-group">
+                        <button type="submit" class="btn-fill-style black-style">Подписаться</button>
+                    </div>
+                </form>
+            </div>
+            <div class="subscribe-section__social">
+                <ul class="social-list">
+                    <li class="social-list__item"><a href="#" target="_blank" class="social-list__link"><i class="icon icon-youtube"></i></a></li>
+                    <li class="social-list__item"><a href="#" target="_blank" class="social-list__link"><i class="icon icon-vk"></i></a></li>
+                    <li class="social-list__item"><a href="#" target="_blank" class="social-list__link"><i class="icon icon-inst"></i></a></li>
+                    <li class="social-list__item"><a href="#" target="_blank" class="social-list__link"><i class="icon icon-tg"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- main end content -->
+<?php require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

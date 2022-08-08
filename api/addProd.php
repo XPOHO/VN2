@@ -99,10 +99,6 @@ $code=translit($itemProd["good"]["article"]);
     ];
 }
 
-//print_r($arrProd);
-
-
-
 $logJson = [];
 $IDHighload = 2;
 $hldata = Bitrix\Highloadblock\HighloadBlockTable::getById($IDHighload)->fetch();
