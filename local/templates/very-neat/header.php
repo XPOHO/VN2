@@ -62,6 +62,7 @@
 </head>
 <body>
 <?$APPLICATION->ShowPanel();?>
+
 <header class="header main-page-header">
     <div class="header__stock">
         <div class="container">

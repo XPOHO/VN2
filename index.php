@@ -3,7 +3,7 @@
     <main class="mpage-main">
         <div id="main-slider" class="main-slider swiper">
             <div class="swiper-wrapper">
-                <div class="slide-item swiper-slide lazyload" data-bgset="images/main/main_page/main_slider/mobile/main_slide1.jpg [(max-width: 575px)] | images/main/main_page/main_slider/pad/main_slide1.jpg [(max-width: 1024px)] | images/main/main_page/main_slider/main_slide1.jpg [(min-width: 1025px)]">
+                <div class="slide-item swiper-slide lazyload" data-bgset="<?=DEFAULT_TEMPLATE_PATH?>/images/ main/main_page/main_slider/mobile/main_slide1.jpg [(max-width: 575px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/main_slider/pad/main_slide1.jpg [(max-width: 1024px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/main_slider/main_slide1.jpg [(min-width: 1025px)]">
                     <div class="container">
                         <div class="slide-info">
                             <h2 class="slide-title">Зимняя коллекция</h2>
@@ -18,7 +18,7 @@
                 <div class="slide-item swiper-slide video-slide">
                     <div class="video-wrapper">
                         <video class="video-item" autoplay="autoplay" loop="loop" muted="muted" playsinline="1" preload="1" poster="">
-                            <source src="assets/videos/1.mp4" type="video/mp4">
+                            <source src="<?=DEFAULT_TEMPLATE_PATH?>/assets/videos/1.mp4" type="video/mp4">
                         </video>
                     </div>
                     <div class="container">
@@ -32,7 +32,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="slide-item swiper-slide lazyload" data-bgset="images/main/main_page/main_slider/mobile/main_slide1.jpg [(max-width: 575px)] | images/main/main_page/main_slider/pad/main_slide1.jpg [(max-width: 1024px)] | images/main/main_page/main_slider/main_slide1.jpg [(min-width: 1025px)]">
+                <div class="slide-item swiper-slide lazyload" data-bgset="<?=DEFAULT_TEMPLATE_PATH?>/images/ main/main_page/main_slider/mobile/main_slide1.jpg [(max-width: 575px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/main_slider/pad/main_slide1.jpg [(max-width: 1024px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/main_slider/main_slide1.jpg [(min-width: 1025px)]">
                     <div class="container">
                         <div class="slide-info">
                             <h2 class="slide-title">Зимняя коллекция</h2>
@@ -49,7 +49,7 @@
         </div>
     </main>
     <section class="mpage-banner full-banner">
-        <div class="banner-slide lazyload" data-bgset="images/main/main_page/banners/mobile/fullbanner_image1.jpg [(max-width: 575px)] | images/main/main_page/banners/pad/fullbanner_image1.jpg [(max-width: 1024px)] | images/main/main_page/banners/fullbanner_image1.jpg [(min-width: 1025px)]">
+        <div class="banner-slide lazyload" data-bgset="<?=DEFAULT_TEMPLATE_PATH?>/images/ main/main_page/banners/mobile/fullbanner_image1.jpg [(max-width: 575px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/pad/fullbanner_image1.jpg [(max-width: 1024px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/fullbanner_image1.jpg [(min-width: 1025px)]">
             <div class="container">
                 <div class="banner-wrapper">
                     <h3 class="banner-subtitle">Новый сезон</h3>
@@ -62,7 +62,7 @@
         </div>
     </section>
     <section class="mpage-banner full-banner">
-        <div class="banner-slide white-slide lazyload" data-bgset="images/main/main_page/banners/mobile/fullbanner_image2.jpg [(max-width: 575px)] | images/main/main_page/banners/pad/fullbanner_image2.jpg [(max-width: 1024px)] | images/main/main_page/banners/fullbanner_image2.jpg [(min-width: 1025px)]">
+        <div class="banner-slide white-slide lazyload" data-bgset="<?=DEFAULT_TEMPLATE_PATH?>/images/ main/main_page/banners/mobile/fullbanner_image2.jpg [(max-width: 575px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/pad/fullbanner_image2.jpg [(max-width: 1024px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/fullbanner_image2.jpg [(min-width: 1025px)]">
             <div class="container">
                 <div class="banner-wrapper">
                     <h3 class="banner-subtitle">Новый сезон</h3>
@@ -82,7 +82,7 @@
                     <h2 class="banner-title">У нас новые модели</h2>
                     <a href="#" class="banner-link btn-fill-style white-style">Перейти в каталог</a>
                 </div>
-                <div class="banner-slide__image lazyload" data-bgset="images/main/main_page/banners/mobile/sidebanner_image1.jpg [(max-width: 575px)] | images/main/main_page/banners/pad/sidebanner_image1.jpg [(max-width: 1024px)] | images/main/main_page/banners/sidebanner_image1.jpg [(min-width: 1025px)]"></div>
+                <div class="banner-slide__image lazyload" data-bgset="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/mobile/sidebanner_image1.jpg [(max-width: 575px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/pad/sidebanner_image1.jpg [(max-width: 1024px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/sidebanner_image1.jpg [(min-width: 1025px)]"></div>
             </div>
         </div>
     </section>
@@ -101,13 +101,13 @@
                             <div class="colors-slider swiper">
                                 <div class="swiper-wrapper">
                                     <a href="#" class="product-link swiper-slide" data-color="#AEB9A9">
-                                        <img src="images/main/main_page/catalogs/product_image1.jpg" alt="product" class="product-image">
+                                        <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image1.jpg" alt="product" class="product-image">
                                     </a>
                                     <a href="#" class="product-link swiper-slide" data-color="#8ACAFF">
-                                        <img src="images/main/main_page/catalogs/product_image2.jpg" alt="product" class="product-image">
+                                        <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image2.jpg" alt="product" class="product-image">
                                     </a>
                                     <a href="#" class="product-link swiper-slide" data-color="#252426">
-                                        <img src="images/main/main_page/catalogs/product_image3.jpg" alt="product" class="product-image">
+                                        <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image3.jpg" alt="product" class="product-image">
                                     </a>
                                 </div>
                                 <div class="colors-navigation">
@@ -137,13 +137,13 @@
                             <div class="colors-slider swiper">
                                 <div class="swiper-wrapper">
                                     <a href="#" class="product-link swiper-slide" data-color="#AEB9A9">
-                                        <img src="images/main/main_page/catalogs/product_image1.jpg" alt="product" class="product-image">
+                                        <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image1.jpg" alt="product" class="product-image">
                                     </a>
                                     <a href="#" class="product-link swiper-slide" data-color="#8ACAFF">
-                                        <img src="images/main/main_page/catalogs/product_image2.jpg" alt="product" class="product-image">
+                                        <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image2.jpg" alt="product" class="product-image">
                                     </a>
                                     <a href="#" class="product-link swiper-slide" data-color="#252426">
-                                        <img src="images/main/main_page/catalogs/product_image3.jpg" alt="product" class="product-image">
+                                        <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image3.jpg" alt="product" class="product-image">
                                     </a>
                                 </div>
                                 <div class="colors-navigation">
@@ -176,7 +176,7 @@
                                 <div class="product-tags__item new-item">New</div>
                             </div>
                             <a href="#" class="product-link">
-                                <img src="images/main/main_page/catalogs/product_image1.jpg" alt="product" class="product-image">
+                                <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image1.jpg" alt="product" class="product-image">
                             </a>
                             <div class="product-btns">
                                 <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
@@ -195,7 +195,7 @@
                     <div class="slide-item swiper-slide">
                         <div class="image-block">
                             <a href="#" class="product-link">
-                                <img src="images/main/main_page/catalogs/product_image3.jpg" alt="product" class="product-image">
+                                <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image3.jpg" alt="product" class="product-image">
                             </a>
                             <div class="product-btns">
                                 <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
@@ -216,7 +216,7 @@
                     <div class="slide-item swiper-slide">
                         <div class="image-block">
                             <a href="#" class="product-link">
-                                <img src="images/main/main_page/catalogs/product_image2.jpg" alt="product" class="product-image">
+                                <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image2.jpg" alt="product" class="product-image">
                             </a>
                             <div class="product-btns">
                                 <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
@@ -235,7 +235,7 @@
                     <div class="slide-item swiper-slide">
                         <div class="image-block">
                             <a href="#" class="product-link">
-                                <img src="images/main/main_page/catalogs/product_image4.jpg" alt="product" class="product-image">
+                                <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image4.jpg" alt="product" class="product-image">
                             </a>
                             <div class="product-btns">
                                 <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
@@ -270,7 +270,7 @@
                     <h2 class="banner-title">Black and white graphic</h2>
                     <a href="#" class="banner-link btn-fill-style white-style">Перейти в каталог</a>
                 </div>
-                <div class="banner-slide__image lazyload" data-bgset="images/main/main_page/banners/mobile/sidebanner_image2.jpg [(max-width: 575px)] | images/main/main_page/banners/pad/sidebanner_image2.jpg [(max-width: 1024px)] | images/main/main_page/banners/sidebanner_image2.jpg [(min-width: 1025px)]"></div>
+                <div class="banner-slide__image lazyload" data-bgset="<?=DEFAULT_TEMPLATE_PATH?>/images/ main/main_page/banners/mobile/sidebanner_image2.jpg [(max-width: 575px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/pad/sidebanner_image2.jpg [(max-width: 1024px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/sidebanner_image2.jpg [(min-width: 1025px)]"></div>
             </div>
         </div>
     </section>
@@ -285,13 +285,13 @@
                             <div class="colors-slider swiper">
                                 <div class="swiper-wrapper">
                                     <a href="#" class="product-link swiper-slide" data-color="#AEB9A9">
-                                        <img src="images/main/main_page/catalogs/product_image21.jpg" alt="product" class="product-image">
+                                        <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image21.jpg" alt="product" class="product-image">
                                     </a>
                                     <a href="#" class="product-link swiper-slide" data-color="#8ACAFF">
-                                        <img src="images/main/main_page/catalogs/product_image22.jpg" alt="product" class="product-image">
+                                        <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image22.jpg" alt="product" class="product-image">
                                     </a>
                                     <a href="#" class="product-link swiper-slide" data-color="#252426">
-                                        <img src="images/main/main_page/catalogs/product_image23.jpg" alt="product" class="product-image">
+                                        <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image23.jpg" alt="product" class="product-image">
                                     </a>
                                 </div>
                                 <div class="colors-navigation">
@@ -325,13 +325,13 @@
                             <div class="colors-slider swiper">
                                 <div class="swiper-wrapper">
                                     <a href="#" class="product-link swiper-slide" data-color="#AEB9A9">
-                                        <img src="images/main/main_page/catalogs/product_image21.jpg" alt="product" class="product-image">
+                                        <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image21.jpg" alt="product" class="product-image">
                                     </a>
                                     <a href="#" class="product-link swiper-slide" data-color="#8ACAFF">
-                                        <img src="images/main/main_page/catalogs/product_image22.jpg" alt="product" class="product-image">
+                                        <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image22.jpg" alt="product" class="product-image">
                                     </a>
                                     <a href="#" class="product-link swiper-slide" data-color="#252426">
-                                        <img src="images/main/main_page/catalogs/product_image23.jpg" alt="product" class="product-image">
+                                        <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image23.jpg" alt="product" class="product-image">
                                     </a>
                                 </div>
                                 <div class="colors-navigation">
@@ -360,7 +360,7 @@
                     <div class="slide-item swiper-slide">
                         <div class="image-block">
                             <a href="#" class="product-link">
-                                <img src="images/main/main_page/catalogs/product_image21.jpg" alt="product" class="product-image">
+                                <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image21.jpg" alt="product" class="product-image">
                             </a>
                             <div class="product-btns">
                                 <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
@@ -379,7 +379,7 @@
                     <div class="slide-item swiper-slide">
                         <div class="image-block">
                             <a href="#" class="product-link">
-                                <img src="images/main/main_page/catalogs/product_image23.jpg" alt="product" class="product-image">
+                                <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image23.jpg" alt="product" class="product-image">
                             </a>
                             <div class="product-btns">
                                 <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
@@ -404,7 +404,7 @@
                                 <div class="product-tags__item new-item">New</div>
                             </div>
                             <a href="#" class="product-link">
-                                <img src="images/main/main_page/catalogs/product_image22.jpg" alt="product" class="product-image">
+                                <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image22.jpg" alt="product" class="product-image">
                             </a>
                             <div class="product-btns">
                                 <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
@@ -423,7 +423,7 @@
                     <div class="slide-item swiper-slide">
                         <div class="image-block">
                             <a href="#" class="product-link">
-                                <img src="images/main/main_page/catalogs/product_image21.jpg" alt="product" class="product-image">
+                                <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image21.jpg" alt="product" class="product-image">
                             </a>
                             <div class="product-btns">
                                 <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
@@ -451,7 +451,7 @@
         </div>
     </section>
     <section class="mpage-banner full-banner center-style">
-        <div class="banner-slide lazyload" data-bgset="images/main/main_page/banners/mobile/fullbanner_image3.jpg [(max-width: 575px)] | images/main/main_page/banners/pad/fullbanner_image3.jpg [(max-width: 1024px)] | images/main/main_page/banners/fullbanner_image3.jpg [(min-width: 1025px)]">
+        <div class="banner-slide lazyload" data-bgset="<?=DEFAULT_TEMPLATE_PATH?>/images/ main/main_page/banners/mobile/fullbanner_image3.jpg [(max-width: 575px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/pad/fullbanner_image3.jpg [(max-width: 1024px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/fullbanner_image3.jpg [(min-width: 1025px)]">
             <div class="container">
                 <h3 class="banner-subtitle">Повседневная одежда</h3>
                 <h2 class="banner-title">Dusk in the valley</h2>
@@ -476,13 +476,13 @@
                             <div class="colors-slider swiper">
                                 <div class="swiper-wrapper">
                                     <a href="#" class="product-link swiper-slide" data-color="#AEB9A9">
-                                        <img src="images/main/main_page/catalogs/product_image21.jpg" alt="product" class="product-image">
+                                        <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image21.jpg" alt="product" class="product-image">
                                     </a>
                                     <a href="#" class="product-link swiper-slide" data-color="#8ACAFF">
-                                        <img src="images/main/main_page/catalogs/product_image22.jpg" alt="product" class="product-image">
+                                        <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image22.jpg" alt="product" class="product-image">
                                     </a>
                                     <a href="#" class="product-link swiper-slide" data-color="#252426">
-                                        <img src="images/main/main_page/catalogs/product_image23.jpg" alt="product" class="product-image">
+                                        <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image23.jpg" alt="product" class="product-image">
                                     </a>
                                 </div>
                                 <div class="colors-navigation">
@@ -512,13 +512,13 @@
                             <div class="colors-slider swiper">
                                 <div class="swiper-wrapper">
                                     <a href="#" class="product-link swiper-slide" data-color="#AEB9A9">
-                                        <img src="images/main/main_page/catalogs/product_image21.jpg" alt="product" class="product-image">
+                                        <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image21.jpg" alt="product" class="product-image">
                                     </a>
                                     <a href="#" class="product-link swiper-slide" data-color="#8ACAFF">
-                                        <img src="images/main/main_page/catalogs/product_image22.jpg" alt="product" class="product-image">
+                                        <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image22.jpg" alt="product" class="product-image">
                                     </a>
                                     <a href="#" class="product-link swiper-slide" data-color="#252426">
-                                        <img src="images/main/main_page/catalogs/product_image23.jpg" alt="product" class="product-image">
+                                        <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image23.jpg" alt="product" class="product-image">
                                     </a>
                                 </div>
                                 <div class="colors-navigation">
@@ -547,7 +547,7 @@
                     <div class="slide-item swiper-slide">
                         <div class="image-block">
                             <a href="#" class="product-link">
-                                <img src="images/main/main_page/catalogs/product_image21.jpg" alt="product" class="product-image">
+                                <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image21.jpg" alt="product" class="product-image">
                             </a>
                             <div class="product-btns">
                                 <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
@@ -570,7 +570,7 @@
                                 <div class="product-tags__item new-item">New</div>
                             </div>
                             <a href="#" class="product-link">
-                                <img src="images/main/main_page/catalogs/product_image23.jpg" alt="product" class="product-image">
+                                <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image23.jpg" alt="product" class="product-image">
                             </a>
                             <div class="product-btns">
                                 <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
@@ -591,7 +591,7 @@
                     <div class="slide-item swiper-slide">
                         <div class="image-block">
                             <a href="#" class="product-link">
-                                <img src="images/main/main_page/catalogs/product_image22.jpg" alt="product" class="product-image">
+                                <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image22.jpg" alt="product" class="product-image">
                             </a>
                             <div class="product-btns">
                                 <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
@@ -610,7 +610,7 @@
                     <div class="slide-item swiper-slide">
                         <div class="image-block">
                             <a href="#" class="product-link">
-                                <img src="images/main/main_page/catalogs/product_image21.jpg" alt="product" class="product-image">
+                                <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image21.jpg" alt="product" class="product-image">
                             </a>
                             <div class="product-btns">
                                 <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
@@ -638,7 +638,7 @@
         </div>
     </section>
     <section class="mpage-banner full-banner left-center-style">
-        <div class="banner-slide lazyload" data-bgset="images/main/main_page/banners/mobile/fullbanner_image4.jpg [(max-width: 575px)] | images/main/main_page/banners/pad/fullbanner_image4.jpg [(max-width: 1024px)] | images/main/main_page/banners/fullbanner_image4.jpg [(min-width: 1025px)]">
+        <div class="banner-slide lazyload" data-bgset="<?=DEFAULT_TEMPLATE_PATH?>/images/ main/main_page/banners/mobile/fullbanner_image4.jpg [(max-width: 575px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/pad/fullbanner_image4.jpg [(max-width: 1024px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/fullbanner_image4.jpg [(min-width: 1025px)]">
             <div class="container">
                 <h3 class="banner-subtitle">Новый сезон</h3>
                 <h2 class="banner-title">Irses flowers</h2>
@@ -649,7 +649,7 @@
         </div>
     </section>
     <section class="mpage-banner full-banner center-style">
-        <div class="banner-slide lazyload" data-bgset="images/main/main_page/banners/mobile/fullbanner_image5.jpg [(max-width: 575px)] | images/main/main_page/banners/pad/fullbanner_image5.jpg [(max-width: 1024px)] | images/main/main_page/banners/fullbanner_image5.jpg [(min-width: 1025px)]">
+        <div class="banner-slide lazyload" data-bgset="<?=DEFAULT_TEMPLATE_PATH?>/images/ main/main_page/banners/mobile/fullbanner_image5.jpg [(max-width: 575px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/pad/fullbanner_image5.jpg [(max-width: 1024px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/fullbanner_image5.jpg [(min-width: 1025px)]">
             <div class="container">
                 <h3 class="banner-subtitle">Повседневная одежда</h3>
                 <h2 class="banner-title">Coffee with mint</h2>
@@ -668,7 +668,7 @@
                     <h2 class="banner-title">Tropical mood</h2>
                     <a href="#" class="banner-link btn-fill-style white-style">Перейти в каталог</a>
                 </div>
-                <div class="banner-slide__image lazyload" data-bgset="images/main/main_page/banners/mobile/sidebanner_image3.jpg [(max-width: 575px)] | images/main/main_page/banners/pad/sidebanner_image3.jpg [(max-width: 1024px)] | images/main/main_page/banners/sidebanner_image3.jpg [(min-width: 1025px)]"></div>
+                <div class="banner-slide__image lazyload" data-bgset="<?=DEFAULT_TEMPLATE_PATH?>/images/ main/main_page/banners/mobile/sidebanner_image3.jpg [(max-width: 575px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/pad/sidebanner_image3.jpg [(max-width: 1024px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/sidebanner_image3.jpg [(min-width: 1025px)]"></div>
             </div>
         </div>
     </section>
@@ -680,7 +680,7 @@
                     <h2 class="banner-title">Night garden</h2>
                     <a href="#" class="banner-link btn-fill-style white-style">Перейти в каталог</a>
                 </div>
-                <div class="banner-slide__image lazyload" data-bgset="images/main/main_page/banners/mobile/sidebanner_image4.jpg [(max-width: 575px)] | images/main/main_page/banners/pad/sidebanner_image4.jpg [(max-width: 1024px)] | images/main/main_page/banners/sidebanner_image4.jpg [(min-width: 1025px)]"></div>
+                <div class="banner-slide__image lazyload" data-bgset="<?=DEFAULT_TEMPLATE_PATH?>/images/ main/main_page/banners/mobile/sidebanner_image4.jpg [(max-width: 575px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/pad/sidebanner_image4.jpg [(max-width: 1024px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/sidebanner_image4.jpg [(min-width: 1025px)]"></div>
             </div>
         </div>
     </section>
@@ -699,13 +699,13 @@
                             <div class="colors-slider swiper">
                                 <div class="swiper-wrapper">
                                     <a href="#" class="product-link swiper-slide" data-color="#AEB9A9">
-                                        <img src="images/main/main_page/catalogs/product_image31.jpg" alt="product" class="product-image">
+                                        <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image31.jpg" alt="product" class="product-image">
                                     </a>
                                     <a href="#" class="product-link swiper-slide" data-color="#8ACAFF">
-                                        <img src="images/main/main_page/catalogs/product_image32.jpg" alt="product" class="product-image">
+                                        <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image32.jpg" alt="product" class="product-image">
                                     </a>
                                     <a href="#" class="product-link swiper-slide" data-color="#252426">
-                                        <img src="images/main/main_page/catalogs/product_image33.jpg" alt="product" class="product-image">
+                                        <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image33.jpg" alt="product" class="product-image">
                                     </a>
                                 </div>
                                 <div class="colors-navigation">
@@ -735,13 +735,13 @@
                             <div class="colors-slider swiper">
                                 <div class="swiper-wrapper">
                                     <a href="#" class="product-link swiper-slide" data-color="#AEB9A9">
-                                        <img src="images/main/main_page/catalogs/product_image31.jpg" alt="product" class="product-image">
+                                        <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image31.jpg" alt="product" class="product-image">
                                     </a>
                                     <a href="#" class="product-link swiper-slide" data-color="#8ACAFF">
-                                        <img src="images/main/main_page/catalogs/product_image32.jpg" alt="product" class="product-image">
+                                        <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image32.jpg" alt="product" class="product-image">
                                     </a>
                                     <a href="#" class="product-link swiper-slide" data-color="#252426">
-                                        <img src="images/main/main_page/catalogs/product_image33.jpg" alt="product" class="product-image">
+                                        <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image33.jpg" alt="product" class="product-image">
                                     </a>
                                 </div>
                                 <div class="colors-navigation">
@@ -770,7 +770,7 @@
                     <div class="slide-item swiper-slide">
                         <div class="image-block">
                             <a href="#" class="product-link">
-                                <img src="images/main/main_page/catalogs/product_image31.jpg" alt="product" class="product-image">
+                                <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image31.jpg" alt="product" class="product-image">
                             </a>
                             <div class="product-btns">
                                 <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
@@ -793,7 +793,7 @@
                                 <div class="product-tags__item new-item">New</div>
                             </div>
                             <a href="#" class="product-link">
-                                <img src="images/main/main_page/catalogs/product_image33.jpg" alt="product" class="product-image">
+                                <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image33.jpg" alt="product" class="product-image">
                             </a>
                             <div class="product-btns">
                                 <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
@@ -814,7 +814,7 @@
                     <div class="slide-item swiper-slide">
                         <div class="image-block">
                             <a href="#" class="product-link">
-                                <img src="images/main/main_page/catalogs/product_image32.jpg" alt="product" class="product-image">
+                                <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image32.jpg" alt="product" class="product-image">
                             </a>
                             <div class="product-btns">
                                 <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
@@ -833,7 +833,7 @@
                     <div class="slide-item swiper-slide">
                         <div class="image-block">
                             <a href="#" class="product-link">
-                                <img src="images/main/main_page/catalogs/product_image31.jpg" alt="product" class="product-image">
+                                <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image31.jpg" alt="product" class="product-image">
                             </a>
                             <div class="product-btns">
                                 <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
