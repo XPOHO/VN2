@@ -3,42 +3,79 @@
 
 <footer class="footer">
     <div class="container">
+
+
+
+
+
+
+
+
+
         <div class="footer__menu">
             <div class="footer__menu__column">
                 <span class="column-title">Помощь</span>
-                <div class="fmenu-wrapper">
-                    <ul class="fmenu-list">
-                        <li class="fmenu-list__item"><a href="#" class="fmenu-list__link">Мой аккаунт</a></li>
-                        <li class="fmenu-list__item"><a href="#" class="fmenu-list__link disabled">Где мой заказ</a></li>
-                        <li class="fmenu-list__item"><a href="#" class="fmenu-list__link">Доставка и оплата</a></li>
-                        <li class="fmenu-list__item"><a href="#" class="fmenu-list__link">Правила возврата</a></li>
-                        <li class="fmenu-list__item"><a href="#" class="fmenu-list__link">Найти магазин</a></li>
-                        <li class="fmenu-list__item"><a href="#" class="fmenu-list__link">Подобрать размер</a></li>
-                    </ul>
-                </div>
+                <?$APPLICATION->IncludeComponent(
+                    "bitrix:menu",
+                    "",
+                    Array(
+                        "ALLOW_MULTI_SELECT" => "N",    // Разрешить несколько активных пунктов одновременно
+                        "CHILD_MENU_TYPE" => "footerHelp",    // Тип меню для остальных уровней
+                        "DELAY" => "N",    // Откладывать выполнение шаблона меню
+                        "MAX_LEVEL" => "2",    // Уровень вложенности меню
+                        "MENU_CACHE_GET_VARS" => array(    // Значимые переменные запроса
+                            0 => "",
+                        ),
+                        "MENU_CACHE_TIME" => "3600",    // Время кеширования (сек.)
+                        "MENU_CACHE_TYPE" => "N",    // Тип кеширования
+                        "MENU_CACHE_USE_GROUPS" => "Y",    // Учитывать права доступа
+                        "ROOT_MENU_TYPE" => "footerHelp",    // Тип меню для первого уровня
+                        "USE_EXT" => "N",    // Подключать файлы с именами вида .тип_меню.menu_ext.php
+                    )
+                );?>
             </div>
             <div class="footer__menu__column">
                 <span class="column-title">Каталог</span>
-                <div class="fmenu-wrapper">
-                    <ul class="fmenu-list">
-                        <li class="fmenu-list__item"><a href="#" class="fmenu-list__link">Распродажа</a></li>
-                        <li class="fmenu-list__item"><a href="#" class="fmenu-list__link">Новинки</a></li>
-                        <li class="fmenu-list__item"><a href="#" class="fmenu-list__link">Повседневная одежда</a></li>
-                        <li class="fmenu-list__item"><a href="#" class="fmenu-list__link">Домашняя одежда</a></li>
-                    </ul>
-                </div>
+
+                <?$APPLICATION->IncludeComponent(
+                    "bitrix:menu",
+                    "",
+                    Array(
+                        "ALLOW_MULTI_SELECT" => "N",    // Разрешить несколько активных пунктов одновременно
+                        "CHILD_MENU_TYPE" => "footerCatalog",    // Тип меню для остальных уровней
+                        "DELAY" => "N",    // Откладывать выполнение шаблона меню
+                        "MAX_LEVEL" => "2",    // Уровень вложенности меню
+                        "MENU_CACHE_GET_VARS" => array(    // Значимые переменные запроса
+                            0 => "",
+                        ),
+                        "MENU_CACHE_TIME" => "3600",    // Время кеширования (сек.)
+                        "MENU_CACHE_TYPE" => "N",    // Тип кеширования
+                        "MENU_CACHE_USE_GROUPS" => "Y",    // Учитывать права доступа
+                        "ROOT_MENU_TYPE" => "footerCatalog",    // Тип меню для первого уровня
+                        "USE_EXT" => "N",    // Подключать файлы с именами вида .тип_меню.menu_ext.php
+                    )
+                );?>
             </div>
             <div class="footer__menu__column">
                 <span class="column-title">Компания</span>
-                <div class="fmenu-wrapper">
-                    <ul class="fmenu-list">
-                        <li class="fmenu-list__item"><a href="#" class="fmenu-list__link">О нас</a></li>
-                        <li class="fmenu-list__item"><a href="#" class="fmenu-list__link">Философия бренда</a></li>
-                        <li class="fmenu-list__item"><a href="#" class="fmenu-list__link">Блог</a></li>
-                        <li class="fmenu-list__item"><a href="#" class="fmenu-list__link">Контакты</a></li>
-                        <li class="fmenu-list__item"><a href="#" class="fmenu-list__link">FAQ</a></li>
-                    </ul>
-                </div>
+                <?$APPLICATION->IncludeComponent(
+                    "bitrix:menu",
+                    "",
+                    Array(
+                        "ALLOW_MULTI_SELECT" => "N",    // Разрешить несколько активных пунктов одновременно
+                        "CHILD_MENU_TYPE" => "footerCompany",    // Тип меню для остальных уровней
+                        "DELAY" => "N",    // Откладывать выполнение шаблона меню
+                        "MAX_LEVEL" => "2",    // Уровень вложенности меню
+                        "MENU_CACHE_GET_VARS" => array(    // Значимые переменные запроса
+                            0 => "",
+                        ),
+                        "MENU_CACHE_TIME" => "3600",    // Время кеширования (сек.)
+                        "MENU_CACHE_TYPE" => "N",    // Тип кеширования
+                        "MENU_CACHE_USE_GROUPS" => "Y",    // Учитывать права доступа
+                        "ROOT_MENU_TYPE" => "footerCompany",    // Тип меню для первого уровня
+                        "USE_EXT" => "N",    // Подключать файлы с именами вида .тип_меню.menu_ext.php
+                    )
+                );?>
             </div>
         </div>
         <a id="lang-link" href="javascript:void(0);" class="lang-link">Язык: <span>Русский</span></a>
@@ -282,7 +319,7 @@
             <button class="modal__close" aria-label="Close modal" data-micromodal-close><i class="icon icon-close"></i></button>
             <main class="modal__content">
                 <div class="modal__content__left-side">
-                    <img src="images/main/modal_image.jpg" alt="product-image" class="product-image">
+                    <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/modal_image.jpg" alt="product-image" class="product-image">
                     <a href="#" class="product-btn favorite-link"><i class="icon icon-heart_fill"></i></a>
                 </div>
                 <div class="modal__content__right-side">

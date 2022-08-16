@@ -883,7 +883,6 @@
                 <ul class="social-list">
                     <li class="social-list__item"><a href="#" target="_blank" class="social-list__link"><i class="icon icon-youtube"></i></a></li>
                     <li class="social-list__item"><a href="#" target="_blank" class="social-list__link"><i class="icon icon-vk"></i></a></li>
-                    <li class="social-list__item"><a href="#" target="_blank" class="social-list__link"><i class="icon icon-inst"></i></a></li>
                     <li class="social-list__item"><a href="#" target="_blank" class="social-list__link"><i class="icon icon-tg"></i></a></li>
                 </ul>
             </div>

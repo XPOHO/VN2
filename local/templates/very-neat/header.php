@@ -1,67 +1,69 @@
-<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
+<? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 ?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <?php
+
     use Bitrix\Main\Page\Asset;
+
     ?>
-    <!-- meta tags -->     <title><? $APPLICATION->ShowTitle(); ?></title>
+    <!-- meta tags --> <title><? $APPLICATION->ShowTitle(); ?></title>
     <?
     Asset::getInstance()->addString('<meta charset="UTF-8">');
     Asset::getInstance()->addString(' <meta http-equiv="X-UA-Compatible" content="IE=edge">');
     Asset::getInstance()->addString('<meta name="author" content="VERY NEAT">');
-    Asset::getInstance()->addString('<meta name="image" content="'.DEFAULT_TEMPLATE_PATH.'/images/preview.jpg">');
-   // Asset::getInstance()->addString('<meta property="og:type" content="website">');
-   // Asset::getInstance()->addString('<meta property="og:site_name" content="VERY NEAT">');
-   // Asset::getInstance()->addString('<meta property="og:title" content="VERY NEAT">');
+    Asset::getInstance()->addString('<meta name="image" content="' . DEFAULT_TEMPLATE_PATH . '/images/preview.jpg">');
+    // Asset::getInstance()->addString('<meta property="og:type" content="website">');
+    // Asset::getInstance()->addString('<meta property="og:site_name" content="VERY NEAT">');
+    // Asset::getInstance()->addString('<meta property="og:title" content="VERY NEAT">');
 
-    Asset::getInstance()->addString('<link rel="shortcut icon" href="'.DEFAULT_TEMPLATE_PATH.'/favicon/favicon.ico" type="image/x-icon">');
-    Asset::getInstance()->addString('<link rel="apple-touch-icon" sizes="57x57" href="'.DEFAULT_TEMPLATE_PATH.'/favicon/apple-icon-57x57.png">');
-    Asset::getInstance()->addString('<link rel="apple-touch-icon" sizes="60x60" href="'.DEFAULT_TEMPLATE_PATH.'/favicon/apple-icon-60x60.png">');
-    Asset::getInstance()->addString('<link rel="apple-touch-icon" sizes="72x72" href="'.DEFAULT_TEMPLATE_PATH.'/favicon/apple-icon-72x72.png">');
-    Asset::getInstance()->addString('<link rel="apple-touch-icon" sizes="76x76" href="'.DEFAULT_TEMPLATE_PATH.'/favicon/apple-icon-76x76.png">');
+    Asset::getInstance()->addString('<link rel="shortcut icon" href="' . DEFAULT_TEMPLATE_PATH . '/favicon/favicon.ico" type="image/x-icon">');
+    Asset::getInstance()->addString('<link rel="apple-touch-icon" sizes="57x57" href="' . DEFAULT_TEMPLATE_PATH . '/favicon/apple-icon-57x57.png">');
+    Asset::getInstance()->addString('<link rel="apple-touch-icon" sizes="60x60" href="' . DEFAULT_TEMPLATE_PATH . '/favicon/apple-icon-60x60.png">');
+    Asset::getInstance()->addString('<link rel="apple-touch-icon" sizes="72x72" href="' . DEFAULT_TEMPLATE_PATH . '/favicon/apple-icon-72x72.png">');
+    Asset::getInstance()->addString('<link rel="apple-touch-icon" sizes="76x76" href="' . DEFAULT_TEMPLATE_PATH . '/favicon/apple-icon-76x76.png">');
 
-    Asset::getInstance()->addString('<link rel="apple-touch-icon" sizes="114x114" href="'.DEFAULT_TEMPLATE_PATH.'/favicon/apple-icon-114x114.png">');
-    Asset::getInstance()->addString('<link rel="apple-touch-icon" sizes="120x120" href="'.DEFAULT_TEMPLATE_PATH.'/favicon/apple-icon-120x120.png">');
-    Asset::getInstance()->addString('<link rel="apple-touch-icon" sizes="144x144" href="'.DEFAULT_TEMPLATE_PATH.'/favicon/apple-icon-144x144.png">');
-    Asset::getInstance()->addString('<link rel="apple-touch-icon" sizes="152x152" href="'.DEFAULT_TEMPLATE_PATH.'/favicon/apple-icon-152x152.png">');
-    Asset::getInstance()->addString('<link rel="icon" type="image/png" sizes="192x192" href="'.DEFAULT_TEMPLATE_PATH.'/favicon/android-icon-192x192.png">');
-    Asset::getInstance()->addString('<link rel="icon" type="image/png" sizes="32x32" href="'.DEFAULT_TEMPLATE_PATH.'/favicon/favicon-32x32.png">');
-    Asset::getInstance()->addString('<link rel="icon" type="image/png" sizes="96x96" href="'.DEFAULT_TEMPLATE_PATH.'/favicon/favicon-96x96.png">');
-    Asset::getInstance()->addString('<link rel="icon" type="image/png" sizes="16x16" href="'.DEFAULT_TEMPLATE_PATH.'/favicon/favicon-16x16.png">');
-    Asset::getInstance()->addString('<link rel="manifest" href="'.DEFAULT_TEMPLATE_PATH.'/favicon/manifest.json">');
-    Asset::getInstance()->addString('<meta name="msapplication-TileImage" content="'.DEFAULT_TEMPLATE_PATH.'/favicon/ms-icon-144x144.png">');
+    Asset::getInstance()->addString('<link rel="apple-touch-icon" sizes="114x114" href="' . DEFAULT_TEMPLATE_PATH . '/favicon/apple-icon-114x114.png">');
+    Asset::getInstance()->addString('<link rel="apple-touch-icon" sizes="120x120" href="' . DEFAULT_TEMPLATE_PATH . '/favicon/apple-icon-120x120.png">');
+    Asset::getInstance()->addString('<link rel="apple-touch-icon" sizes="144x144" href="' . DEFAULT_TEMPLATE_PATH . '/favicon/apple-icon-144x144.png">');
+    Asset::getInstance()->addString('<link rel="apple-touch-icon" sizes="152x152" href="' . DEFAULT_TEMPLATE_PATH . '/favicon/apple-icon-152x152.png">');
+    Asset::getInstance()->addString('<link rel="icon" type="image/png" sizes="192x192" href="' . DEFAULT_TEMPLATE_PATH . '/favicon/android-icon-192x192.png">');
+    Asset::getInstance()->addString('<link rel="icon" type="image/png" sizes="32x32" href="' . DEFAULT_TEMPLATE_PATH . '/favicon/favicon-32x32.png">');
+    Asset::getInstance()->addString('<link rel="icon" type="image/png" sizes="96x96" href="' . DEFAULT_TEMPLATE_PATH . '/favicon/favicon-96x96.png">');
+    Asset::getInstance()->addString('<link rel="icon" type="image/png" sizes="16x16" href="' . DEFAULT_TEMPLATE_PATH . '/favicon/favicon-16x16.png">');
+    Asset::getInstance()->addString('<link rel="manifest" href="' . DEFAULT_TEMPLATE_PATH . '/favicon/manifest.json">');
+    Asset::getInstance()->addString('<meta name="msapplication-TileImage" content="' . DEFAULT_TEMPLATE_PATH . '/favicon/ms-icon-144x144.png">');
     Asset::getInstance()->addString('<meta name="msapplication-TileColor" content="#565656">');
     Asset::getInstance()->addString('<meta name="apple-mobile-web-app-title" content="">');
     Asset::getInstance()->addString('<meta name="apple-mobile-web-app-capable" content="yes">');
     Asset::getInstance()->addString('<meta name="format-detection" content="telephone=no">');
     Asset::getInstance()->addString('<meta name="format-detection" content="address=no">');
-    Asset::getInstance()->addString('<link rel="preload" href="'.DEFAULT_TEMPLATE_PATH.'/fonts/MontserratBold/MontserratBold.woff2" as="font" type="font/woff2" crossorigin>');
-    Asset::getInstance()->addString('<link rel="preload" href="'.DEFAULT_TEMPLATE_PATH.'/fonts/MontserratLight/MontserratLight.woff2" as="font" type="font/woff2" crossorigin>');
-    Asset::getInstance()->addString('<link rel="preload" href="'.DEFAULT_TEMPLATE_PATH.'/fonts/MontserratMedium/MontserratMedium.woff2" as="font" type="font/woff2" crossorigin>');
-    Asset::getInstance()->addString('<link rel="preload" href="'.DEFAULT_TEMPLATE_PATH.'/fonts/MontserratRegular/MontserratRegular.woff2" as="font" type="font/woff2" crossorigin>');
-    Asset::getInstance()->addString('<link rel="preload" href="'.DEFAULT_TEMPLATE_PATH.'/fonts/MontserratSemiBold/MontserratSemiBold.woff2" as="font" type="font/woff2" crossorigin>');
-    Asset::getInstance()->addString('<link rel="preload" href="'.DEFAULT_TEMPLATE_PATH.'/fonts/RobotoBold/RobotoBold.woff2" as="font" type="font/woff2" crossorigin>');
-    Asset::getInstance()->addString('<link rel="preload" href="'.DEFAULT_TEMPLATE_PATH.'/fonts/RobotoMedium/RobotoMedium.woff2" as="font" type="font/woff2" crossorigin>');
-    Asset::getInstance()->addString('<link rel="preload" href="'.DEFAULT_TEMPLATE_PATH.'/fonts/RobotoRegular/RobotoRegular.woff2" as="font" type="font/woff2" crossorigin>');
- //Asset::getInstance()->addString('');
+    Asset::getInstance()->addString('<link rel="preload" href="' . DEFAULT_TEMPLATE_PATH . '/fonts/MontserratBold/MontserratBold.woff2" as="font" type="font/woff2" crossorigin>');
+    Asset::getInstance()->addString('<link rel="preload" href="' . DEFAULT_TEMPLATE_PATH . '/fonts/MontserratLight/MontserratLight.woff2" as="font" type="font/woff2" crossorigin>');
+    Asset::getInstance()->addString('<link rel="preload" href="' . DEFAULT_TEMPLATE_PATH . '/fonts/MontserratMedium/MontserratMedium.woff2" as="font" type="font/woff2" crossorigin>');
+    Asset::getInstance()->addString('<link rel="preload" href="' . DEFAULT_TEMPLATE_PATH . '/fonts/MontserratRegular/MontserratRegular.woff2" as="font" type="font/woff2" crossorigin>');
+    Asset::getInstance()->addString('<link rel="preload" href="' . DEFAULT_TEMPLATE_PATH . '/fonts/MontserratSemiBold/MontserratSemiBold.woff2" as="font" type="font/woff2" crossorigin>');
+    Asset::getInstance()->addString('<link rel="preload" href="' . DEFAULT_TEMPLATE_PATH . '/fonts/RobotoBold/RobotoBold.woff2" as="font" type="font/woff2" crossorigin>');
+    Asset::getInstance()->addString('<link rel="preload" href="' . DEFAULT_TEMPLATE_PATH . '/fonts/RobotoMedium/RobotoMedium.woff2" as="font" type="font/woff2" crossorigin>');
+    Asset::getInstance()->addString('<link rel="preload" href="' . DEFAULT_TEMPLATE_PATH . '/fonts/RobotoRegular/RobotoRegular.woff2" as="font" type="font/woff2" crossorigin>');
+    //Asset::getInstance()->addString('');
     ?>
     <meta property="og:description" content="VERY NEAT">
-    <meta property="og:image" content="<?=DEFAULT_TEMPLATE_PATH?>/images/preview.jpg">
+    <meta property="og:image" content="<?= DEFAULT_TEMPLATE_PATH ?>/images/preview.jpg">
     <meta property="og:url" content="https://veryneat.ru/">
     <!-- canonical -->
     <link rel="canonical" href="https://veryneat.ru/">
     <?
     $APPLICATION->ShowHead();
-    Asset::getInstance()->addCss(DEFAULT_TEMPLATE_PATH."/css/main.css");
-    Asset::getInstance()->addCss(DEFAULT_TEMPLATE_PATH."/css/styles.css");
-    Asset::getInstance()->addJs(DEFAULT_TEMPLATE_PATH."/js/common.js");
+    Asset::getInstance()->addCss(DEFAULT_TEMPLATE_PATH . "/css/main.css");
+    Asset::getInstance()->addCss(DEFAULT_TEMPLATE_PATH . "/css/styles.css");
+    Asset::getInstance()->addJs(DEFAULT_TEMPLATE_PATH . "/js/common.js");
     //CJSCore::Init(["jquery"]);
     ?>
 </head>
 <body>
-<?$APPLICATION->ShowPanel();?>
+<? $APPLICATION->ShowPanel(); ?>
 
 <header class="header main-page-header">
     <div class="header__stock">
@@ -77,9 +79,11 @@
                     </span>
             </button>
             <a href="/" class="logo-link">
-                <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/svg/logo.svg" width="137px" alt="VERY NEAT" class="logo-image">
+                <img src="<?= DEFAULT_TEMPLATE_PATH ?>/images/main/svg/logo.svg" width="137px" alt="VERY NEAT"
+                     class="logo-image">
             </a>
-            <a href="javascript:void(0);" class="city-link" data-micromodal-trigger="modal-cities" style="display: none;">Москва</a>
+            <a href="javascript:void(0);" class="city-link" data-micromodal-trigger="modal-cities"
+               style="display: none;">Москва</a>
             <nav class="hmain-menu" style="position: absolute; transform: translateX(-100vw);">
                 <div class="hmain-menu__header">
                     <a href="#" class="b2b-link">B2B</a>
@@ -88,285 +92,57 @@
                 <div class="hmain-menu__categories">
                     <ul class="categories-list">
                         <li class="categories-list__item active">
-                            <a href="javascript:void(0);" data-category="category1" class="categories-list__link" style="background-image: url('images/main/main_page/menu/category_image1.jpg')">
+                            <a href="javascript:void(0);" data-category="category1" class="categories-list__link"
+                               style="background-image: url('images/main/main_page/menu/category_image1.jpg')">
                                 <span>Повседневная одежда</span>
                             </a>
                         </li>
                         <li class="categories-list__item">
-                            <a href="javascript:void(0);" data-category="category2" class="categories-list__link" style="background-image: url('images/main/main_page/menu/category_image2.jpg')">
+                            <a href="javascript:void(0);" data-category="category2" class="categories-list__link"
+                               style="background-image: url('images/main/main_page/menu/category_image2.jpg')">
                                 <span>Домашняя одежда</span>
                             </a>
                         </li>
                     </ul>
                 </div>
                 <div class="hmain-menu__subcategories">
-                    <ul class="subcategories-list show" data-category="category1">
-                        <li class="subcategories-list__item submenu">
-                            <a href="#" class="subcategories-list__link active">Новинки</a>
-                            <div class="submenu-wrapper show">
-                                <ul class="submenu-list">
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Базовый гардероб</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Вся одежда</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Куртки и жилеты</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Платья и комбинезоны</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link active">Брюки и шорты</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Джинсы</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Топы и боди</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Футболки</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Жакеты</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Рубашки и блузы</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Толстовки</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Юбки</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Шапки, шарфы, перчатки</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Белье</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Купальники</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="subcategories-list__item submenu">
-                            <a href="#" class="subcategories-list__link">Одежда</a>
-                            <div class="submenu-wrapper">
-                                <ul class="submenu-list">
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Новинки list</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Базовый гардероб</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Вся одежда</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Куртки и жилеты</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="subcategories-list__item submenu">
-                            <a href="#" class="subcategories-list__link">Аксессуары</a>
-                            <div class="submenu-wrapper">
-                                <ul class="submenu-list">
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Новинки list</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Базовый гардероб</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Вся одежда</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Куртки и жилеты</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Платья и комбинезоны</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Брюки и шорты</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Джинсы</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Топы и боди</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Футболки</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Жакеты</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Рубашки и блузы</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Толстовки</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Юбки</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Шапки, шарфы, перчатки</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Белье</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Купальники</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="subcategories-list__item submenu">
-                            <a href="#" class="subcategories-list__link">Дисконт</a>
-                            <div class="submenu-wrapper">
-                                <ul class="submenu-list">
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Новинки list</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Базовый гардероб</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Вся одежда</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Куртки и жилеты</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Платья и комбинезоны</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Брюки и шорты</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Джинсы</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Топы и боди</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Футболки</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Жакеты</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Рубашки и блузы</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Толстовки</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Юбки</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Шапки, шарфы, перчатки</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Белье</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Купальники</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="subcategories-list__item submenu">
-                            <a href="#" class="subcategories-list__link">Коллекции</a>
-                            <div class="submenu-wrapper">
-                                <ul class="submenu-list">
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Новинки list</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Базовый гардероб</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Вся одежда</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Куртки и жилеты</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Платья и комбинезоны</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Брюки и шорты</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Джинсы</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Топы и боди</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Футболки</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Жакеты</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Рубашки и блузы</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Толстовки</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Юбки</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Шапки, шарфы, перчатки</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Белье</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Купальники</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="subcategories-list__item submenu">
-                            <a href="#" class="subcategories-list__link">Вдохновение</a>
-                            <div class="submenu-wrapper">
-                                <ul class="submenu-list">
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Новинки list</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Базовый гардероб</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Вся одежда</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Куртки и жилеты</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Платья и комбинезоны</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Брюки и шорты</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Джинсы</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Топы и боди</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Футболки</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Жакеты</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Рубашки и блузы</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Толстовки</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Юбки</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Шапки, шарфы, перчатки</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Белье</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Купальники</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
-                    <ul class="subcategories-list" data-category="category2">
-                        <li class="subcategories-list__item submenu">
-                            <a href="#" class="subcategories-list__link active">Новинки (категория 2)</a>
-                            <div class="submenu-wrapper show">
-                                <ul class="submenu-list">
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Новинки list</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Базовый гардероб</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Вся одежда</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Куртки и жилеты</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Платья и комбинезоны</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Брюки и шорты</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Джинсы</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Топы и боди</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Футболки</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Жакеты</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Рубашки и блузы</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Толстовки</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Юбки</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Шапки, шарфы, перчатки</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Белье</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Купальники</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="subcategories-list__item submenu">
-                            <a href="#" class="subcategories-list__link">Одежда</a>
-                            <div class="submenu-wrapper">
-                                <ul class="submenu-list">
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Новинки list</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Базовый гардероб</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Вся одежда</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Куртки и жилеты</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Платья и комбинезоны</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Брюки и шорты</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Джинсы</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Топы и боди</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Футболки</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Жакеты</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Рубашки и блузы</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Толстовки</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Юбки</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Шапки, шарфы, перчатки</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Белье</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Купальники</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="subcategories-list__item submenu">
-                            <a href="#" class="subcategories-list__link">Аксессуары</a>
-                            <div class="submenu-wrapper">
-                                <ul class="submenu-list">
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Новинки list</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Базовый гардероб</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Вся одежда</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Куртки и жилеты</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Платья и комбинезоны</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Брюки и шорты</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Джинсы</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Топы и боди</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Футболки</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Жакеты</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Рубашки и блузы</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Толстовки</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Юбки</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Шапки, шарфы, перчатки</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Белье</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Купальники</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="subcategories-list__item submenu">
-                            <a href="#" class="subcategories-list__link">Дисконт</a>
-                            <div class="submenu-wrapper">
-                                <ul class="submenu-list">
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Новинки list</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Базовый гардероб</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Вся одежда</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Куртки и жилеты</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Платья и комбинезоны</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Брюки и шорты</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Джинсы</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Топы и боди</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Футболки</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Жакеты</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Рубашки и блузы</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Толстовки</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Юбки</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Шапки, шарфы, перчатки</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Белье</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Купальники</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="subcategories-list__item submenu">
-                            <a href="#" class="subcategories-list__link">Коллекции</a>
-                            <div class="submenu-wrapper">
-                                <ul class="submenu-list">
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Новинки list</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Базовый гардероб</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Вся одежда</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Куртки и жилеты</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Платья и комбинезоны</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Брюки и шорты</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Джинсы</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Топы и боди</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Футболки</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Жакеты</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Рубашки и блузы</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Толстовки</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Юбки</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Шапки, шарфы, перчатки</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Белье</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Купальники</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="subcategories-list__item submenu">
-                            <a href="#" class="subcategories-list__link">Вдохновение</a>
-                            <div class="submenu-wrapper">
-                                <ul class="submenu-list">
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Новинки list</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Базовый гардероб</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Вся одежда</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Куртки и жилеты</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Платья и комбинезоны</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Брюки и шорты</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Джинсы</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Топы и боди</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Футболки</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Жакеты</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Рубашки и блузы</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Толстовки</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Юбки</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Шапки, шарфы, перчатки</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Белье</a></li>
-                                    <li class="submenu-list__item"><a href="#" class="submenu-list__link">Купальники</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
+
+
+                    <? $APPLICATION->IncludeComponent("bitrix:menu", "povsednevn", array(
+                        "ALLOW_MULTI_SELECT" => "N",    // Разрешить несколько активных пунктов одновременно
+                        "CHILD_MENU_TYPE" => "mainpov",    // Тип меню для остальных уровней
+                        "DELAY" => "N",    // Откладывать выполнение шаблона меню
+                        "MAX_LEVEL" => "2",    // Уровень вложенности меню
+                        "MENU_CACHE_GET_VARS" => array(    // Значимые переменные запроса
+                            0 => "",
+                        ),
+                        "MENU_CACHE_TIME" => "3600",    // Время кеширования (сек.)
+                        "MENU_CACHE_TYPE" => "N",    // Тип кеширования
+                        "MENU_CACHE_USE_GROUPS" => "Y",    // Учитывать права доступа
+                        "ROOT_MENU_TYPE" => "mainpov",    // Тип меню для первого уровня
+                        "USE_EXT" => "Y",    // Подключать файлы с именами вида .тип_меню.menu_ext.php
+                    ),
+                        false
+                    ); ?>
+
+                    <? $APPLICATION->IncludeComponent("bitrix:menu", "domashnya", array(
+                        "ALLOW_MULTI_SELECT" => "N",    // Разрешить несколько активных пунктов одновременно
+                        "CHILD_MENU_TYPE" => "maindom",    // Тип меню для остальных уровней
+                        "DELAY" => "N",    // Откладывать выполнение шаблона меню
+                        "MAX_LEVEL" => "2",    // Уровень вложенности меню
+                        "MENU_CACHE_GET_VARS" => array(    // Значимые переменные запроса
+                            0 => "",
+                        ),
+                        "MENU_CACHE_TIME" => "3600",    // Время кеширования (сек.)
+                        "MENU_CACHE_TYPE" => "N",    // Тип кеширования
+                        "MENU_CACHE_USE_GROUPS" => "Y",    // Учитывать права доступа
+                        "ROOT_MENU_TYPE" => "maindom",    // Тип меню для первого уровня
+                        "USE_EXT" => "Y",    // Подключать файлы с именами вида .тип_меню.menu_ext.php
+                    ),
+                        false
+                    ); ?>
+
+
                 </div>
                 <div class="hmain-menu__footer">
                     <a href="tel:88005111340" class="phone-link">8 (800) 511-13-40</a>
@@ -376,13 +152,15 @@
             <a href="tel:88005111340" class="phone-link" style="display: none;">8 (800) 511-13-40</a>
             <div class="search-block">
                 <a id="search-open" href="javascript:void(0);" class="search-link"><i class="icon icon-search"></i></a>
-                <div id="search-result" class="search-block__result" style="transform: translateX(100vw); position: absolute;">
+                <div id="search-result" class="search-block__result"
+                     style="transform: translateX(100vw); position: absolute;">
                     <form action="" class="search-block__form">
                         <div class="input-group">
                             <button type="submit"><i class="icon icon-search"></i></button>
                             <input type="text" placeholder="Категория, товар или артикуль">
                         </div>
-                        <a id="search-close" href="javascript:void(0);" class="close-link"><i class="icon icon-close"></i></a>
+                        <a id="search-close" href="javascript:void(0);" class="close-link"><i
+                                    class="icon icon-close"></i></a>
                     </form>
                     <div class="result-catalog">
                         <!-- test item
@@ -390,7 +168,7 @@
                         <div class="product-item">
                         <div class="image-block">
                             <a href="#" class="product-link">
-                                <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/search/item_image.jpg" alt="product-image" class="product-image">
+                                <img src="<?= DEFAULT_TEMPLATE_PATH ?>/images/main/main_page/search/item_image.jpg" alt="product-image" class="product-image">
                             </a>
                         </div>
                         <div class="descr-block">
@@ -408,7 +186,7 @@
                         <div class="product-item">
                         <div class="image-block">
                             <a href="#" class="product-link">
-                                <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/search/item_image.jpg" alt="product-image" class="product-image">
+                                <img src="<?= DEFAULT_TEMPLATE_PATH ?>/images/main/main_page/search/item_image.jpg" alt="product-image" class="product-image">
                             </a>
                         </div>
                         <div class="descr-block">
@@ -426,7 +204,7 @@
                         <div class="product-item">
                         <div class="image-block">
                             <a href="#" class="product-link">
-                                <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/search/item_image.jpg" alt="product-image" class="product-image">
+                                <img src="<?= DEFAULT_TEMPLATE_PATH ?>/images/main/main_page/search/item_image.jpg" alt="product-image" class="product-image">
                             </a>
                         </div>
                         <div class="descr-block">
@@ -450,8 +228,10 @@
                             <ul class="actual-list">
                                 <li class="actual-list__item"><a href="#" class="actual-list__link">Распродажа</a></li>
                                 <li class="actual-list__item"><a href="#" class="actual-list__link">Новинки</a></li>
-                                <li class="actual-list__item"><a href="#" class="actual-list__link">Повседневная одежда</a></li>
-                                <li class="actual-list__item"><a href="#" class="actual-list__link">Домашняя одежда</a></li>
+                                <li class="actual-list__item"><a href="#" class="actual-list__link">Повседневная
+                                        одежда</a></li>
+                                <li class="actual-list__item"><a href="#" class="actual-list__link">Домашняя одежда</a>
+                                </li>
                             </ul>
                         </div>
                         <div class="result-info__yousee">
@@ -460,7 +240,8 @@
                                 <div class="product-item">
                                     <div class="image-block">
                                         <a href="#" class="product-link">
-                                            <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/search/item_image.jpg" alt="product-image" class="product-image">
+                                            <img src="<?= DEFAULT_TEMPLATE_PATH ?>/images/main/main_page/search/item_image.jpg"
+                                                 alt="product-image" class="product-image">
                                         </a>
                                     </div>
                                     <div class="descr-block">
@@ -468,7 +249,8 @@
                                         <span class="article">АРТ 7002950M</span>
                                         <div class="properties">
                                             <span class="properties__item">XL</span>
-                                            <span class="properties__color"><span style="background-color: #8A8972;"></span>Хаки</span>
+                                            <span class="properties__color"><span
+                                                        style="background-color: #8A8972;"></span>Хаки</span>
                                         </div>
                                     </div>
                                     <div class="price-block">
@@ -478,7 +260,8 @@
                                 <div class="product-item">
                                     <div class="image-block">
                                         <a href="#" class="product-link">
-                                            <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/search/item_image.jpg" alt="product-image" class="product-image">
+                                            <img src="<?= DEFAULT_TEMPLATE_PATH ?>/images/main/main_page/search/item_image.jpg"
+                                                 alt="product-image" class="product-image">
                                         </a>
                                     </div>
                                     <div class="descr-block">
@@ -486,7 +269,8 @@
                                         <span class="article">АРТ 7002950M</span>
                                         <div class="properties">
                                             <span class="properties__item">XL</span>
-                                            <span class="properties__color"><span style="background-color: #8A8972;"></span>Хаки</span>
+                                            <span class="properties__color"><span
+                                                        style="background-color: #8A8972;"></span>Хаки</span>
                                         </div>
                                     </div>
                                     <div class="price-block">
@@ -496,7 +280,8 @@
                                 <div class="product-item">
                                     <div class="image-block">
                                         <a href="#" class="product-link">
-                                            <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/search/item_image.jpg" alt="product-image" class="product-image">
+                                            <img src="<?= DEFAULT_TEMPLATE_PATH ?>/images/main/main_page/search/item_image.jpg"
+                                                 alt="product-image" class="product-image">
                                         </a>
                                     </div>
                                     <div class="descr-block">
@@ -504,7 +289,8 @@
                                         <span class="article">АРТ 7002950M</span>
                                         <div class="properties">
                                             <span class="properties__item">XL</span>
-                                            <span class="properties__color"><span style="background-color: #8A8972;"></span>Хаки</span>
+                                            <span class="properties__color"><span
+                                                        style="background-color: #8A8972;"></span>Хаки</span>
                                         </div>
                                     </div>
                                     <div class="price-block">
@@ -525,9 +311,12 @@
             </div>
             <ul class="profile-links">
                 <li class="profile-links__item">
-                    <a id="minicart-link" href="javascript:void(0);" class="profile-links__link"><i class="icon icon-cart_fill"></i></a>
-                    <div id="minicart" class="minicart-content" style="transform: translateX(100vw); position: absolute;">
-                        <a id="minicart-close" href="javascript:void(0);" class="minicart-close-link"><i class="icon icon-close"></i></a>
+                    <a id="minicart-link" href="javascript:void(0);" class="profile-links__link"><i
+                                class="icon icon-cart_fill"></i></a>
+                    <div id="minicart" class="minicart-content"
+                         style="transform: translateX(100vw); position: absolute;">
+                        <a id="minicart-close" href="javascript:void(0);" class="minicart-close-link"><i
+                                    class="icon icon-close"></i></a>
                         <!-- if cart is empty
                     <div class="minicart-content__empty">
                         <p>Ваша корзина пуста</p>
@@ -540,7 +329,8 @@
                                 <div class="minicart-content__item">
                                     <div class="image-block">
                                         <a href="#" class="product-link">
-                                            <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/minicart/minicart_product.jpg" alt="product-image" class="product-image">
+                                            <img src="<?= DEFAULT_TEMPLATE_PATH ?>/images/main/minicart/minicart_product.jpg"
+                                                 alt="product-image" class="product-image">
                                         </a>
                                     </div>
                                     <div class="descr-block">
@@ -548,13 +338,16 @@
                                         <span class="article">АРТ 7002950M</span>
                                         <div class="properties">
                                             <span class="properties__item">XL</span>
-                                            <span class="properties__color"><span style="background-color: #8A8972;"></span>Хаки</span>
+                                            <span class="properties__color"><span
+                                                        style="background-color: #8A8972;"></span>Хаки</span>
                                         </div>
                                         <div class="count-block">
                                             <div class="input-group count-group">
-                                                <a href="javascript:void(0);" class="count-btn minus-btn"><i class="icon icon-count_arrow"></i></a>
+                                                <a href="javascript:void(0);" class="count-btn minus-btn"><i
+                                                            class="icon icon-count_arrow"></i></a>
                                                 <input type="text" class="count-input" readonly value="1">
-                                                <a href="javascript:void(0);" class="count-btn plus-btn"><i class="icon icon-count_arrow"></i></a>
+                                                <a href="javascript:void(0);" class="count-btn plus-btn"><i
+                                                            class="icon icon-count_arrow"></i></a>
                                             </div>
                                             <a href="#" class="favorite-link"><i class="icon icon-heart_fill"></i></a>
                                         </div>
@@ -570,21 +363,26 @@
                                 <div class="minicart-content__item">
                                     <div class="image-block">
                                         <a href="#" class="product-link">
-                                            <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/minicart/minicart_product.jpg" alt="product-image" class="product-image">
+                                            <img src="<?= DEFAULT_TEMPLATE_PATH ?>/images/main/minicart/minicart_product.jpg"
+                                                 alt="product-image" class="product-image">
                                         </a>
                                     </div>
                                     <div class="descr-block">
-                                        <a href="#" class="product-name">Футболка из органического хлопка с круглым вырезом и принтом</a>
+                                        <a href="#" class="product-name">Футболка из органического хлопка с круглым
+                                            вырезом и принтом</a>
                                         <span class="article">АРТ 7002950M</span>
                                         <div class="properties">
                                             <span class="properties__item">XL</span>
-                                            <span class="properties__color"><span style="background-color: #8A8972;"></span>Хаки</span>
+                                            <span class="properties__color"><span
+                                                        style="background-color: #8A8972;"></span>Хаки</span>
                                         </div>
                                         <div class="count-block">
                                             <div class="input-group count-group">
-                                                <a href="javascript:void(0);" class="count-btn minus-btn"><i class="icon icon-count_arrow"></i></a>
+                                                <a href="javascript:void(0);" class="count-btn minus-btn"><i
+                                                            class="icon icon-count_arrow"></i></a>
                                                 <input type="text" class="count-input" readonly value="1">
-                                                <a href="javascript:void(0);" class="count-btn plus-btn"><i class="icon icon-count_arrow"></i></a>
+                                                <a href="javascript:void(0);" class="count-btn plus-btn"><i
+                                                            class="icon icon-count_arrow"></i></a>
                                             </div>
                                             <a href="#" class="favorite-link"><i class="icon icon-heart_fill"></i></a>
                                         </div>
@@ -600,7 +398,8 @@
                                 <div class="minicart-content__item">
                                     <div class="image-block">
                                         <a href="#" class="product-link">
-                                            <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/minicart/minicart_product.jpg" alt="product-image" class="product-image">
+                                            <img src="<?= DEFAULT_TEMPLATE_PATH ?>/images/main/minicart/minicart_product.jpg"
+                                                 alt="product-image" class="product-image">
                                         </a>
                                     </div>
                                     <div class="descr-block">
@@ -608,13 +407,16 @@
                                         <span class="article">АРТ 7002950M</span>
                                         <div class="properties">
                                             <span class="properties__item">XL</span>
-                                            <span class="properties__color"><span style="background-color: #8A8972;"></span>Хаки</span>
+                                            <span class="properties__color"><span
+                                                        style="background-color: #8A8972;"></span>Хаки</span>
                                         </div>
                                         <div class="count-block">
                                             <div class="input-group count-group">
-                                                <a href="javascript:void(0);" class="count-btn minus-btn"><i class="icon icon-count_arrow"></i></a>
+                                                <a href="javascript:void(0);" class="count-btn minus-btn"><i
+                                                            class="icon icon-count_arrow"></i></a>
                                                 <input type="text" class="count-input" readonly value="1">
-                                                <a href="javascript:void(0);" class="count-btn plus-btn"><i class="icon icon-count_arrow"></i></a>
+                                                <a href="javascript:void(0);" class="count-btn plus-btn"><i
+                                                            class="icon icon-count_arrow"></i></a>
                                             </div>
                                             <a href="#" class="favorite-link"><i class="icon icon-heart_fill"></i></a>
                                         </div>
@@ -630,7 +432,8 @@
                                 <div class="minicart-content__item">
                                     <div class="image-block">
                                         <a href="#" class="product-link">
-                                            <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/minicart/minicart_product.jpg" alt="product-image" class="product-image">
+                                            <img src="<?= DEFAULT_TEMPLATE_PATH ?>/images/main/minicart/minicart_product.jpg"
+                                                 alt="product-image" class="product-image">
                                         </a>
                                     </div>
                                     <div class="descr-block">
@@ -638,13 +441,16 @@
                                         <span class="article">АРТ 7002950M</span>
                                         <div class="properties">
                                             <span class="properties__item">XL</span>
-                                            <span class="properties__color"><span style="background-color: #8A8972;"></span>Хаки</span>
+                                            <span class="properties__color"><span
+                                                        style="background-color: #8A8972;"></span>Хаки</span>
                                         </div>
                                         <div class="count-block">
                                             <div class="input-group count-group">
-                                                <a href="javascript:void(0);" class="count-btn minus-btn"><i class="icon icon-count_arrow"></i></a>
+                                                <a href="javascript:void(0);" class="count-btn minus-btn"><i
+                                                            class="icon icon-count_arrow"></i></a>
                                                 <input type="text" class="count-input" readonly value="10">
-                                                <a href="javascript:void(0);" class="count-btn plus-btn"><i class="icon icon-count_arrow"></i></a>
+                                                <a href="javascript:void(0);" class="count-btn plus-btn"><i
+                                                            class="icon icon-count_arrow"></i></a>
                                             </div>
                                             <a href="#" class="favorite-link"><i class="icon icon-heart_fill"></i></a>
                                         </div>
@@ -684,13 +490,13 @@
                                             <div class="colors-slider swiper">
                                                 <div class="swiper-wrapper">
                                                     <a href="#" class="product-link swiper-slide" data-color="#AEB9A9">
-                                                        <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image31.jpg" alt="product" class="product-image">
+                                                        <img src="<?= DEFAULT_TEMPLATE_PATH ?>/images/main/main_page/catalogs/product_image31.jpg" alt="product" class="product-image">
                                                     </a>
                                                     <a href="#" class="product-link swiper-slide" data-color="#8ACAFF">
-                                                        <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image32.jpg" alt="product" class="product-image">
+                                                        <img src="<?= DEFAULT_TEMPLATE_PATH ?>/images/main/main_page/catalogs/product_image32.jpg" alt="product" class="product-image">
                                                     </a>
                                                     <a href="#" class="product-link swiper-slide" data-color="#252426">
-                                                        <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image33.jpg" alt="product" class="product-image">
+                                                        <img src="<?= DEFAULT_TEMPLATE_PATH ?>/images/main/main_page/catalogs/product_image33.jpg" alt="product" class="product-image">
                                                     </a>
                                                 </div>
                                                 <div class="colors-navigation">
@@ -720,13 +526,13 @@
                                             <div class="colors-slider swiper">
                                                 <div class="swiper-wrapper">
                                                     <a href="#" class="product-link swiper-slide" data-color="#AEB9A9">
-                                                        <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image31.jpg" alt="product" class="product-image">
+                                                        <img src="<?= DEFAULT_TEMPLATE_PATH ?>/images/main/main_page/catalogs/product_image31.jpg" alt="product" class="product-image">
                                                     </a>
                                                     <a href="#" class="product-link swiper-slide" data-color="#8ACAFF">
-                                                        <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image32.jpg" alt="product" class="product-image">
+                                                        <img src="<?= DEFAULT_TEMPLATE_PATH ?>/images/main/main_page/catalogs/product_image32.jpg" alt="product" class="product-image">
                                                     </a>
                                                     <a href="#" class="product-link swiper-slide" data-color="#252426">
-                                                        <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image33.jpg" alt="product" class="product-image">
+                                                        <img src="<?= DEFAULT_TEMPLATE_PATH ?>/images/main/main_page/catalogs/product_image33.jpg" alt="product" class="product-image">
                                                     </a>
                                                 </div>
                                                 <div class="colors-navigation">
@@ -754,7 +560,7 @@
                                     <div class="slide-item swiper-slide">
                                         <div class="image-block">
                                             <a href="#" class="product-link">
-                                                <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image31.jpg" alt="product" class="product-image">
+                                                <img src="<?= DEFAULT_TEMPLATE_PATH ?>/images/main/main_page/catalogs/product_image31.jpg" alt="product" class="product-image">
                                             </a>
                                             <div class="product-btns">
                                                 <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
@@ -773,7 +579,7 @@
                                     <div class="slide-item swiper-slide">
                                         <div class="image-block">
                                             <a href="#" class="product-link">
-                                                <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image33.jpg" alt="product" class="product-image">
+                                                <img src="<?= DEFAULT_TEMPLATE_PATH ?>/images/main/main_page/catalogs/product_image33.jpg" alt="product" class="product-image">
                                             </a>
                                             <div class="product-btns">
                                                 <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
@@ -794,7 +600,7 @@
                                     <div class="slide-item swiper-slide">
                                         <div class="image-block">
                                             <a href="#" class="product-link">
-                                                <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image32.jpg" alt="product" class="product-image">
+                                                <img src="<?= DEFAULT_TEMPLATE_PATH ?>/images/main/main_page/catalogs/product_image32.jpg" alt="product" class="product-image">
                                             </a>
                                             <div class="product-btns">
                                                 <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
@@ -813,7 +619,7 @@
                                     <div class="slide-item swiper-slide">
                                         <div class="image-block">
                                             <a href="#" class="product-link">
-                                                <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image31.jpg" alt="product" class="product-image">
+                                                <img src="<?= DEFAULT_TEMPLATE_PATH ?>/images/main/main_page/catalogs/product_image31.jpg" alt="product" class="product-image">
                                             </a>
                                             <div class="product-btns">
                                                 <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
@@ -851,9 +657,12 @@
                     <a href="#" class="profile-links__link"><i class="icon icon-heart"></i></a>
                 </li>
                 <li class="profile-links__item">
-                    <a id="profile-link" href="javascript:void(0);" class="profile-links__link"><i class="icon icon-user"></i></a>
-                    <ul id="profile-menu" class="profile-menu" style="transform: translateX(100vw); position: absolute;">
-                        <li class="profile-menu__item"><a href="#" class="profile-menu__link active">Личные данные</a></li>
+                    <a id="profile-link" href="javascript:void(0);" class="profile-links__link"><i
+                                class="icon icon-user"></i></a>
+                    <ul id="profile-menu" class="profile-menu"
+                        style="transform: translateX(100vw); position: absolute;">
+                        <li class="profile-menu__item"><a href="#" class="profile-menu__link active">Личные данные</a>
+                        </li>
                         <li class="profile-menu__item"><a href="#" class="profile-menu__link">Заказы</a></li>
                         <li class="profile-menu__item"><a href="#" class="profile-menu__link">Избранное</a></li>
                         <li class="profile-menu__item"><a href="#" class="profile-menu__link exit-link">Выйти</a></li>
