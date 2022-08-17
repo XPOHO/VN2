@@ -1,55 +1,67 @@
 <?php require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");?>
        <!-- main content -->
-    <main class="mpage-main">
-        <div id="main-slider" class="main-slider swiper">
-            <div class="swiper-wrapper">
-                <div class="slide-item swiper-slide lazyload" data-bgset="<?=DEFAULT_TEMPLATE_PATH?>/images/ main/main_page/main_slider/mobile/main_slide1.jpg [(max-width: 575px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/main_slider/pad/main_slide1.jpg [(max-width: 1024px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/main_slider/main_slide1.jpg [(min-width: 1025px)]">
-                    <div class="container">
-                        <div class="slide-info">
-                            <h2 class="slide-title">Зимняя коллекция</h2>
-                            <h3 class="slide-subtitle">Lorem ipsum is placeholder text commonly used -20%</h3>
-                        </div>
-                        <div class="slide-links">
-                            <a href="#" class="slide-btn">Повседневная одежда</a>
-                            <a href="#" class="slide-btn">Домашняя одежда</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="slide-item swiper-slide video-slide">
-                    <div class="video-wrapper">
-                        <video class="video-item" autoplay="autoplay" loop="loop" muted="muted" playsinline="1" preload="1" poster="">
-                            <source src="<?=DEFAULT_TEMPLATE_PATH?>/assets/videos/1.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                    <div class="container">
-                        <div class="slide-info">
-                            <h2 class="slide-title">Зимняя коллекция</h2>
-                            <h3 class="slide-subtitle">Lorem ipsum is placeholder text commonly used -20%</h3>
-                        </div>
-                        <div class="slide-links">
-                            <a href="#" class="slide-btn">Повседневная одежда</a>
-                            <a href="#" class="slide-btn">Домашняя одежда</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="slide-item swiper-slide lazyload" data-bgset="<?=DEFAULT_TEMPLATE_PATH?>/images/ main/main_page/main_slider/mobile/main_slide1.jpg [(max-width: 575px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/main_slider/pad/main_slide1.jpg [(max-width: 1024px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/main_slider/main_slide1.jpg [(min-width: 1025px)]">
-                    <div class="container">
-                        <div class="slide-info">
-                            <h2 class="slide-title">Зимняя коллекция</h2>
-                            <h3 class="slide-subtitle">Lorem ipsum is placeholder text commonly used -20%</h3>
-                        </div>
-                        <div class="slide-links">
-                            <a href="#" class="slide-btn">Повседневная одежда</a>
-                            <a href="#" class="slide-btn">Домашняя одежда</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-pagination"></div>
-        </div>
-    </main>
+
+<?$APPLICATION->IncludeComponent(
+    "bitrix:news.list",
+    "",
+    Array(
+        "ACTIVE_DATE_FORMAT" => "d.m.Y",
+        "ADD_SECTIONS_CHAIN" => "Y",
+        "AJAX_MODE" => "N",
+        "AJAX_OPTION_ADDITIONAL" => "",
+        "AJAX_OPTION_HISTORY" => "N",
+        "AJAX_OPTION_JUMP" => "N",
+        "AJAX_OPTION_STYLE" => "Y",
+        "CACHE_FILTER" => "N",
+        "CACHE_GROUPS" => "Y",
+        "CACHE_TIME" => "36000000",
+        "CACHE_TYPE" => "A",
+        "CHECK_DATES" => "Y",
+        "DETAIL_URL" => "",
+        "DISPLAY_BOTTOM_PAGER" => "Y",
+        "DISPLAY_DATE" => "Y",
+        "DISPLAY_NAME" => "Y",
+        "DISPLAY_PICTURE" => "Y",
+        "DISPLAY_PREVIEW_TEXT" => "Y",
+        "DISPLAY_TOP_PAGER" => "N",
+        "FIELD_CODE" => array("", "ID", "NAME", "PREVIEW_TEXT", ""),
+        "FILTER_NAME" => "",
+        "HIDE_LINK_WHEN_NO_DETAIL" => "N",
+        "IBLOCK_ID" => "4",
+        "IBLOCK_TYPE" => "news",
+        "INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
+        "INCLUDE_SUBSECTIONS" => "Y",
+        "MESSAGE_404" => "",
+        "NEWS_COUNT" => "20",
+        "PAGER_BASE_LINK_ENABLE" => "N",
+        "PAGER_DESC_NUMBERING" => "N",
+        "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+        "PAGER_SHOW_ALL" => "N",
+        "PAGER_SHOW_ALWAYS" => "N",
+        "PAGER_TEMPLATE" => "",
+        "PAGER_TITLE" => "Слайдер",
+        "PARENT_SECTION" => "",
+        "PARENT_SECTION_CODE" => "",
+        "PREVIEW_TRUNCATE_LEN" => "",
+        "PROPERTY_CODE" => array("", "", ""),
+        "SET_BROWSER_TITLE" => "Y",
+        "SET_LAST_MODIFIED" => "N",
+        "SET_META_DESCRIPTION" => "Y",
+        "SET_META_KEYWORDS" => "Y",
+        "SET_STATUS_404" => "N",
+        "SET_TITLE" => "Y",
+        "SHOW_404" => "N",
+        "SORT_BY1" => "ACTIVE_FROM",
+        "SORT_BY2" => "SORT",
+        "SORT_ORDER1" => "DESC",
+        "SORT_ORDER2" => "ASC",
+        "STRICT_SECTION_CHECK" => "N"
+    )
+);?>
+
+
     <section class="mpage-banner full-banner">
-        <div class="banner-slide lazyload" data-bgset="<?=DEFAULT_TEMPLATE_PATH?>/images/ main/main_page/banners/mobile/fullbanner_image1.jpg [(max-width: 575px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/pad/fullbanner_image1.jpg [(max-width: 1024px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/fullbanner_image1.jpg [(min-width: 1025px)]">
+        <div class="banner-slide lazyload" data-bgset="<?=DEFAULT_TEMPLATE_PATH?>/images/main//main_page/banners/mobile/fullbanner_image1.jpg [(max-width: 575px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/pad/fullbanner_image1.jpg [(max-width: 1024px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/fullbanner_image1.jpg [(min-width: 1025px)]">
             <div class="container">
                 <div class="banner-wrapper">
                     <h3 class="banner-subtitle">Новый сезон</h3>
@@ -62,7 +74,7 @@
         </div>
     </section>
     <section class="mpage-banner full-banner">
-        <div class="banner-slide white-slide lazyload" data-bgset="<?=DEFAULT_TEMPLATE_PATH?>/images/ main/main_page/banners/mobile/fullbanner_image2.jpg [(max-width: 575px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/pad/fullbanner_image2.jpg [(max-width: 1024px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/fullbanner_image2.jpg [(min-width: 1025px)]">
+        <div class="banner-slide white-slide lazyload" data-bgset="<?=DEFAULT_TEMPLATE_PATH?>/images/main//main_page/banners/mobile/fullbanner_image2.jpg [(max-width: 575px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/pad/fullbanner_image2.jpg [(max-width: 1024px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/fullbanner_image2.jpg [(min-width: 1025px)]">
             <div class="container">
                 <div class="banner-wrapper">
                     <h3 class="banner-subtitle">Новый сезон</h3>
@@ -270,7 +282,7 @@
                     <h2 class="banner-title">Black and white graphic</h2>
                     <a href="#" class="banner-link btn-fill-style white-style">Перейти в каталог</a>
                 </div>
-                <div class="banner-slide__image lazyload" data-bgset="<?=DEFAULT_TEMPLATE_PATH?>/images/ main/main_page/banners/mobile/sidebanner_image2.jpg [(max-width: 575px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/pad/sidebanner_image2.jpg [(max-width: 1024px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/sidebanner_image2.jpg [(min-width: 1025px)]"></div>
+                <div class="banner-slide__image lazyload" data-bgset="<?=DEFAULT_TEMPLATE_PATH?>/images/main//main_page/banners/mobile/sidebanner_image2.jpg [(max-width: 575px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/pad/sidebanner_image2.jpg [(max-width: 1024px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/sidebanner_image2.jpg [(min-width: 1025px)]"></div>
             </div>
         </div>
     </section>
@@ -451,7 +463,7 @@
         </div>
     </section>
     <section class="mpage-banner full-banner center-style">
-        <div class="banner-slide lazyload" data-bgset="<?=DEFAULT_TEMPLATE_PATH?>/images/ main/main_page/banners/mobile/fullbanner_image3.jpg [(max-width: 575px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/pad/fullbanner_image3.jpg [(max-width: 1024px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/fullbanner_image3.jpg [(min-width: 1025px)]">
+        <div class="banner-slide lazyload" data-bgset="<?=DEFAULT_TEMPLATE_PATH?>/images/main//main_page/banners/mobile/fullbanner_image3.jpg [(max-width: 575px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/pad/fullbanner_image3.jpg [(max-width: 1024px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/fullbanner_image3.jpg [(min-width: 1025px)]">
             <div class="container">
                 <h3 class="banner-subtitle">Повседневная одежда</h3>
                 <h2 class="banner-title">Dusk in the valley</h2>
@@ -638,7 +650,7 @@
         </div>
     </section>
     <section class="mpage-banner full-banner left-center-style">
-        <div class="banner-slide lazyload" data-bgset="<?=DEFAULT_TEMPLATE_PATH?>/images/ main/main_page/banners/mobile/fullbanner_image4.jpg [(max-width: 575px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/pad/fullbanner_image4.jpg [(max-width: 1024px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/fullbanner_image4.jpg [(min-width: 1025px)]">
+        <div class="banner-slide lazyload" data-bgset="<?=DEFAULT_TEMPLATE_PATH?>/images/main//main_page/banners/mobile/fullbanner_image4.jpg [(max-width: 575px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/pad/fullbanner_image4.jpg [(max-width: 1024px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/fullbanner_image4.jpg [(min-width: 1025px)]">
             <div class="container">
                 <h3 class="banner-subtitle">Новый сезон</h3>
                 <h2 class="banner-title">Irses flowers</h2>
@@ -649,7 +661,7 @@
         </div>
     </section>
     <section class="mpage-banner full-banner center-style">
-        <div class="banner-slide lazyload" data-bgset="<?=DEFAULT_TEMPLATE_PATH?>/images/ main/main_page/banners/mobile/fullbanner_image5.jpg [(max-width: 575px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/pad/fullbanner_image5.jpg [(max-width: 1024px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/fullbanner_image5.jpg [(min-width: 1025px)]">
+        <div class="banner-slide lazyload" data-bgset="<?=DEFAULT_TEMPLATE_PATH?>/images/main//main_page/banners/mobile/fullbanner_image5.jpg [(max-width: 575px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/pad/fullbanner_image5.jpg [(max-width: 1024px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/fullbanner_image5.jpg [(min-width: 1025px)]">
             <div class="container">
                 <h3 class="banner-subtitle">Повседневная одежда</h3>
                 <h2 class="banner-title">Coffee with mint</h2>
@@ -668,7 +680,7 @@
                     <h2 class="banner-title">Tropical mood</h2>
                     <a href="#" class="banner-link btn-fill-style white-style">Перейти в каталог</a>
                 </div>
-                <div class="banner-slide__image lazyload" data-bgset="<?=DEFAULT_TEMPLATE_PATH?>/images/ main/main_page/banners/mobile/sidebanner_image3.jpg [(max-width: 575px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/pad/sidebanner_image3.jpg [(max-width: 1024px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/sidebanner_image3.jpg [(min-width: 1025px)]"></div>
+                <div class="banner-slide__image lazyload" data-bgset="<?=DEFAULT_TEMPLATE_PATH?>/images/main//main_page/banners/mobile/sidebanner_image3.jpg [(max-width: 575px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/pad/sidebanner_image3.jpg [(max-width: 1024px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/sidebanner_image3.jpg [(min-width: 1025px)]"></div>
             </div>
         </div>
     </section>
@@ -680,7 +692,7 @@
                     <h2 class="banner-title">Night garden</h2>
                     <a href="#" class="banner-link btn-fill-style white-style">Перейти в каталог</a>
                 </div>
-                <div class="banner-slide__image lazyload" data-bgset="<?=DEFAULT_TEMPLATE_PATH?>/images/ main/main_page/banners/mobile/sidebanner_image4.jpg [(max-width: 575px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/pad/sidebanner_image4.jpg [(max-width: 1024px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/sidebanner_image4.jpg [(min-width: 1025px)]"></div>
+                <div class="banner-slide__image lazyload" data-bgset="<?=DEFAULT_TEMPLATE_PATH?>/images/main//main_page/banners/mobile/sidebanner_image4.jpg [(max-width: 575px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/pad/sidebanner_image4.jpg [(max-width: 1024px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/sidebanner_image4.jpg [(min-width: 1025px)]"></div>
             </div>
         </div>
     </section>

@@ -11,7 +11,7 @@
     <!-- meta tags --> <title><? $APPLICATION->ShowTitle(); ?></title>
     <?
     Asset::getInstance()->addString('<meta charset="UTF-8">');
-    Asset::getInstance()->addString(' <meta http-equiv="X-UA-Compatible" content="IE=edge">');
+    Asset::getInstance()->addString('<meta http-equiv="X-UA-Compatible" content="IE=edge">');
     Asset::getInstance()->addString('<meta name="author" content="VERY NEAT">');
     Asset::getInstance()->addString('<meta name="image" content="' . DEFAULT_TEMPLATE_PATH . '/images/preview.jpg">');
     // Asset::getInstance()->addString('<meta property="og:type" content="website">');
@@ -39,6 +39,7 @@
     Asset::getInstance()->addString('<meta name="apple-mobile-web-app-capable" content="yes">');
     Asset::getInstance()->addString('<meta name="format-detection" content="telephone=no">');
     Asset::getInstance()->addString('<meta name="format-detection" content="address=no">');
+    Asset::getInstance()->addString('<meta name="viewport" content="width=device-width, initial-scale=1.0">');
     Asset::getInstance()->addString('<link rel="preload" href="' . DEFAULT_TEMPLATE_PATH . '/fonts/MontserratBold/MontserratBold.woff2" as="font" type="font/woff2" crossorigin>');
     Asset::getInstance()->addString('<link rel="preload" href="' . DEFAULT_TEMPLATE_PATH . '/fonts/MontserratLight/MontserratLight.woff2" as="font" type="font/woff2" crossorigin>');
     Asset::getInstance()->addString('<link rel="preload" href="' . DEFAULT_TEMPLATE_PATH . '/fonts/MontserratMedium/MontserratMedium.woff2" as="font" type="font/woff2" crossorigin>');
@@ -79,8 +80,18 @@
                     </span>
             </button>
             <a href="/" class="logo-link">
-                <img src="<?= DEFAULT_TEMPLATE_PATH ?>/images/main/svg/logo.svg" width="137px" alt="VERY NEAT"
-                     class="logo-image">
+
+                <?$APPLICATION->IncludeComponent(
+                    "bitrix:main.include",
+                    "",
+                    Array(
+                        "AREA_FILE_SHOW" => "file",
+                        "AREA_FILE_SUFFIX" => "inc",
+                        "EDIT_TEMPLATE" => "",
+                        "PATH" => "/include/logo.php"
+                    )
+                );?>
+
             </a>
             <a href="javascript:void(0);" class="city-link" data-micromodal-trigger="modal-cities"
                style="display: none;">Москва</a>
@@ -93,13 +104,13 @@
                     <ul class="categories-list">
                         <li class="categories-list__item active">
                             <a href="javascript:void(0);" data-category="category1" class="categories-list__link"
-                               style="background-image: url('images/main/main_page/menu/category_image1.jpg')">
+                               style="background-image: url('<?= DEFAULT_TEMPLATE_PATH ?>/images/main/main_page/menu/category_image1.jpg')">
                                 <span>Повседневная одежда</span>
                             </a>
                         </li>
                         <li class="categories-list__item">
                             <a href="javascript:void(0);" data-category="category2" class="categories-list__link"
-                               style="background-image: url('images/main/main_page/menu/category_image2.jpg')">
+                               style="background-image: url('<?= DEFAULT_TEMPLATE_PATH ?>/images/main/main_page/menu/category_image2.jpg')">
                                 <span>Домашняя одежда</span>
                             </a>
                         </li>
@@ -145,11 +156,42 @@
 
                 </div>
                 <div class="hmain-menu__footer">
-                    <a href="tel:88005111340" class="phone-link">8 (800) 511-13-40</a>
+                    <a href="tel:<?
+
+
+                    use Bitrix\Main\IO,
+                        Bitrix\Main\Application;
+
+                    $telefon = new IO\File(Application::getDocumentRoot() . "/include/telefon.php");
+                    $telefonHref = $telefon->getContents();
+                    echo $telefonHref; ?>
+
+
+            ?>" class="phone-link"><?$APPLICATION->IncludeComponent(
+                            "bitrix:main.include",
+                            "",
+                            Array(
+                                "AREA_FILE_SHOW" => "file",
+                                "AREA_FILE_SUFFIX" => "inc",
+                                "EDIT_TEMPLATE" => "",
+                                "PATH" => "/include/telefon.php"
+                            )
+                        );?></a>
                     <a href="javascript:void(0);" data-micromodal-trigger="modal-cities" class="city-link">Москва</a>
                 </div>
             </nav>
-            <a href="tel:88005111340" class="phone-link" style="display: none;">8 (800) 511-13-40</a>
+            <a href="tel:<?
+            echo $telefonHref;
+            ?>" class="phone-link" style="display: none;"><?$APPLICATION->IncludeComponent(
+                    "bitrix:main.include",
+                    "",
+                    Array(
+                        "AREA_FILE_SHOW" => "file",
+                        "AREA_FILE_SUFFIX" => "inc",
+                        "EDIT_TEMPLATE" => "",
+                        "PATH" => "/include/telefon.php"
+                    )
+                );?></a>
             <div class="search-block">
                 <a id="search-open" href="javascript:void(0);" class="search-link"><i class="icon icon-search"></i></a>
                 <div id="search-result" class="search-block__result"

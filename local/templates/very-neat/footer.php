@@ -16,66 +16,69 @@
             <div class="footer__menu__column">
                 <span class="column-title">Помощь</span>
                 <?$APPLICATION->IncludeComponent(
-                    "bitrix:menu",
-                    "",
-                    Array(
-                        "ALLOW_MULTI_SELECT" => "N",    // Разрешить несколько активных пунктов одновременно
-                        "CHILD_MENU_TYPE" => "footerHelp",    // Тип меню для остальных уровней
-                        "DELAY" => "N",    // Откладывать выполнение шаблона меню
-                        "MAX_LEVEL" => "2",    // Уровень вложенности меню
-                        "MENU_CACHE_GET_VARS" => array(    // Значимые переменные запроса
-                            0 => "",
-                        ),
-                        "MENU_CACHE_TIME" => "3600",    // Время кеширования (сек.)
-                        "MENU_CACHE_TYPE" => "N",    // Тип кеширования
-                        "MENU_CACHE_USE_GROUPS" => "Y",    // Учитывать права доступа
-                        "ROOT_MENU_TYPE" => "footerHelp",    // Тип меню для первого уровня
-                        "USE_EXT" => "N",    // Подключать файлы с именами вида .тип_меню.menu_ext.php
-                    )
-                );?>
+	"bitrix:menu", 
+	"menuFooterSectino", 
+	array(
+		"ALLOW_MULTI_SELECT" => "N",
+		"CHILD_MENU_TYPE" => "footerHelp",
+		"DELAY" => "N",
+		"MAX_LEVEL" => "2",
+		"MENU_CACHE_GET_VARS" => array(
+		),
+		"MENU_CACHE_TIME" => "3600",
+		"MENU_CACHE_TYPE" => "N",
+		"MENU_CACHE_USE_GROUPS" => "Y",
+		"ROOT_MENU_TYPE" => "footerHelp",
+		"USE_EXT" => "N",
+		"COMPONENT_TEMPLATE" => "menuFooterSectino"
+	),
+	false
+);?>
             </div>
             <div class="footer__menu__column">
                 <span class="column-title">Каталог</span>
 
                 <?$APPLICATION->IncludeComponent(
-                    "bitrix:menu",
-                    "",
-                    Array(
-                        "ALLOW_MULTI_SELECT" => "N",    // Разрешить несколько активных пунктов одновременно
-                        "CHILD_MENU_TYPE" => "footerCatalog",    // Тип меню для остальных уровней
-                        "DELAY" => "N",    // Откладывать выполнение шаблона меню
-                        "MAX_LEVEL" => "2",    // Уровень вложенности меню
-                        "MENU_CACHE_GET_VARS" => array(    // Значимые переменные запроса
-                            0 => "",
-                        ),
-                        "MENU_CACHE_TIME" => "3600",    // Время кеширования (сек.)
-                        "MENU_CACHE_TYPE" => "N",    // Тип кеширования
-                        "MENU_CACHE_USE_GROUPS" => "Y",    // Учитывать права доступа
-                        "ROOT_MENU_TYPE" => "footerCatalog",    // Тип меню для первого уровня
-                        "USE_EXT" => "N",    // Подключать файлы с именами вида .тип_меню.menu_ext.php
-                    )
-                );?>
+	"bitrix:menu", 
+	"menuFooterSectino", 
+	array(
+		"ALLOW_MULTI_SELECT" => "N",
+		"CHILD_MENU_TYPE" => "footerCatalog",
+		"DELAY" => "N",
+		"MAX_LEVEL" => "2",
+		"MENU_CACHE_GET_VARS" => array(
+		),
+		"MENU_CACHE_TIME" => "3600",
+		"MENU_CACHE_TYPE" => "N",
+		"MENU_CACHE_USE_GROUPS" => "Y",
+		"ROOT_MENU_TYPE" => "footerCatalog",
+		"USE_EXT" => "N",
+		"COMPONENT_TEMPLATE" => "menuFooterSectino"
+	),
+	false
+);?>
             </div>
             <div class="footer__menu__column">
                 <span class="column-title">Компания</span>
                 <?$APPLICATION->IncludeComponent(
-                    "bitrix:menu",
-                    "",
-                    Array(
-                        "ALLOW_MULTI_SELECT" => "N",    // Разрешить несколько активных пунктов одновременно
-                        "CHILD_MENU_TYPE" => "footerCompany",    // Тип меню для остальных уровней
-                        "DELAY" => "N",    // Откладывать выполнение шаблона меню
-                        "MAX_LEVEL" => "2",    // Уровень вложенности меню
-                        "MENU_CACHE_GET_VARS" => array(    // Значимые переменные запроса
-                            0 => "",
-                        ),
-                        "MENU_CACHE_TIME" => "3600",    // Время кеширования (сек.)
-                        "MENU_CACHE_TYPE" => "N",    // Тип кеширования
-                        "MENU_CACHE_USE_GROUPS" => "Y",    // Учитывать права доступа
-                        "ROOT_MENU_TYPE" => "footerCompany",    // Тип меню для первого уровня
-                        "USE_EXT" => "N",    // Подключать файлы с именами вида .тип_меню.menu_ext.php
-                    )
-                );?>
+	"bitrix:menu", 
+	"menuFooterSectino", 
+	array(
+		"ALLOW_MULTI_SELECT" => "N",
+		"CHILD_MENU_TYPE" => "footerCompany",
+		"DELAY" => "N",
+		"MAX_LEVEL" => "2",
+		"MENU_CACHE_GET_VARS" => array(
+		),
+		"MENU_CACHE_TIME" => "3600",
+		"MENU_CACHE_TYPE" => "N",
+		"MENU_CACHE_USE_GROUPS" => "Y",
+		"ROOT_MENU_TYPE" => "footerCompany",
+		"USE_EXT" => "N",
+		"COMPONENT_TEMPLATE" => "menuFooterSectino"
+	),
+	false
+);?>
             </div>
         </div>
         <a id="lang-link" href="javascript:void(0);" class="lang-link">Язык: <span>Русский</span></a>
