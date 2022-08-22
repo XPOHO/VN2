@@ -34,11 +34,17 @@ $this->setFrameMode(true);
                     $mobFoto=CFile::GetPath($arProps["MOBILE_FOTO"]["VALUE"]);
                     $video=CFile::GetPath($arProps["VIDEO"]["VALUE"]);
 
-                    if (empty($arProps["VIDEO"]["VALUE"])){
 
+            $this->AddEditAction($ITEM['ID'], $ITEM['EDIT_LINK'], CIBlock::GetArrayByID($ITEM["IBLOCK_ID"], "ELEMENT_EDIT"));
+            $this->AddDeleteAction($ITEM['ID'], $ITEM['DELETE_LINK'], CIBlock::GetArrayByID($ITEM["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
+            ?><?
+
+
+
+            if (empty($arProps["VIDEO"]["VALUE"])){
 
                       ?>
-                        <div class="slide-item swiper-slide lazyload"
+                        <div id="<?=$this->GetEditAreaId($ITEM['ID']);?>" class="slide-item swiper-slide lazyload"
                              data-bgset="<?= $mobFoto ?> [(max-width: 575px)] | <?= $padFoto ?> [(max-width: 1024px)] | <?= $pkFoto ?> [(min-width: 1025px)]">
                             <div class="container">
                                 <div class="slide-info">
@@ -55,7 +61,7 @@ $this->setFrameMode(true);
                     }
                     else{
                         ?>
-                        <div class="slide-item swiper-slide video-slide">
+                        <div id="<?=$this->GetEditAreaId($ITEM['ID']);?>" class="slide-item swiper-slide video-slide">
                             <div class="video-wrapper">
                                 <video class="video-item" autoplay="autoplay" loop="loop" muted="muted" playsinline="1" preload="1"
                                        poster="">
