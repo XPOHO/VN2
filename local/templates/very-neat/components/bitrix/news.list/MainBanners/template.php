@@ -32,7 +32,7 @@ foreach ($arResult["ITEMS"] as $item) {
         if ($item["PROPERTIES"]["TEXT_FORMAT"]['VALUE_ENUM_ID'] == 48) {
             ?>
             <section id="<?= $this->GetEditAreaId($item['ID']); ?>" class="mpage-banner full-banner center-style">
-                <div class="banner-slide lazyloaded"
+                <div class="banner-slide lazyloaded <?=$whiteSlide?>"
                      data-bgset="<?= $srcMob ?> [(max-width: 575px)] | <?= $srcPlan ?> [(max-width: 1024px)] | <?= $srcPK ?> [(min-width: 1025px)]"
                      style="background-image: url(&quot;<?= $srcPK ?>&quot;);">
                     <div class="container">
