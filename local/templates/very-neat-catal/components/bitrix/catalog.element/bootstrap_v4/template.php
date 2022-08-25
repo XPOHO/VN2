@@ -14,10 +14,8 @@ use Bitrix\Main\Localization\Loc;
 * @var string $templateFolder
 */
 $this->setFrameMode(true);
-
 $templateLibrary = array('popup', 'fx');
 $currencyList = '';
-echo "12321";
 if (!empty($arResult['CURRENCIES']))
 {
 	$templateLibrary[] = 'currency';

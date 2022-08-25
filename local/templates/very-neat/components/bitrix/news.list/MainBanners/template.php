@@ -21,15 +21,15 @@ foreach ($arResult["ITEMS"] as $item) {
     $srcPlan = CFile::GetPath($item["PROPERTIES"]["PLAN_FOTO"]['VALUE']);
     $srcMob = CFile::GetPath($item["PROPERTIES"]["MOBILE_FOTO"]['VALUE']);
     switch ($item["PROPERTIES"]["TYPE_SLIDE"]['VALUE_ENUM_ID']) {
-        case 28:
+        case 56:
             $whiteSlide = "white-slide";
             break;
-        case 27:
+        case 57:
             $whiteSlide = "";
             break;
     }
-    if ($item["PROPERTIES"]["FORMAT_FOTO"]['VALUE_ENUM_ID'] == 18) {
-        if ($item["PROPERTIES"]["TEXT_FORMAT"]['VALUE_ENUM_ID'] == 21) {
+    if ($item["PROPERTIES"]["FORMAT_FOTO"]['VALUE_ENUM_ID'] == 45) {
+        if ($item["PROPERTIES"]["TEXT_FORMAT"]['VALUE_ENUM_ID'] == 48) {
             ?>
             <section id="<?= $this->GetEditAreaId($item['ID']); ?>" class="mpage-banner full-banner center-style">
                 <div class="banner-slide lazyloaded <?=$whiteSlide?>"
@@ -41,16 +41,16 @@ foreach ($arResult["ITEMS"] as $item) {
                         <div class="banner-btns inline-btns">
                             <a href="<?= $item["PROPERTIES"]["HREF"]['VALUE'] ?>" class="banner-link  <?
                             switch ($item["PROPERTIES"]["TYPE_BUTTON"]['VALUE_ENUM_ID']) {
-                                case 23:
+                                case 58:
                                     echo "btn-outline-style";
                                     break;
-                                case 24:
+                                case 59:
                                     echo "btn-outline-style white-style";
                                     break;
-                                case 25:
+                                case 60:
                                     echo "btn-fill-style";
                                     break;
-                                case 26:
+                                case 61:
                                     echo "btn-fill-style white-style";
                                     break;
                             }
@@ -85,16 +85,16 @@ foreach ($arResult["ITEMS"] as $item) {
                                 <a href="<?= $item["PROPERTIES"]["HREF"]['VALUE'] ?>" class="banner-link
                          <?
                                 switch ($item["PROPERTIES"]["TYPE_BUTTON"]['VALUE_ENUM_ID']) {
-                                    case 23:
+                                    case 58:
                                         echo "btn-outline-style";
                                         break;
-                                    case 24:
+                                    case 59:
                                         echo "btn-outline-style white-style";
                                         break;
-                                    case 25:
+                                    case 60:
                                         echo "btn-fill-style";
                                         break;
-                                    case 26:
+                                    case 61:
                                         echo "btn-fill-style white-style";
                                         break;
                                 }
@@ -109,7 +109,7 @@ foreach ($arResult["ITEMS"] as $item) {
     } else {
         ?>
         <section id="<?= $this->GetEditAreaId($item['ID']); ?>" class="mpage-banner side-banner  <?
-        if ($item["PROPERTIES"]["FORMAT_FOTO"]['VALUE_ENUM_ID'] == 29) {
+        if ($item["PROPERTIES"]["FORMAT_FOTO"]['VALUE_ENUM_ID'] == 47) {
             echo "reverse-style";
         }
         ?>">
@@ -120,16 +120,16 @@ foreach ($arResult["ITEMS"] as $item) {
                         <h2 class="banner-title"><?= $item["PROPERTIES"]["BIG_TEXT"]['VALUE'] ?></h2>
                         <a href="<?= $item["PROPERTIES"]["HREF"]['VALUE'] ?>" class="banner-link <?
                         switch ($item["PROPERTIES"]["TYPE_BUTTON"]['VALUE_ENUM_ID']) {
-                            case 23:
+                            case 58:
                                 echo "btn-outline-style";
                                 break;
-                            case 24:
+                            case 59:
                                 echo "btn-outline-style white-style";
                                 break;
-                            case 25:
+                            case 60:
                                 echo "btn-fill-style";
                                 break;
-                            case 26:
+                            case 61:
                                 echo "btn-fill-style white-style";
                                 break;
                         }
@@ -155,7 +155,6 @@ foreach ($arResult["ITEMS"] as $item) {
             </div>
         </section>
         <?php
-
     }
 }
 ?>
