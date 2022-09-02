@@ -661,3 +661,14 @@
         </div>
     </div>
 </header>
+
+<main class="catalog-page">
+    <div class="breadcrumbs">
+        <div class="container">
+            <ul class="breadcrumbs__list">
+                <li class="breadcrumbs__item"><a href="#" class="breadcrumbs__link">Главная</a></li>
+                <li class="breadcrumbs__item"><span class="breadcrumbs__current">FAQ</span></li>
+            </ul>
+        </div>
+    </div>
+

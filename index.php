@@ -140,33 +140,6 @@
 	false
 );?>
 
-
-
-    <section class="mpage-banner full-banner">
-        <div class="banner-slide white-slide lazyload" data-bgset="<?=DEFAULT_TEMPLATE_PATH?>/images/main//main_page/banners/mobile/fullbanner_image2.jpg [(max-width: 575px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/pad/fullbanner_image2.jpg [(max-width: 1024px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/fullbanner_image2.jpg [(min-width: 1025px)]">
-            <div class="container">
-                <div class="banner-wrapper">
-                    <h3 class="banner-subtitle">Новый сезон</h3>
-                    <h2 class="banner-title">Новая коллекция</h2>
-                    <div class="banner-btns">
-                        <a href="#" class="banner-link btn-fill-style">Перейти в каталог</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="mpage-banner side-banner">
-        <div class="banner-slide">
-            <div class="container">
-                <div class="banner-slide__info">
-                    <h3 class="banner-subtitle">Повседневная одежда</h3>
-                    <h2 class="banner-title">У нас новые модели</h2>
-                    <a href="#" class="banner-link btn-fill-style white-style">Перейти в каталог</a>
-                </div>
-                <div class="banner-slide__image lazyload" data-bgset="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/mobile/sidebanner_image1.jpg [(max-width: 575px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/pad/sidebanner_image1.jpg [(max-width: 1024px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/sidebanner_image1.jpg [(min-width: 1025px)]"></div>
-            </div>
-        </div>
-    </section>
     <section class="mpage-catalog catalog-section">
         <h2 class="catalog-section__title section-title">Повседневная одежда</h2>
         <div class="catalog-section__content">

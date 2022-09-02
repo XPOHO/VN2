@@ -39,7 +39,8 @@ foreach ($arResult["ITEMS"] as $item) {
                         <h3 class="banner-subtitle"><?= $item["PROPERTIES"]["SMOLL_TEXT"]['VALUE'] ?></h3>
                         <h2 class="banner-title"><?= $item["PROPERTIES"]["BIG_TEXT"]['VALUE'] ?></h2>
                         <div class="banner-btns inline-btns">
-                            <a href="<?= $item["PROPERTIES"]["HREF"]['VALUE'] ?>" class                            switch ($item["PROPERTIES"]["TYPE_BUTTON"]['VALUE_ENUM_ID']) {
+                            <a href="<?= $item["PROPERTIES"]["HREF"]['VALUE'] ?>" class="banner-link  <?
+                            switch ($item["PROPERTIES"]["TYPE_BUTTON"]['VALUE_ENUM_ID']) {
                                 case 23:
                                     echo "btn-outline-style";
                                     break;
