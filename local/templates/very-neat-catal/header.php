@@ -58,7 +58,7 @@
     Asset::getInstance()->addCss(DEFAULT_TEMPLATE_PATH . "/css/main.css");
     Asset::getInstance()->addCss(DEFAULT_TEMPLATE_PATH . "/css/styles.css");
     Asset::getInstance()->addJs(DEFAULT_TEMPLATE_PATH . "/js/common.js");
-    //CJSCore::Init(["jquery"]);
+    CJSCore::Init(["jquery"]);
     ?>
 </head>
 <body>

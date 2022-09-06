@@ -15,58 +15,46 @@ echo "<pre>";
 
 //print_r($arrAll);
 
-
 foreach ($arrAll['goods'] as $itemProd) {
+    $nameProd=$itemProd["good"]["nameSite"];
+    if (empty($itemProd["good"]["nameSite"])){
 
+        $nameProd=$itemProd["good"]["artname"];
 
+        if (empty($itemProd["good"]["artname"])){
+
+            $nameProd=$itemProd["good"]["name"];
+
+        }
+    }
     $offers = [];
-    //print_r($itemProd["good"]);
-
-
-    foreach ($arrAll['goods'] as $itemOffers) {
-
-
         $ArImages = [];
-        if ($itemProd["good"]["article"] == $itemOffers["good"]["article"]) {
-            foreach ($itemOffers["good"]["images"] as $itemImg) {
-
+            foreach ($itemProd["good"]["images"] as $itemImg) {
                 $ArImages[] = $itemImg["src"];
-
             }
-
-
-            foreach ($itemOffers["good"]["sizes"] as $itemSize) {
+            foreach ($itemProd["good"]["sizes"] as $itemSize) {
 
                 if (isset($kod77Dub[$itemSize["size"]["kod77"]])) {
                     continue;
                 } else {
                     $kod77Dub[$itemSize["size"]["kod77"]] = true;
                 }
-
+                //  "COLOR" => $itemProd["good"]["color"],
                 $offers[] = [
-                    "NAME" => $itemOffers["good"]["nameSite"],
+                    "NAME" => $nameProd,
                     "SIZE" => $itemSize["size"]["value"],
-                  //  "COLOR" => $itemOffers["good"]["color"],
-                    "COLOR" => $itemOffers["good"]["realColor"],
+                  //  "COLOR" => $itemProd["good"]["color"],
+                    "COLOR" => $itemProd["good"]["realColor"],
                     "PRICE" => "666",
                     "ORT" => "777",
                     "RETAIL" => "888",
                     "Code_77" => $itemSize["size"]["kod77"],
                     "QUANTITY" => 0,
-                    "COLLECTION" => $itemOffers["good"]["season"],
-                    'DETAIL_PICTURE' => $itemOffers["good"]["images"][0]["src"],
+                    "COLLECTION" => $itemProd["good"]["season"],
+                    'DETAIL_PICTURE' => $itemProd["good"]["images"][0]["src"],
                     'PICTURES' => $ArImages,
                 ];
             }
-        }
-    }
-
-    if (isset($prodDub[$itemProd["good"]["article"]])) {
-        continue;
-    } else {
-        $prodDub[$itemProd["good"]["article"]] = true;
-    }
-
 $code=translit($itemProd["good"]["article"]);
     $code = str_replace("/", "-", "$code");
     $code = str_replace(" ", "-", "$code");
@@ -77,7 +65,8 @@ $code=translit($itemProd["good"]["article"]);
             //  $itemProd["good"]["nameSite"]
         ],
         "params" => [
-            "NAME" => $itemProd["good"]["nameSite"],
+            "NAME" => $nameProd,
+            "ID" => $itemProd["good"]["id"],
             "DETAIL_TEXT" => $itemProd["good"]["description"],
             "DIS" => $itemProd["good"]["artname"],
             "CODE" => $code,
@@ -94,11 +83,9 @@ $code=translit($itemProd["good"]["article"]);
             "COUNTRY" => $itemProd["good"]["country"],
         ],
         "offers" => $offers
-
-
     ];
 }
-
+//print_r($arrProd);
 $logJson = [];
 $IDHighload = 2;
 $hldata = Bitrix\Highloadblock\HighloadBlockTable::getById($IDHighload)->fetch();
@@ -121,9 +108,7 @@ $bs = new CIBlockSection;
 $arrAll = $arrProd;
 //перебор новых товаров
 foreach ($arrAll as $arr) {
-
-
-
+    $addTest=false;
 //print_r($arr);
     //Обработка регистра к чуствиетльным элементам.
    // $arr["params"]['HIT'] = mb_strtolower($arr["params"]['HIT']);
@@ -131,6 +116,9 @@ foreach ($arrAll as $arr) {
     //определение раздела для товара. Если не найдено, создаёт
     $SECTION_ID = false;
     foreach ($arr['section'] as $sectionName) {
+        if ($sectionName=="Футболки женские"){
+            $addTest=true;
+        }
         $arFilter = array('IBLOCK_ID' => $IBLOCK_ID, 'NAME' => $sectionName, "SECTION_ID" => $SECTION_ID);
         $db_list = CIBlockSection::GetList(array($by => $order), $arFilter, true);
         if ($ar_result = $db_list->GetNext()) {
@@ -157,10 +145,13 @@ foreach ($arrAll as $arr) {
     }
 // поиск товара по коду АРТИКЛУ!!!
 
-     if ("ЕВТ 3078"!=$arr["params"]['ARTICLE']){continue;}
+    if (!$addTest){
+        continue;
+    }
+     //if ("ЕВТ 3078"!=$arr["params"]['ARTICLE']){continue;}
    // var_dump($SECTION_ID);
     $arSelect = array("ID", "IBLOCK_ID", "NAME", "DATE_ACTIVE_FROM", "PROPERTY_*");//IBLOCK_ID и ID обязательно должны быть указаны, см. описание arSelectFields выше
-    $arFilter = array("IBLOCK_ID" => IntVal($IBLOCK_ID), "PROPERTY_ARTNUMBER" => $arr["params"]['ARTICLE']);
+    $arFilter = array("IBLOCK_ID" => IntVal($IBLOCK_ID), "PROPERTY_ID1S" => $arr["params"]['ID']);
     $res = CIBlockElement::GetList(array(), $arFilter, false, array(), $arSelect);
     if ($ob = $res->GetNextElement()) {
         $arFieldsProd = $ob->GetFields();
@@ -227,18 +218,12 @@ foreach ($arrAll as $arr) {
 // сезон
         if (!empty($arr["params"]['SEASON'])) {
             $PROPERTY_CODE = "SEASON";
-
-
             if ($arr["params"]['SEASON']=="весна-лето"){
-
-                $arr["params"]['SEASON']=18;
-
+                $arr["params"]['SEASON']=55;
             }
             elseif ($arr["params"]['SEASON']=="осень-зима"){
-                $arr["params"]['SEASON']=19;
+                $arr["params"]['SEASON']=56;
             }
-
-
             CIBlockElement::SetPropertyValuesEx($arFieldsProd["ID"], false, array($PROPERTY_CODE => $arr["params"]['SEASON']));
         }
 // Полотно
@@ -539,23 +524,25 @@ foreach ($arrAll as $arr) {
 //        }
         $PROP = [];
         $PROP[9] = $arr["params"]['ARTICLE'];
+        $PROP[9] = $arr["params"]['ARTICLE'];
     //    $PROP[7701] = $arr["params"]['COMPOUND'];
-        $PROP[29] = $arr["params"]['COUNTRY'];
+        $PROP[42] = $arr["params"]['COUNTRY'];
         $PROP[5] = [8];
       //  $PROP[7652] = $hitValuep;
         if ($arr["params"]['SEASON']=="весна-лето"){
 
-            $arr["params"]['SEASON']=18;
+            $arr["params"]['SEASON']=55;
 
         }
         elseif ($arr["params"]['SEASON']=="осень-зима"){
-            $arr["params"]['SEASON']=19;
+            $arr["params"]['SEASON']=56;
         }
 
-        $PROP[28] = $arr["params"]['SEASON'];
+        $PROP[43] = $arr["params"]['SEASON'];
 
-        $PROP[30] = $arr["params"]['POLOTNO'];
-        $PROP[33] = $arr["params"]['YEAR'];
+        $PROP[46] = $arr["params"]['POLOTNO'];
+        $PROP[44] = $arr["params"]['YEAR'];
+        $PROP[40] = $arr["params"]['ID'];
 //        if ($arr["params"]['BEZ_SHOV']==1) {
 //            $arr["params"]['BEZ_SHOV'] = 4196;
 //        } else {
@@ -601,10 +588,23 @@ foreach ($arrAll as $arr) {
         }
 // добавляем торговых предложений
         foreach ($arr['offers'] as $offer) {
+
+            if ($offer['SIZE'] == "no size") {
+                $offer['SIZE'] = "Без размера";
+            }
+            if ($offer['SIZE'] == "no-size") {
+                $offer['SIZE'] = "Без размера";
+            }
+
+            print_r($offer);
             $sizeValue = "";
 //определение Размеров (это же поле выбора из списка, и нужны id значений размеров)
             $property_enums = CIBlockPropertyEnum::GetList(array("DEF" => "DESC", "SORT" => "ASC"), array("IBLOCK_ID" => $IBLOCK_OFFERS_ID, "CODE" => "SIZES_CLOTHES"));
             while ($enum_fields = $property_enums->GetNext()) {
+                echo $enum_fields["VALUE"]. '=='. $offer['SIZE'].'<br>';
+
+
+
                 if ($enum_fields["VALUE"] == $offer['SIZE']) {
                     $sizeValue = $enum_fields["ID"];
                     break;
@@ -631,11 +631,6 @@ foreach ($arrAll as $arr) {
                     $colorValue = $resp["UF_XML_ID"];
                 }
             }
-            $arSelect = array("ID", "IBLOCK_ID", "NAME", "DATE_ACTIVE_FROM", "PROPERTY_SIZES_CLOTHES");//IBLOCK_ID и ID обязательно должны быть указаны, см. описание arSelectFields выше
-            $arFilter = array("IBLOCK_ID" => IntVal($IBLOCK_OFFERS_ID), "PROPERTY_KOD77" => $offer['Code_77']);
-            $res = CIBlockElement::GetList(array(), $arFilter, false, array(), $arSelect);
-            if ($ob = $res->GetNextElement()) {
-            } else {
 //торговое предложенме не найдено
 //Добавление Дполнительных фото
                 $photos = [];
@@ -656,6 +651,26 @@ foreach ($arrAll as $arr) {
                 if ($imgDetaile["size"]<100){
                     $imgDetaile=[];
                 }
+
+                print_r(array(
+                    "IBLOCK_ID" => $IBLOCK_OFFERS_ID, // IBLOCK торговых предложений
+                    "NAME" => $offer["NAME"],
+                    "ACTIVE" => "Y",
+                    'DETAIL_PICTURE' => $imgDetaile,
+                    //'PREVIEW_PICTURE' => CFile::MakeFileArray($offer['DETAIL_PICTURE']),
+                    'PROPERTY_VALUES' => array(
+                        'CML2_LINK' => $product_id,
+                        'SIZES_CLOTHES' => $sizeValue,
+                        'ARTNUMBER' => $arr["params"]['ARTICLE'],
+                        'KOD77' => $offer['Code_77'],
+                        "MORE_PHOTO" => $photos,
+                        "COLOR_REF" => $colorValue,
+                        //"FRCOLLECTION" => $offer['COLLECTION'],
+                        //"ALL_ARTICLE" => $offer['FULL_ARTICLE'],
+                    )
+                ));
+
+
                 $arLoadProductArray = array(
                     "IBLOCK_ID" => $IBLOCK_OFFERS_ID, // IBLOCK торговых предложений
                     "NAME" => $offer["NAME"],
@@ -745,7 +760,6 @@ foreach ($arrAll as $arr) {
 //                        "PRODUCT_ID" => $product_offer_id,
 //                    )
  //               );
-            }
         }
     }
 }

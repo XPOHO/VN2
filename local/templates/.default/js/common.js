@@ -33574,9 +33574,61 @@ document.addEventListener('DOMContentLoaded', function () {
   /* test cookie */
   // document.getElementById('cookie-modal').classList.add('show');
 
+
+  var prodStop=[];
+  $( ".product-colors__item" ).click(function() {
+
+
+
+
+
+
+    setTimeout(() => { let idProdBlock = $(this).parent().parent().parent().parent();
+
+      let idProd=idProdBlock.find('.swiper-slide-active').data( "idprod" )
+      let test=idProdBlock.find('.addcart-link');
+      $(test).data( "idprod",idProd);
+      $(test).attr('data-idprod', idProd);
+      }, 1300);
+
+
+    $( ".addBasket" ).click(function() {
+
+
+      let addProdBasket=$(this).data( "idprod");
+     let stp = prodStop.indexOf(addProdBasket);
+     if (stp > 0){return false;}
+      prodStop.push(addProdBasket);
+      //console.log(prodStop);
+
+
+
+
+    })
+
+
+  });
+
+  $( ".addBasket" ).click(function() {
+
+    let addProdBasket=$(this).data( "idprod");
+    prodStop.push(addProdBasket);
+  //  console.log(prodStop);
+
+      $.ajax({
+          url: '/addbasket.php',
+          type: 'POST',
+          data: { prod: addProdBasket},
+          success: (res)=>{
+              console.log(res);
+          }
+      })
+
+  })
 });
 })();
 
 /******/ })()
 ;
 //# sourceMappingURL=common.js.map
+

@@ -108,9 +108,7 @@ if (isset($arResult['ITEM']))
 	$buttonSizeClass = isset($arResult['BIG_BUTTONS']) && $arResult['BIG_BUTTONS'] === 'Y' ? 'btn-md' : 'btn-sm';
 	$itemHasDetailUrl = isset($item['DETAIL_PAGE_URL']) && $item['DETAIL_PAGE_URL'] != '';
 	?>
-
-	<div class="product-item-container<?=(isset($arResult['SCALABLE']) && $arResult['SCALABLE'] === 'Y' ? ' product-item-scalable-card' : '')?>"
-		id="<?=$areaId?>" data-entity="item">
+    <div id="<?=$areaId?>" data-entity="item" class="catalog-page__content__item product-item colors-item">
 		<?
 		$documentRoot = Main\Application::getDocumentRoot();
 		$templatePath = mb_strtolower($arResult['TYPE']).'/template.php';
