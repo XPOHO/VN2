@@ -35,11 +35,32 @@ $arFilter = array("IBLOCK_ID" => 3, "ACTIVE_DATE" => "Y", "ACTIVE" => "Y", "PROP
 $resOfferMain = CIblockElement::GetList(array("DATE_CREATE" => "DESC"), $arFilter, false, [], $arSelect);
 if ($obOfferMain = $resOfferMain->GetNextElement()) {
 
+
+
+
+
+
+
     $arFieldsOfferMain = $obOfferMain->GetFields();
     //  print_r($arFieldsOfferMain);
     //  $foto=CFile::GetPath($arFieldsOfferMain["DETAIL_PICTURE"]);
     // var_dump($foto);
 
+    $allProductPrices = \Bitrix\Catalog\PriceTable::getList([
+        "select" => ["*"],
+        "filter" => [
+            "=PRODUCT_ID" => $arFieldsOfferMain["ID"],
+        ],
+        "order" => ["CATALOG_GROUP_ID" => "ASC"]
+    ])->fetchAll();
+    $salePrice = "";
+    $retailPrice = "";
+    foreach ($allProductPrices as $itemPrice) {
+        if ($itemPrice['CATALOG_GROUP_ID'] == 1)
+            $salePrice = round($itemPrice['PRICE']);
+        if ($itemPrice['CATALOG_GROUP_ID'] == 2)
+            $retailPrice = round($itemPrice['PRICE']);
+    }
     $renderImage = CFile::ResizeImageGet($arFieldsOfferMain["DETAIL_PICTURE"], array("width" => 372, "height" => 600), BX_RESIZE_IMAGE_PROPORTIONAL);
     $Photo = $renderImage["src"];
 
@@ -62,6 +83,8 @@ $arCart[] = [
     "id" => $item["ID"],
     "code" => $item["CODE"],
     "img" => "$Photo",
+    "sale"=>$salePrice,
+    "retail"=>$retailPrice,
     "color" => "$mainColor",
     "href" => $item['DETAIL_PAGE_URL'],
 ];
@@ -110,6 +133,25 @@ if ($totalCart>$maxCart){
             "filter" => array("UF_XML_ID" => $arProps["COLOR_REF"]['VALUE']),
         ));
 
+
+        $allProductPrices = \Bitrix\Catalog\PriceTable::getList([
+            "select" => ["*"],
+            "filter" => [
+                "=PRODUCT_ID" => $arFieldsOffer["ID"],
+            ],
+            "order" => ["CATALOG_GROUP_ID" => "ASC"]
+        ])->fetchAll();
+        $salePrice = "";
+        $retailPrice = "";
+        foreach ($allProductPrices as $itemPrice) {
+            if ($itemPrice['CATALOG_GROUP_ID'] == 1)
+                $salePrice = round($itemPrice['PRICE']);
+            if ($itemPrice['CATALOG_GROUP_ID'] == 2)
+                $retailPrice = round($itemPrice['PRICE']);
+        }
+
+
+
         if ($resp = $resultColor->fetch()) {
             $mainColor = $resp['UF_COLORCOD'];
 
@@ -117,6 +159,8 @@ if ($totalCart>$maxCart){
                 "id" => $idProd,
                 "code" => $code,
                 "img" => "$Photo",
+                "sale"=>$salePrice,
+                "retail"=>$retailPrice,
                 "color" => "$mainColor",
                 "href" => $url,
             ];
@@ -125,8 +169,8 @@ if ($totalCart>$maxCart){
         }
     }
 }
-//           echo "<pre>";
-//print_r($item);
+
+
 ?>
 
 
@@ -138,43 +182,27 @@ if ($totalCart>$maxCart){
             if ($item['PROPERTIES']['SPECIALOFFER']['VALUE'] == "да") {
 
                 ?>
-
                 <div class="product-tags__item sale-item">Спец пред.!</div>
-
-
                 <?
-
             }
             if ($item['PROPERTIES']['NEWPRODUCT']['VALUE'] == "да") {
-
                 ?>
-
                 <div class="product-tags__item new-item">New</div>
-
                 <?
-
             }
-
             ?>
-
         </div>
         <div class="swiper-wrapper">
             <?
             foreach ($arCart as $itemCart) {
                 ?>
-                <a data-idProd="<?=$itemCart['id']?>" href="<?= $itemCart['href'] ?>" class="product-link swiper-slide chengeColor"
+                <a data-idProd="<?=$itemCart['id']?>" data-sale="<?=$itemCart['sale']?>" data-retail="<?=$itemCart['retail']?>" href="<?= $itemCart['href'] ?>" class="product-link swiper-slide chengeColor"
                    data-color="<?
-
                    if (empty( $itemCart['color'])){
-
                        echo "#bdbdbd";
-
                    }else{
-
                        echo  $itemCart['color'];
-
                    }
-
                    ?>">
                     <img src="<?= $itemCart['img'] ?>" alt="<?= $itemCart['code'] ?>" class="product-image">
                 </a>
@@ -188,8 +216,8 @@ if ($totalCart>$maxCart){
         </div>
     </div>
     <div class="product-btns">
-        <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
-        <a style="cursor: pointer" data-idProd="<?=$item["ID"]?>" class="product-btn addcart-link addBasket"><i class="icon icon-cart"></i><span>В корзину</span></a>
+        <a href="#" data-item="<?=$item['ID']?>" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
+        <a style="cursor: pointer" data-idProd="<?=$item["ID"]?>" data-micromodal-trigger="modal-product" class="product-btn addcart-link addBasket"><i class="icon icon-cart"></i><span>Подробнее</span></a>
     </div>
 </div>
 <div class="descr-block">

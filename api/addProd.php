@@ -410,7 +410,7 @@ foreach ($arrAll as $arr) {
                 );
                 $arFieldsPrice = array(
                     "PRODUCT_ID" => $arFields["ID"],
-                    "CATALOG_GROUP_ID" => 3,
+                    "CATALOG_GROUP_ID" => 2,
                     "PRICE" => $offer["RETAIL"],
                     "CURRENCY" => "RUB",
                 );
@@ -487,7 +487,7 @@ foreach ($arrAll as $arr) {
                     array(
                         "CURRENCY" => "RUB",
                         "PRICE" => $offer["RETAIL"],
-                        "CATALOG_GROUP_ID" => 3,
+                        "CATALOG_GROUP_ID" => 2,
                         "PRODUCT_ID" => $product_offer_id,
                     )
                 );
@@ -744,7 +744,7 @@ foreach ($arrAll as $arr) {
                             'CML2_LINK' => $product_id,
                           //  'TP_Code77' => $offer['RETAIL'],
                         ),
-                        "CATALOG_GROUP_ID" => 3,
+                        "CATALOG_GROUP_ID" => 2,
                         "PRODUCT_ID" => $product_offer_id,
                     )
                 );
