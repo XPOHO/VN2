@@ -85,7 +85,7 @@ if (!$USER->IsAuthorized()) // Для неавторизованного
                         $resOffer = CIblockElement::GetList(array("DATE_CREATE" => "DESC"), $arFilter, false, [], $arSelect);
                         $Photo = "";
                         $sizesArr = [];
-                        if ($obOffer = $resOffer->GetNextElement()) {
+                        while ($obOffer = $resOffer->GetNextElement()) {
                             $arFieldsOffer = $obOffer->GetFields();
                             if (empty($Photo)) {
                                 $renderImage = CFile::ResizeImageGet($arFieldsOffer["DETAIL_PICTURE"], array("width" => 400, "height" => 700), BX_RESIZE_IMAGE_PROPORTIONAL);
@@ -120,27 +120,12 @@ if (!$USER->IsAuthorized()) // Для неавторизованного
                                     "filter" => array("UF_XML_ID" => $arProps["COLOR_REF"]['VALUE']),
                                 ));
                                 if ($resp = $resultColor->fetch()) {
+                                //    print_r($resp);
                                     $mainColor = $resp['UF_COLORCOD'];
                                     $mainColorName = $resp['UF_NAME'];
                                 }
                         }
 
-                        $arCart[] = [
-                            "id" => $idProd,
-                            "art" => $arPropsProd['ARTNUMBER']['VALUE'],
-                            "year" => $arPropsProd['YEAR']['VALUE'],
-                            "polotno" => $arPropsProd['POLOTNO']['VALUE'],
-                            "season" => $arPropsProd['SEASON']['VALUE'],
-                            "country" => $arPropsProd['COUNTRY']['VALUE'],
-                            "code" => $code,
-                            "img" => "$Photo",
-                            "color" => [
-                                'name' => $mainColorName,
-                                'code' => $mainColor
-                            ],
-                            "sizes" => $sizesArr,
-                            "href" => $url
-                        ];
                         if (empty($mainColor)) {
                             $mainColor = '#8A8972';
                         }
