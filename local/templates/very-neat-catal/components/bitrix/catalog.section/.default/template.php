@@ -271,12 +271,6 @@ $signedParams = $signer->sign(base64_encode(serialize($arResult['ORIGINAL_PARAME
 <script>
 
 
-    // $( ".addcart-link" ).click(function() {
-    //     let idProd = $(this).data('idprod');
-    //     console.log(idProd);
-    //
-    // });
-
 	BX.message({
 		BTN_MESSAGE_BASKET_REDIRECT: '<?=GetMessageJS('CT_BCS_CATALOG_BTN_MESSAGE_BASKET_REDIRECT')?>',
 		BASKET_URL: '<?=$arParams['BASKET_URL']?>',
