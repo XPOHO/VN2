@@ -34739,11 +34739,25 @@
                     let idProd = idProdBlock.find('.swiper-slide-active').data("idprod")
                     let priceRetail = idProdBlock.find('.swiper-slide-active').data("retail")
                     let priceSale = idProdBlock.find('.swiper-slide-active').data("sale")
-                    priceRetail = priceRetail + ' ₽'
+
+
+
+
+                    if (priceRetail.trim() == '') {
+
+                        priceRetail='';
+
+                    }
+                    else{
+
+                        priceRetail = priceRetail + ' ₽'
+
+                    }
+
                     priceSale = priceSale + ' ₽'
 
                     if (priceSale.trim() == '') {
-                        priceSale = priceRetail;
+                        priceSale = priceRetail + ' ₽';
                         priceRetail = "";
                     }
 
@@ -34754,11 +34768,11 @@
 
 
                     let blockRetail = idProdBlock.find('.oldprice');
-                    $(blockRetail).text(priceRetail + ' ₽');
+                    $(blockRetail).text(priceRetail);
 
 
                     let blockSale = idProdBlock.find('.price');
-                    $(blockSale).text(priceSale + ' ₽');
+                    $(blockSale).text(priceSale);
                 }, 1100);
 
 
@@ -34771,8 +34785,6 @@
                     prodStop.push(addProdBasket);
                     //console.log(prodStop);
                 })
-
-
             });
 
             $(".addBasket").click(function () {

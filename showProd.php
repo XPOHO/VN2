@@ -8,11 +8,39 @@ CModule::IncludeModule('highloadblock');
 use Bitrix\Sale;
 
 \Bitrix\Main\Loader::includeModule("catalog");
-header('Content-Type: application/json');
+//header('Content-Type: application/json');
 $request = \Bitrix\Main\Application::getInstance()->getContext()->getRequest();
 $productId = $request->getPost("prod");
 $productId = 1196;
 $IDHighload = 2;
+
+
+if(!$USER->IsAuthorized()) // Для неавторизованного
+{
+
+    $request = \Bitrix\Main\Application::getInstance()->getContext()->getRequest();
+    $favCookie=    $request->getCookie('favorites');
+
+    $arFavorites=  unserialize($favCookie);
+    $favoritesAr=[];
+    foreach ($arFavorites as $itemFav){
+        $favoritesAr[$itemFav]=true;
+    }
+}
+else{
+
+    $idUser = $USER->GetID();
+    $rsUser = CUser::GetByID($idUser);
+    $arUser = $rsUser->Fetch();
+    $arFavorites = $arUser['UF_FAVORITES'];  // Достаём избранное пользователя
+
+    $favoritesAr=[];
+    foreach ($arFavorites as $itemFav){
+        $favoritesAr[$itemFav]=true;
+    }
+
+}
+
 $hldata = Bitrix\Highloadblock\HighloadBlockTable::getById($IDHighload)->fetch();
 $hlentity = Bitrix\Highloadblock\HighloadBlockTable::compileEntity($hldata);
 $hlDataClass = $hldata["NAME"] . "Table";
@@ -70,12 +98,23 @@ if ($obProd = $resProd->GetNextElement()) {
             }
         }
     }
+    echo "<pre>";
+    print_r($favoritesAr);
+    if (isset($favoritesAr[$productId])){
+
+        $favorite=true;
+
+    }
+ else{
+     $favorite=false;
+ }
     $arCart[] = [
         "id" => $idProd,
         "art" => $arPropsProd['ARTNUMBER']['VALUE'],
         "year" => $arPropsProd['YEAR']['VALUE'],
         "polotno" => $arPropsProd['POLOTNO']['VALUE'],
         "season" => $arPropsProd['SEASON']['VALUE'],
+        "favorite" => $favorite,
         "country" => $arPropsProd['COUNTRY']['VALUE'],
         "code" => $code,
         "img" => "$Photo",

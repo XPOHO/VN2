@@ -19,13 +19,11 @@ $request = \Bitrix\Main\Application::getInstance()->getContext()->getRequest();
 if ($_GET['id']) {
 
 
-
     if (!$USER->IsAuthorized()) // Для неавторизованного
     {
 
 
         $cookieValue = $request->getCookie("favorites");
-        var_dump($cookieValue);
         $arElements = unserialize($APPLICATION->get_cookie('favorites'));
         if (!in_array($_GET['id'], $arElements)) {
             $arElements[] = $_GET['id'];
@@ -36,32 +34,15 @@ if ($_GET['id']) {
             $result = 2; // Датчик. Удаляем
         }
 
-
-
-
-        $cookie = new \Bitrix\Main\Web\Cookie("favorites", serialize($arElements), time()+86400*30);
+        $cookie = new \Bitrix\Main\Web\Cookie("favorites", serialize($arElements), time() + 86400 * 30);
         $cookie->setSpread(\Bitrix\Main\Web\Cookie::SPREAD_DOMAIN); // распространять куки на все домены
 
         $cookie->setSecure(false); // безопасное хранение cookie
         $cookie->setHttpOnly(false);
 
-
         \Bitrix\Main\Application::getInstance()->getContext()->getResponse()->addCookie($cookie);
         $cookieValue = $request->getCookie("favorites");
-
-
-
-
         $context->getResponse()->writeHeaders("");
-
-        var_dump($cookieValue);
-       // $cookie = new Cookie("favorites", serialize($arElements), time() + 60 * 60 * 24 * 60);
-
-
-//        $cookie->setDomain($context->getServer()->getHttpHost());
-//        $cookie->setHttpOnly(false);
-//        $context->getResponse()->addCookie($cookie);
-//        $context->getResponse()->writeHeaders("");
     } else { // Для авторизованного
         $idUser = $USER->GetID();
         $rsUser = CUser::GetByID($idUser);

@@ -56,19 +56,11 @@ $IDHighload = 2;
 $hldata = Bitrix\Highloadblock\HighloadBlockTable::getById($IDHighload)->fetch();
 $hlentity = Bitrix\Highloadblock\HighloadBlockTable::compileEntity($hldata);
 $hlDataClass = $hldata["NAME"] . "Table";
-?>
-<?
 $mainColor = "";
 $arSelect = array("ID", "IBLOCK_ID", "CODE", "NAME", "DETAIL_PICTURE", "PROPERTY_*");
 $arFilter = array("IBLOCK_ID" => 3, "ACTIVE_DATE" => "Y", "ACTIVE" => "Y", "PROPERTY_CML2_LINK" => $item["ID"]);
 $resOfferMain = CIblockElement::GetList(array("DATE_CREATE" => "DESC"), $arFilter, false, [], $arSelect);
 if ($obOfferMain = $resOfferMain->GetNextElement()) {
-
-
-
-
-
-
 
     $arFieldsOfferMain = $obOfferMain->GetFields();
     //  print_r($arFieldsOfferMain);
@@ -103,7 +95,6 @@ if ($obOfferMain = $resOfferMain->GetNextElement()) {
 
     if ($resp = $resultColor->fetch()) {
         $mainColor = $resp['UF_COLORCOD'];
-        //   print_r($resp);
     }
 }
 
@@ -119,9 +110,7 @@ $arCart[] = [
 ];
 //print_r($arCart);
 //print_r($morePhoto);
-
 $articl = $item["PROPERTIES"]["ARTNUMBER"];
-
 $maxCart=5;
 $totalCart=0;
 $plusColor=0;
@@ -129,10 +118,8 @@ $arSelect = array("ID", "IBLOCK_ID", "CODE", "NAME", "DETAIL_PAGE_URL", "PROPERT
 $arFilter = array("IBLOCK_ID" => 2, "ACTIVE_DATE" => "Y", "ACTIVE" => "Y", "PROPERTY_ARTNUMBER" => $articl);
 $resProd = CIblockElement::GetList(array("DATE_CREATE" => "DESC"), $arFilter, false, [], $arSelect);
 while ($obProd = $resProd->GetNextElement()) {
-
     $totalCart++;
 if ($totalCart>$maxCart){
-
     $plusColor++;
     continue;
 }
@@ -141,11 +128,8 @@ if ($totalCart>$maxCart){
         continue;
     }
     $idProd=$arFieldsProd["ID"];
-
     $code = $arFieldsProd["CODE"];
     $url = $arFieldsProd["DETAIL_PAGE_URL"];
-
-
     $arSelect = array("ID", "IBLOCK_ID", "CODE", "NAME", "DETAIL_PICTURE", "PROPERTY_*");
     $arFilter = array("IBLOCK_ID" => 3, "ACTIVE_DATE" => "Y", "ACTIVE" => "Y", "PROPERTY_CML2_LINK" => $arFieldsProd["ID"]);
     $resOffer = CIblockElement::GetList(array("DATE_CREATE" => "DESC"), $arFilter, false, [], $arSelect);
@@ -198,11 +182,7 @@ if ($totalCart>$maxCart){
         }
     }
 }
-
-
 ?>
-
-
 <div class="image-block">
     <div class="colors-slider-catalog swiper">
         <div class="product-tags">
@@ -257,8 +237,27 @@ if ($totalCart>$maxCart){
 <div class="descr-block">
     <a href="#" class="product-name"><?= $productTitle ?></a>
     <span class="product-price">
-                        <span class="oldprice">1 749 ₽</span>
-                        <span class="price">1 749 ₽</span>
+                        <span class="oldprice"><?
+
+                            if (!empty($retailPrice)){
+
+                                echo "$retailPrice ₽";
+
+                            }
+
+                            ?></span>
+                        <span class="price">
+
+                            <?
+
+                            if (!empty($salePrice)){
+
+                                echo "$salePrice ₽";
+
+                            }
+
+                            ?>
+                        </span>
                         </span>
     <div class="product-colors">
         <div class="colors-pagination"></div>
@@ -272,7 +271,5 @@ if ($totalCart>$maxCart){
             <?
         }
         ?>
-
-
     </div>
 </div>
