@@ -85,14 +85,14 @@ if (!$USER->IsAuthorized()) // Для неавторизованного
                         $resOffer = CIblockElement::GetList(array("DATE_CREATE" => "DESC"), $arFilter, false, [], $arSelect);
                         $Photo = "";
                         $sizesArr = [];
-                        while ($obOffer = $resOffer->GetNextElement()) {
+                        if ($obOffer = $resOffer->GetNextElement()) {
                             $arFieldsOffer = $obOffer->GetFields();
-                            /// print_r($arFieldsOffer);
                             if (empty($Photo)) {
                                 $renderImage = CFile::ResizeImageGet($arFieldsOffer["DETAIL_PICTURE"], array("width" => 400, "height" => 700), BX_RESIZE_IMAGE_PROPORTIONAL);
                                 $Photo = $renderImage["src"];
                             }
                             $arProps = $obOffer->GetProperties();
+
                             $sizesArr[$arProps['SIZES_CLOTHES']['VALUE']]["id"] = $arFieldsOffer["ID"];
 
 
@@ -113,7 +113,7 @@ if (!$USER->IsAuthorized()) // Для неавторизованного
                             }
                             $sizesArr[$arProps['SIZES_CLOTHES']['VALUE']]["price"]["retail"] = $retailPrice;
                             $sizesArr[$arProps['SIZES_CLOTHES']['VALUE']]["price"]["sale"] = $salePrice;
-                            if (empty($mainColor)) {
+
                                 $resultColor = $hlDataClass::getList(array(
                                     "select" => array("ID", "UF_NAME", "UF_XML_ID", "UF_COLORCOD"), // Поля для выборки
                                     "order" => array(),
@@ -123,7 +123,6 @@ if (!$USER->IsAuthorized()) // Для неавторизованного
                                     $mainColor = $resp['UF_COLORCOD'];
                                     $mainColorName = $resp['UF_NAME'];
                                 }
-                            }
                         }
 
                         $arCart[] = [
