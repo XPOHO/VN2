@@ -23,6 +23,35 @@ use \Bitrix\Main\Localization\Loc;
  * @var string $labelPositionClass
  * @var CatalogSectionComponent $component
  */
+
+
+if(!$USER->IsAuthorized()) // Для неавторизованного
+	    {
+
+            $request = \Bitrix\Main\Application::getInstance()->getContext()->getRequest();
+            $favCookie=    $request->getCookie('favorites');
+
+            $arFavorites=  unserialize($favCookie);
+            $favoritesAr=[];
+            foreach ($arFavorites as $itemFav){
+                $favoritesAr[$itemFav]=true;
+            }
+        }
+else{
+
+    $idUser = $USER->GetID();
+    $rsUser = CUser::GetByID($idUser);
+    $arUser = $rsUser->Fetch();
+    $arFavorites = $arUser['UF_FAVORITES'];  // Достаём избранное пользователя
+
+    $favoritesAr=[];
+    foreach ($arFavorites as $itemFav){
+        $favoritesAr[$itemFav]=true;
+    }
+
+}
+
+
 $IDHighload = 2;
 $hldata = Bitrix\Highloadblock\HighloadBlockTable::getById($IDHighload)->fetch();
 $hlentity = Bitrix\Highloadblock\HighloadBlockTable::compileEntity($hldata);
@@ -215,8 +244,13 @@ if ($totalCart>$maxCart){
             <div class="colors-btn color-next"><i class="icon icon-slider_arrow"></i></div>
         </div>
     </div>
+
     <div class="product-btns">
-        <a href="#" data-item="<?=$item['ID']?>" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
+        <a style="cursor: pointer" data-item="<?=$item['ID']?>" class="product-btn favorite-link <?
+
+        if (isset($favoritesAr[$item['ID']])){echo "active";}
+
+        ?>"><i class="icon icon-heart"></i></a>
         <a style="cursor: pointer" data-idProd="<?=$item["ID"]?>" data-micromodal-trigger="modal-product" class="product-btn addcart-link addBasket"><i class="icon icon-cart"></i><span>Подробнее</span></a>
     </div>
 </div>

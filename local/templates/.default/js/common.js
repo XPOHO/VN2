@@ -34700,15 +34700,20 @@
 
 
             $('.favorite-link').on('click', function (e) {
+                let doAction
                 var favorID = $(this).attr('data-item');
-                if ($(this).hasClass('active'))
-                    var doAction = 'delete';
-                else
-                    var doAction = 'add';
+                if ($(this).hasClass('active')) {
+                    doAction = 'delete';
+                    $(this).removeClass('active');
+                } else {
+                    doAction = 'add';
+                    $(this).addClass('active');
+                }
+
 
                 addFavorite(favorID, doAction);
-            });
 
+            });
 
             function addFavorite(id, action) {
                 var param = 'id=' + id + "&action=" + action;
@@ -34717,19 +34722,7 @@
                     type: "GET",
                     dataType: "html",
                     data: param,
-                    success: function (response) { // Если Данные отправлены успешно
-                        var result = $.parseJSON(response);
-                        if (result == 1) { // Если всё чётко, то выполняем действия, которые показывают, что данные отправлены
-                            $('.favor[data-item="' + id + '"]').addClass('active');
-                            var wishCount = parseInt($('#want .col').html()) + 1;
-                            $('#want .col').html(wishCount); // Визуально меняем количество у иконки
-                        }
-                        if (result == 2) {
-                            $('.favor[data-item="' + id + '"]').removeClass('active');
-                            var wishCount = parseInt($('#want .col').html()) - 1;
-                            $('#want .col').html(wishCount); // Визуально меняем количество у иконки
-                        }
-                    },
+                    success: function (response) { },
                     error: function (jqXHR, textStatus, errorThrown) { // Ошибка
                         console.log('Error: ' + errorThrown);
                     }
@@ -34751,7 +34744,7 @@
 
                     if (priceSale.trim() == '') {
                         priceSale = priceRetail;
-                        priceRetail="";
+                        priceRetail = "";
                     }
 
 
@@ -34759,14 +34752,14 @@
                     $(test).data("idprod", idProd);
                     $(test).attr('data-idprod', idProd);
 
-                    
+
                     let blockRetail = idProdBlock.find('.oldprice');
                     $(blockRetail).text(priceRetail + ' ₽');
 
 
                     let blockSale = idProdBlock.find('.price');
-                    $(blockSale).text( priceSale + ' ₽');
-                }, 1300);
+                    $(blockSale).text(priceSale + ' ₽');
+                }, 1100);
 
 
                 $(".addBasket").click(function () {
@@ -34800,7 +34793,6 @@
             })
         });
     })();
-
     /******/
 })()
 ;
