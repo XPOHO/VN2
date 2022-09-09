@@ -34787,6 +34787,23 @@
                 })
             });
 
+
+
+            $('.delete-product').on('click', function (e) {
+                let idProdBlock = $(this).data("idprod");
+                $(this).parent().parent().hide();
+                $.ajax({
+                    url: '/dellbasket.php',
+                    type: 'POST',
+                    data: {prod: idProdBlock},
+                    success: (res) => {
+                        console.log(res);
+                    }
+                })
+            });
+
+
+
             $(".addBasket").click(function () {
 
                 let addProdBasket = $(this).data("idprod");

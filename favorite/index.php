@@ -42,10 +42,7 @@ if (!$USER->IsAuthorized()) // Для неавторизованного
     }
 
 }
-
 ?>
-
-
 <main class="favorite-page">
     <div class="breadcrumbs">
         <div class="container">
@@ -188,12 +185,8 @@ if (!$USER->IsAuthorized()) // Для неавторизованного
         </div>
     </div>
 </main>
-
-
 <script>
-
-
-    $('.favorite-link').on('click', function (e) {
+    $('.remove-link').on('click', function (e) {
         let doAction
         var favorID = $(this).attr('data-item');
         if ($(this).hasClass('active')) {
@@ -202,13 +195,8 @@ if (!$USER->IsAuthorized()) // Для неавторизованного
             doAction = 'add';
         }
         $(this).parent().parent().remove()
-
-
-
        // addFavorite(favorID, doAction);
-
     });
-
     function addFavorite(id, action) {
         var param = 'id=' + id + "&action=" + action;
         $.ajax({
@@ -222,30 +210,20 @@ if (!$USER->IsAuthorized()) // Для неавторизованного
             }
         });
     }
-
-
     $('.addcart-link').on('click', function (e) {
-
-
         let idProdBlock = $(this).parent().parent().find('.choices__input').val();
-
-
-
-
+let button=$(this);
         let addProdBasket = $(this).data("idprod");
-        //  console.log(prodStop);
-
         $.ajax({
             url: '/addbasket.php',
             type: 'POST',
-            data: {prod: idProdBlock},
+            data: {prod: idProdBlock, quantity: 1},
             success: (res) => {
+             //   button.text("Добавлено")
                 console.log(res);
             }
         })
-
     });
-
 </script>
 <!--<section class="recently-products favorite-last">-->
 <!--    <div class="container">-->
