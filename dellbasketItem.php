@@ -17,14 +17,6 @@ $basket = Sale\Basket::loadItemsForFUser(Sale\Fuser::getId(), Bitrix\Main\Contex
 
 
 if ($item = $basket->getExistsItem('catalog', $productId)) {
-    $item->setField('QUANTITY', $item->getQuantity() + 1);
-} else {
-    $item = $basket->createItem('catalog', $productId);
-    $item->setFields(array(
-        'QUANTITY' => $quantity,
-        'CURRENCY' => Bitrix\Currency\CurrencyManager::getBaseCurrency(),
-        'LID' => Bitrix\Main\Context::getCurrent()->getSite(),
-        'PRODUCT_PROVIDER_CLASS' => 'CCatalogProductProvider',
-    ));
+    $item->setField('QUANTITY', $item->getQuantity() - 1);
 }
 $basket->save();

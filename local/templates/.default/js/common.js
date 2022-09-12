@@ -34816,10 +34816,66 @@
                     data: {prod: addProdBasket},
                     success: (res) => {
                         console.log(res);
+                        console.log($('.minicart-content__empty').length);
                     }
                 })
 
             })
+
+
+
+
+
+
+            $(".plus-btn").click(function () {
+
+
+                let addProdBasket = $(this).data("basketid");
+                let newPricePlus = $(this).data("price");
+                newPricePlus= Number(newPricePlus)
+                let oldprice=  $("#result-total").text().replace(/[^0-9]/g,"");
+                oldprice =  Number(oldprice)
+                let newPrice= oldprice+newPricePlus;
+
+                $("#result-total").text(newPrice + " ₽");
+
+
+                $.ajax({
+                    url: '/addbasket.php',
+                    type: 'POST',
+                    data: {prod: addProdBasket},
+                    success: (res) => {
+                        console.log(res);
+                    }
+                })
+
+            });
+
+
+            $(".minus-btn").click(function () {
+
+                let addProdBasket = $(this).data("basketid");
+                let newPriceMinus = $(this).data("price");
+                newPriceMinus=Number(newPriceMinus)
+              let oldprice=  $("#result-total").text().replace(/[^0-9]/g,"");
+                oldprice =  Number(oldprice)
+              let newPrice= oldprice-newPriceMinus;
+
+              $("#result-total").text(newPrice + " ₽");
+                $.ajax({
+                    url: '/dellbasketItem.php',
+                    type: 'POST',
+                    data: {prod: addProdBasket},
+                    success: (res) => {
+                        console.log(res);
+                    }
+                })
+
+            });
+
+
+
+
         });
     })();
     /******/

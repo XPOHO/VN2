@@ -221,6 +221,7 @@ let button=$(this);
             success: (res) => {
              //   button.text("Добавлено")
                 console.log(res);
+                $('.updateblock').click();
             }
         })
     });

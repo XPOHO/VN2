@@ -368,155 +368,112 @@
 
 
 
-            $IDHighload = 2;
-            use Bitrix\Sale;
-            Bitrix\Main\Loader::includeModule("sale");
-            Bitrix\Main\Loader::includeModule("catalog");
-            $basket = Sale\Basket::loadItemsForFUser(Sale\Fuser::getId(), Bitrix\Main\Context::getCurrent()->getSite());
-            $countProdBasket=count($basket->getQuantityList());
-            CModule::IncludeModule('highloadblock');
-            $hldata = Bitrix\Highloadblock\HighloadBlockTable::getById($IDHighload)->fetch();
-            $hlentity = Bitrix\Highloadblock\HighloadBlockTable::compileEntity($hldata);
-            $hlDataClass = $hldata["NAME"] . "Table";
-            $priceBasket = $basket->getPrice();
+
             ?>
             <ul class="profile-links">
                 <li class="profile-links__item ">
                     <a id="minicart-link" href="javascript:void(0);" class="profile-links__link"><i class="icon icon-cart_fill"></i></a>
                     <div id="minicart" class="minicart-content" style="transform: translateX(100vw); position: absolute;">
                         <a id="minicart-close" href="javascript:void(0);" class="minicart-close-link"><i class="icon icon-close"></i></a>
-                        <?
-                        $basketItems = $basket->getBasketItems();
 
 
-                        if (empty($countProdBasket)){
+                        <?$APPLICATION->IncludeComponent(
+	"bitrix:sale.basket.basket", 
+	".default", 
+	array(
+		"ACTION_VARIABLE" => "basketAction",
+		"ADDITIONAL_PICT_PROP_2" => "-",
+		"ADDITIONAL_PICT_PROP_3" => "-",
+		"AUTO_CALCULATION" => "Y",
+		"BASKET_IMAGES_SCALING" => "adaptive",
+		"COLUMNS_LIST_EXT" => array(
+			0 => "PREVIEW_PICTURE",
+			1 => "DISCOUNT",
+			2 => "DELETE",
+			3 => "DELAY",
+			4 => "TYPE",
+			5 => "SUM",
+		),
+		"COLUMNS_LIST_MOBILE" => array(
+			0 => "PREVIEW_PICTURE",
+			1 => "DISCOUNT",
+			2 => "DELETE",
+			3 => "DELAY",
+			4 => "TYPE",
+			5 => "SUM",
+		),
+		"COMPATIBLE_MODE" => "Y",
+		"CORRECT_RATIO" => "Y",
+		"DEFERRED_REFRESH" => "N",
+		"DISCOUNT_PERCENT_POSITION" => "bottom-center",
+		"DISPLAY_MODE" => "extended",
+		"EMPTY_BASKET_HINT_PATH" => "/",
+		"GIFTS_BLOCK_TITLE" => "Выберите один из подарков",
+		"GIFTS_CONVERT_CURRENCY" => "N",
+		"GIFTS_HIDE_BLOCK_TITLE" => "N",
+		"GIFTS_HIDE_NOT_AVAILABLE" => "N",
+		"GIFTS_MESS_BTN_BUY" => "Выбрать",
+		"GIFTS_MESS_BTN_DETAIL" => "Подробнее",
+		"GIFTS_PAGE_ELEMENT_COUNT" => "4",
+		"GIFTS_PLACE" => "BOTTOM",
+		"GIFTS_PRODUCT_PROPS_VARIABLE" => "prop",
+		"GIFTS_PRODUCT_QUANTITY_VARIABLE" => "quantity",
+		"GIFTS_SHOW_DISCOUNT_PERCENT" => "Y",
+		"GIFTS_SHOW_OLD_PRICE" => "N",
+		"GIFTS_TEXT_LABEL_GIFT" => "Подарок",
+		"HIDE_COUPON" => "Y",
+		"LABEL_PROP" => array(
+		),
+		"PATH_TO_ORDER" => "/personal/order/make/",
+		"PRICE_DISPLAY_MODE" => "Y",
+		"PRICE_VAT_SHOW_VALUE" => "N",
+		"PRODUCT_BLOCKS_ORDER" => "props,sku,columns",
+		"QUANTITY_FLOAT" => "Y",
+		"SET_TITLE" => "Y",
+		"SHOW_DISCOUNT_PERCENT" => "Y",
+		"SHOW_FILTER" => "N",
+		"SHOW_RESTORE" => "Y",
+		"TEMPLATE_THEME" => "blue",
+		"TOTAL_BLOCK_DISPLAY" => array(
+			0 => "bottom",
+		),
+		"USE_DYNAMIC_SCROLL" => "Y",
+		"USE_ENHANCED_ECOMMERCE" => "N",
+		"USE_GIFTS" => "N",
+		"USE_PREPAYMENT" => "N",
+		"USE_PRICE_ANIMATION" => "Y",
+		"AJAX_MODE" => "Y",
+		"COMPONENT_TEMPLATE" => ".default",
+		"AJAX_OPTION_JUMP" => "N",
+		"AJAX_OPTION_STYLE" => "Y",
+		"AJAX_OPTION_HISTORY" => "N",
+		"AJAX_OPTION_ADDITIONAL" => ""
+	),
+	false
+);?>
 
-                            ?>
-
-                            <div class="minicart-content__empty">
-                                <p>Ваша корзина пуста</p>
-                            </div>
-
-                            <?
-
-                        }
-
-                        else{
-                            ?>
-
-
-
-                            <div class="minicart-content__list">
-                                <div class="minicart-title">Корзина <span id="products-count"><?
-                                        echo num_word($countProdBasket,["Товар","Товара","Товаров"]);
-                                        ?></span></div>
-                                <div class="product-list">
-
-                                    <?
-
-                                    foreach ($basketItems as $basketItem){
-                                        $idItemBasket= $basketItem->getId();
-                                        $arSelect = array("ID", "IBLOCK_ID", "CODE", "NAME", "DETAIL_PICTURE", "PROPERTY_*");
-                                        $arFilter = array("IBLOCK_ID" => 3, "ACTIVE_DATE" => "Y", "ACTIVE" => "Y", "ID" => $basketItem->getProductId());
-                                        $resOffer = CIblockElement::GetList(array("DATE_CREATE" => "DESC"), $arFilter, false, [], $arSelect);
-                                        $Photo = "";
-                                        $sizesArr = [];
-                                        $article="";
-                                        $url="";
-
-
-                                        if  ($obOffer = $resOffer->GetNextElement()) {
-                                            $arFieldsOffer = $obOffer->GetFields();
-                                            $arProps = $obOffer->GetProperties();
-                                            $arSelect = array("ID", "IBLOCK_ID", "CODE", "NAME", "DETAIL_PAGE_URL", "PROPERTY_*");
-                                            $arFilter = array("IBLOCK_ID" => 2, "ACTIVE_DATE" => "Y", "ACTIVE" => "Y", "ID" => $arProps["CML2_LINK"]["VALUE"]);
-                                            $resProd = CIblockElement::GetList(array("DATE_CREATE" => "DESC"), $arFilter, false, [], $arSelect);
-                                            if ($obProd = $resProd->GetNextElement()) {
-                                                $arFieldsProd = $obProd->GetFields();
-                                                $arPropsProd = $obProd->GetProperties();
-                                                $url = $arFieldsProd["DETAIL_PAGE_URL"];
-                                                $article =  $arPropsProd['ARTNUMBER']['VALUE'];
-                                                $nameProd=$arFieldsProd['NAME'];
-                                                $idProd=$arFieldsProd['ID'];
-                                            }
-
-                                            if (empty($Photo)) {
-                                                $renderImage = CFile::ResizeImageGet($arFieldsOffer["DETAIL_PICTURE"], array("width" => 100, "height" => 140), BX_RESIZE_IMAGE_PROPORTIONAL);
-                                                $Photo = $renderImage["src"];
-                                            }
-                                            $BasketItemSize=$arProps['SIZES_CLOTHES']['VALUE'];
-                                            $allProductPrices = \Bitrix\Catalog\PriceTable::getList([
-                                                "select" => ["*"],
-                                                "filter" => [
-                                                    "=PRODUCT_ID" => $arFieldsOffer["ID"],
-                                                ],
-                                                "order" => ["CATALOG_GROUP_ID" => "ASC"]
-                                            ])->fetchAll();
-                                            $salePrice = "";
-                                            $retailPrice = "";
-                                            foreach ($allProductPrices as $itemPrice) {
-                                                if ($itemPrice['CATALOG_GROUP_ID'] == 1)
-                                                    $salePrice = round($itemPrice['PRICE']);
-                                                if ($itemPrice['CATALOG_GROUP_ID'] == 2)
-                                                    $retailPrice = round($itemPrice['PRICE']);
-                                            }
-                                            $resultColor = $hlDataClass::getList(array(
-                                                "select" => array("ID", "UF_NAME", "UF_XML_ID", "UF_COLORCOD"), // Поля для выборки
-                                                "order" => array(),
-                                                "filter" => array("UF_XML_ID" => $arProps["COLOR_REF"]['VALUE']),
-                                            ));
-                                            if ($resp = $resultColor->fetch()) {
-                                                $mainColor = $resp['UF_COLORCOD'];
-                                                $mainColorName = $resp['UF_NAME'];
-                                            }
-                                            if (empty($mainColor)){
-                                                $mainColor="#8A8972";
-                                            }
-                                            ?>
-
-
-                                            <div class="minicart-content__item">
-                                                <div class="image-block">
-                                                    <a href="<?=$url?>" class="product-link">
-                                                        <img src="<?= $Photo ?>" alt="product-image" class="product-image">
-                                                    </a>
-                                                </div>
-                                                <div class="descr-block">
-                                                    <a href="<?=$url?>" class="product-name"><?=$nameProd?></a>
-                                                    <span class="article"><?=$article?></span>
-                                                    <div class="properties">
-                                                        <span class="properties__item"><?=$BasketItemSize?></span>
-                                                        <span class="properties__color"><span style="background-color: <?=$mainColor?>;"></span><?=$mainColorName?></span>
-                                                    </div>
-                                                    <div class="count-block">
-                                                        <div class="input-group count-group">
-                                                            <a href="javascript:void(0);" class="count-btn minus-btn"><i class="icon icon-count_arrow"></i></a>
-                                                            <input type="text" class="count-input" readonly value="<?=$basketItem->getQuantity()?>">
-                                                            <a href="javascript:void(0);" class="count-btn plus-btn"><i class="icon icon-count_arrow"></i></a>
-                                                        </div>
-                                                        <a style="cursor: pointer" class="favorite-link <? if (isset($favoritesAr[$idProd])){echo "active";}  ?>"><i class="icon icon-heart_fill"></i></a>
-                                                    </div>
-                                                </div>
-                                                <div class="price-block">
-                                                    <span class="oldprice"></span>
-                                                    <span class="price"><?=$basketItem->getPrice(); ?> ₽</span>
-                                                </div>
-                                                <div class="delete-block">
-                                                    <a style="cursor: pointer" data-idprod="<?=$idItemBasket?>" class="delete-product"><i class="icon icon-trash"></i></a>
-                                                </div>
-                                            </div>
-                                            <?
-                                        }
-                                    }
-                                    ?>
-                                </div>
-                                <div class="minicart-content__result">
-                                    <div class="price-group">Итого: <span id="result-total"><?=$priceBasket?> ₽</span></div>
-                                    <a href="/personal/order/make/" class="order-link btn-fill-style">Оформить заказ</a>
-                                </div>
-                            </div>
-                            <?
-                        }
+<!--                        --><?//
+//
+//                        if (empty($countProdBasket)){
+//
+//                            ?>
+<!---->
+<!--                            <div class="minicart-content__empty">-->
+<!--                                <p>Ваша корзина пуста</p>-->
+<!--                            </div>-->
+<!---->
+<!--                            --><?//
+//
+//                        }
+//
+//                        else{
+//                            ?>
+<!---->
+<!---->
+<!---->
+<!---->
+<!--                            --><?//
+//                        }
                         ?>
                         <!-- if cart is not empty -->
 
