@@ -34789,6 +34789,19 @@
                 })
             });
 
+            $(".clean-favlist").click(function () {
+
+
+                $(".favorite-list__item").hide();
+
+                $.ajax({
+                    url: '/favoritesAll.php',
+                    type: 'POST',
+                    success: (res) => {
+                        console.log(res);
+                    }
+                })
+            })
             $(".addBasket").click(function () {
                 let addProdBasket = $(this).data("idprod");
                 prodStop.push(addProdBasket);
