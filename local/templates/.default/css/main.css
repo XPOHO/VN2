@@ -16,19 +16,19 @@
 }
 @font-face {
   font-family: Montserrat;
-  font-weight: 200;
-  font-style: normal;
-  font-display: swap;
-  src: url(../fonts/MontserratLight/MontserratLight.eot);
-  src: url(../fonts/MontserratLight/MontserratLight.eot?#iefix) format("embedded-opentype"),url(../fonts/MontserratLight/MontserratLight.woff) format("woff"),url(../fonts/MontserratLight/MontserratLight.woff2) format("woff2"),url(../fonts/MontserratLight/MontserratLight.ttf) format("truetype")
-}
-@font-face {
-  font-family: Montserrat;
   font-weight: 500;
   font-style: normal;
   font-display: swap;
   src: url(../fonts/MontserratMedium/MontserratMedium.eot);
   src: url(../fonts/MontserratMedium/MontserratMedium.eot?#iefix) format("embedded-opentype"),url(../fonts/MontserratMedium/MontserratMedium.woff) format("woff"),url(../fonts/MontserratMedium/MontserratMedium.woff2) format("woff2"),url(../fonts/MontserratMedium/MontserratMedium.ttf) format("truetype")
+}
+@font-face {
+  font-family: Montserrat;
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+  src: url(../fonts/MontserratLight/MontserratLight.eot);
+  src: url(../fonts/MontserratLight/MontserratLight.eot?#iefix) format("embedded-opentype"),url(../fonts/MontserratLight/MontserratLight.woff) format("woff"),url(../fonts/MontserratLight/MontserratLight.woff2) format("woff2"),url(../fonts/MontserratLight/MontserratLight.ttf) format("truetype")
 }
 @font-face {
   font-family: Montserrat;
@@ -2023,6 +2023,7 @@ body.overflow:after {
   transition: color .3s;
   margin-left: 12px
 }
+.header__main .profile-links__item .minicart-content__list .minicart-content__item .descr-block .count-block .favorite-link.active,
 .header__main .profile-links__item .minicart-content__list .minicart-content__item .descr-block .count-block .favorite-link:hover {
   color: #565656
 }
@@ -2264,6 +2265,10 @@ body.overflow:after {
 .header__main .profile-links__item .minicart-content__added .minicart-content__more .minicart-slider .slide-item .image-block .product-btns .product-btn.favorite-link {
   -webkit-filter: drop-shadow(0 100px 80px rgba(0, 0, 0, .04)) drop-shadow(0 41.7776px 33.4221px rgba(0, 0, 0, .0287542)) drop-shadow(0 22.3363px 17.869px rgba(0, 0, 0, .0238443)) drop-shadow(0 12.5216px 10.0172px rgba(0, 0, 0, .02)) drop-shadow(0 6.6501px 5.32008px rgba(0, 0, 0, .0161557)) drop-shadow(0 2.76726px 2.21381px rgba(0, 0, 0, .0112458));
   filter: drop-shadow(0 100px 80px rgba(0, 0, 0, .04)) drop-shadow(0 41.7776px 33.4221px rgba(0, 0, 0, .0287542)) drop-shadow(0 22.3363px 17.869px rgba(0, 0, 0, .0238443)) drop-shadow(0 12.5216px 10.0172px rgba(0, 0, 0, .02)) drop-shadow(0 6.6501px 5.32008px rgba(0, 0, 0, .0161557)) drop-shadow(0 2.76726px 2.21381px rgba(0, 0, 0, .0112458))
+}
+.header__main .profile-links__item .minicart-content__added .minicart-content__more .minicart-slider .slide-item .image-block .product-btns .product-btn.favorite-link.active .icon:before,
+.header__main .profile-links__item .minicart-content__added .minicart-content__more .minicart-slider .slide-item .image-block .product-btns .product-btn.favorite-link:hover .icon:before {
+  content: "\e80d"
 }
 .header__main .profile-links__item .minicart-content__added .minicart-content__more .minicart-slider .slide-item .descr-block {
   position: relative;
@@ -2648,6 +2653,35 @@ body.overflow:after {
 }
 .header__main .profile-links__link:hover {
   color: rgba(255,255,255,.5)
+}
+.header__main .profile-links__link.cart-link {
+  display: inline-block;
+  position: relative
+}
+.header__main .profile-links__link.cart-link .cart-value {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  right: -8px;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+  font-size: 10px;
+  line-height: normal;
+  padding: 5px 0;
+  color: #fff;
+  background-color: #f25b30;
+  border: 1px solid #f25b30;
+  font-weight: 700
 }
 .header__main .profile-links__link .icon-cart_fill {
   font-size: 22px;

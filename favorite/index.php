@@ -228,11 +228,7 @@ if (!$USER->IsAuthorized()) // Для неавторизованного
             }
         })
     });
-    $('#minicart-link').on('click', function (e) {
 
-        $('.updateblock').click();
-
-    })
 </script>
 
 <!--<section class="recently-products favorite-last">-->

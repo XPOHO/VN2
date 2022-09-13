@@ -163,6 +163,7 @@ $displayModeClass = $arParams['DISPLAY_MODE'] === 'compact' ? ' basket-items-lis
 if (empty($arResult['ERROR_MESSAGE']))
 {
     $countProdBasket="";
+    $countProdBasket=count($arResult['GRID']['ROWS']);
     ?>
 
 
@@ -271,7 +272,7 @@ if (empty($arResult['ERROR_MESSAGE']))
                         </div>
                         <?
                     }
-                }}
+                }
             ?>
         </div>
         <div class="minicart-content__result">
@@ -408,8 +409,20 @@ if (empty($arResult['ERROR_MESSAGE']))
 </script>
 
     <?php
+}
+elseif ($arResult['EMPTY_BASKET']){
 
-//elseif ($arResult['EMPTY_BASKET'])
+
+    ?>
+
+    <div class="minicart-content__empty">
+        <p>Ваша корзина пуста</p>
+    </div>
+
+    <?php
+
+
+}
 //{
 //	include(Main\Application::getDocumentRoot().$templateFolder.'/empty.php');
 //}

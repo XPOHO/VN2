@@ -372,7 +372,23 @@
             ?>
             <ul class="profile-links">
                 <li class="profile-links__item ">
-                    <a id="minicart-link" href="javascript:void(0);" class="profile-links__link"><i class="icon icon-cart_fill"></i></a>
+                    <a id="minicart-link" href="javascript:void(0);" class="profile-links__link cart-link"><i class="icon icon-cart_fill"></i>
+
+                        <?
+                        use Bitrix\Sale;
+                        Bitrix\Main\Loader::includeModule("sale");
+                        Bitrix\Main\Loader::includeModule("catalog");
+                        $basket = Sale\Basket::loadItemsForFUser(Sale\Fuser::getId(), Bitrix\Main\Context::getCurrent()->getSite());
+
+                        $countProdBasket= count($basket->getQuantityList());
+                        if (!empty($countProdBasket)){
+
+                            ?> <span id="cart-value" class="cart-value"><?=$countProdBasket?></span><?
+                        }
+                        ?>
+
+                    </a>
+
                     <div id="minicart" class="minicart-content" style="transform: translateX(100vw); position: absolute;">
                         <a id="minicart-close" href="javascript:void(0);" class="minicart-close-link"><i class="icon icon-close"></i></a>
 

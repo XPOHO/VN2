@@ -47,6 +47,22 @@
     Asset::getInstance()->addString('<link rel="preload" href="' . DEFAULT_TEMPLATE_PATH . '/fonts/RobotoMedium/RobotoMedium.woff2" as="font" type="font/woff2" crossorigin>');
     Asset::getInstance()->addString('<link rel="preload" href="' . DEFAULT_TEMPLATE_PATH . '/fonts/RobotoRegular/RobotoRegular.woff2" as="font" type="font/woff2" crossorigin>');
     //Asset::getInstance()->addString('');
+
+
+
+
+       Asset::getInstance()->addString('<link rel="stylesheet" href="' . DEFAULT_TEMPLATE_PATH . '/css/flaticon.css">');
+       Asset::getInstance()->addString('<link rel="stylesheet" href="' . DEFAULT_TEMPLATE_PATH . '/css/icofont.css">');
+       Asset::getInstance()->addString('<script defer="defer" src="' . DEFAULT_TEMPLATE_PATH . '/js/sag-vendors.js"></script>');
+       Asset::getInstance()->addString('<script defer="defer" src="' . DEFAULT_TEMPLATE_PATH . '/js/sag.js"></script>');
+       Asset::getInstance()->addString('<link href="' . DEFAULT_TEMPLATE_PATH . '/css/sag.css" rel="stylesheet">');
+
+
+
+
+
+
+
     ?>
     <meta property="og:description" content="VERY NEAT">
     <meta property="og:image" content="<?= DEFAULT_TEMPLATE_PATH ?>/images/preview.jpg">
@@ -59,8 +75,6 @@
     Asset::getInstance()->addCss(DEFAULT_TEMPLATE_PATH . "/css/styles.css");
     Asset::getInstance()->addJs(DEFAULT_TEMPLATE_PATH . "/js/common.js");
     CJSCore::Init(["jquery"]);
-
-
 
 
     ?>
@@ -82,19 +96,20 @@
             </button>
             <a href="/" class="logo-link">
 
-                <?$APPLICATION->IncludeComponent(
+                <? $APPLICATION->IncludeComponent(
                     "bitrix:main.include",
                     "",
-                    Array(
+                    array(
                         "AREA_FILE_SHOW" => "file",
                         "AREA_FILE_SUFFIX" => "inc",
                         "EDIT_TEMPLATE" => "",
                         "PATH" => "/include/logo.php"
                     )
-                );?>
+                ); ?>
 
-                  </a>
-            <a href="javascript:void(0);" class="city-link" data-micromodal-trigger="modal-cities" style="display: none;">Москва</a>
+            </a>
+            <a href="javascript:void(0);" class="city-link" data-micromodal-trigger="modal-cities"
+               style="display: none;">Москва</a>
             <nav class="hmain-menu" style="position: absolute; transform: translateX(-100vw);">
                 <div class="hmain-menu__header">
                     <a href="#" class="b2b-link">B2B</a>
@@ -118,12 +133,14 @@
                 <div class="hmain-menu__categories">
                     <ul class="categories-list">
                         <li class="categories-list__item active">
-                            <a href="javascript:void(0);" data-category="category1" class="categories-list__link" style="background-image: url('<?= DEFAULT_TEMPLATE_PATH ?>/images/main/main_page/menu/category_image1.jpg')">
+                            <a href="javascript:void(0);" data-category="category1" class="categories-list__link"
+                               style="background-image: url('<?= DEFAULT_TEMPLATE_PATH ?>/images/main/main_page/menu/category_image1.jpg')">
                                 <span>Повседневная одежда</span>
                             </a>
                         </li>
                         <li class="categories-list__item">
-                            <a href="javascript:void(0);" data-category="category2" class="categories-list__link" style="background-image: url('<?= DEFAULT_TEMPLATE_PATH ?>/images/main/main_page/menu/category_image2.jpg')">
+                            <a href="javascript:void(0);" data-category="category2" class="categories-list__link"
+                               style="background-image: url('<?= DEFAULT_TEMPLATE_PATH ?>/images/main/main_page/menu/category_image2.jpg')">
                                 <span>Домашняя одежда</span>
                             </a>
                         </li>
@@ -168,38 +185,40 @@
 
                 </div>
                 <div class="hmain-menu__footer">
-                    <a href="tel:88005111340" class="phone-link">  <?$APPLICATION->IncludeComponent(
+                    <a href="tel:88005111340" class="phone-link">  <? $APPLICATION->IncludeComponent(
                             "bitrix:main.include",
                             "",
-                            Array(
+                            array(
                                 "AREA_FILE_SHOW" => "file",
                                 "AREA_FILE_SUFFIX" => "inc",
                                 "EDIT_TEMPLATE" => "",
                                 "PATH" => "/include/telefon.php"
                             )
-                        );?></a>
+                        ); ?></a>
                     <a href="javascript:void(0);" data-micromodal-trigger="modal-cities" class="city-link">Москва</a>
                 </div>
             </nav>
-            <a href="tel:88005111340" class="phone-link" style="display: none;">  <?$APPLICATION->IncludeComponent(
+            <a href="tel:88005111340" class="phone-link" style="display: none;">  <? $APPLICATION->IncludeComponent(
                     "bitrix:main.include",
                     "",
-                    Array(
+                    array(
                         "AREA_FILE_SHOW" => "file",
                         "AREA_FILE_SUFFIX" => "inc",
                         "EDIT_TEMPLATE" => "",
                         "PATH" => "/include/telefon.php"
                     )
-                );?></a>
+                ); ?></a>
             <div class="search-block">
                 <a id="search-open" href="javascript:void(0);" class="search-link"><i class="icon icon-search"></i></a>
-                <div id="search-result" class="search-block__result" style="transform: translateX(100vw); position: absolute;">
+                <div id="search-result" class="search-block__result"
+                     style="transform: translateX(100vw); position: absolute;">
                     <form action="" class="search-block__form">
                         <div class="input-group">
                             <button type="submit"><i class="icon icon-search"></i></button>
                             <input type="text" placeholder="Категория, товар или артикуль">
                         </div>
-                        <a id="search-close" href="javascript:void(0);" class="close-link"><i class="icon icon-close"></i></a>
+                        <a id="search-close" href="javascript:void(0);" class="close-link"><i
+                                    class="icon icon-close"></i></a>
                     </form>
                     <div class="result-catalog">
                         <!-- test item
@@ -267,8 +286,10 @@
                             <ul class="actual-list">
                                 <li class="actual-list__item"><a href="#" class="actual-list__link">Распродажа</a></li>
                                 <li class="actual-list__item"><a href="#" class="actual-list__link">Новинки</a></li>
-                                <li class="actual-list__item"><a href="#" class="actual-list__link">Повседневная одежда</a></li>
-                                <li class="actual-list__item"><a href="#" class="actual-list__link">Домашняя одежда</a></li>
+                                <li class="actual-list__item"><a href="#" class="actual-list__link">Повседневная
+                                        одежда</a></li>
+                                <li class="actual-list__item"><a href="#" class="actual-list__link">Домашняя одежда</a>
+                                </li>
                             </ul>
                         </div>
                         <div class="result-info__yousee">
@@ -277,7 +298,8 @@
                                 <div class="product-item">
                                     <div class="image-block">
                                         <a href="#" class="product-link">
-                                            <img src="<?= DEFAULT_TEMPLATE_PATH ?>/images/main/main_page/search/item_image.jpg" alt="product-image" class="product-image">
+                                            <img src="<?= DEFAULT_TEMPLATE_PATH ?>/images/main/main_page/search/item_image.jpg"
+                                                 alt="product-image" class="product-image">
                                         </a>
                                     </div>
                                     <div class="descr-block">
@@ -285,7 +307,8 @@
                                         <span class="article">АРТ 7002950M</span>
                                         <div class="properties">
                                             <span class="properties__item">XL</span>
-                                            <span class="properties__color"><span style="background-color: #8A8972;"></span>Хаки</span>
+                                            <span class="properties__color"><span
+                                                        style="background-color: #8A8972;"></span>Хаки</span>
                                         </div>
                                     </div>
                                     <div class="price-block">
@@ -295,7 +318,8 @@
                                 <div class="product-item">
                                     <div class="image-block">
                                         <a href="#" class="product-link">
-                                            <img src="<?= DEFAULT_TEMPLATE_PATH ?>/images/main/main_page/search/item_image.jpg" alt="product-image" class="product-image">
+                                            <img src="<?= DEFAULT_TEMPLATE_PATH ?>/images/main/main_page/search/item_image.jpg"
+                                                 alt="product-image" class="product-image">
                                         </a>
                                     </div>
                                     <div class="descr-block">
@@ -303,7 +327,8 @@
                                         <span class="article">АРТ 7002950M</span>
                                         <div class="properties">
                                             <span class="properties__item">XL</span>
-                                            <span class="properties__color"><span style="background-color: #8A8972;"></span>Хаки</span>
+                                            <span class="properties__color"><span
+                                                        style="background-color: #8A8972;"></span>Хаки</span>
                                         </div>
                                     </div>
                                     <div class="price-block">
@@ -313,7 +338,8 @@
                                 <div class="product-item">
                                     <div class="image-block">
                                         <a href="#" class="product-link">
-                                            <img src="<?= DEFAULT_TEMPLATE_PATH ?>/images/main/main_page/search/item_image.jpg" alt="product-image" class="product-image">
+                                            <img src="<?= DEFAULT_TEMPLATE_PATH ?>/images/main/main_page/search/item_image.jpg"
+                                                 alt="product-image" class="product-image">
                                         </a>
                                     </div>
                                     <div class="descr-block">
@@ -321,7 +347,8 @@
                                         <span class="article">АРТ 7002950M</span>
                                         <div class="properties">
                                             <span class="properties__item">XL</span>
-                                            <span class="properties__color"><span style="background-color: #8A8972;"></span>Хаки</span>
+                                            <span class="properties__color"><span
+                                                        style="background-color: #8A8972;"></span>Хаки</span>
                                         </div>
                                     </div>
                                     <div class="price-block">
@@ -367,157 +394,123 @@
             }
 
 
+            //            $IDHighload = 2;
+            //            use Bitrix\Sale;
+            //            Bitrix\Main\Loader::includeModule("sale");
+            //            Bitrix\Main\Loader::includeModule("catalog");
+            //            $basket = Sale\Basket::loadItemsForFUser(Sale\Fuser::getId(), Bitrix\Main\Context::getCurrent()->getSite());
+            //           $countProdBasket=count($basket->getQuantityList());
+            //            CModule::IncludeModule('highloadblock');
+            //            $hldata = Bitrix\Highloadblock\HighloadBlockTable::getById($IDHighload)->fetch();
+            //            $hlentity = Bitrix\Highloadblock\HighloadBlockTable::compileEntity($hldata);
+            //            $hlDataClass = $hldata["NAME"] . "Table";
+            //            $priceBasket = $basket->getPrice();
 
-            $IDHighload = 2;
-            use Bitrix\Sale;
-            Bitrix\Main\Loader::includeModule("sale");
-            Bitrix\Main\Loader::includeModule("catalog");
-            $basket = Sale\Basket::loadItemsForFUser(Sale\Fuser::getId(), Bitrix\Main\Context::getCurrent()->getSite());
-           $countProdBasket=count($basket->getQuantityList());
-            CModule::IncludeModule('highloadblock');
-            $hldata = Bitrix\Highloadblock\HighloadBlockTable::getById($IDHighload)->fetch();
-            $hlentity = Bitrix\Highloadblock\HighloadBlockTable::compileEntity($hldata);
-            $hlDataClass = $hldata["NAME"] . "Table";
-            $priceBasket = $basket->getPrice();
             ?>
+
+
             <ul class="profile-links">
                 <li class="profile-links__item ">
-                    <a id="minicart-link" href="javascript:void(0);" class="profile-links__link"><i class="icon icon-cart_fill"></i></a>
-                    <div id="minicart" class="minicart-content" style="transform: translateX(100vw); position: absolute;">
-                        <a id="minicart-close" href="javascript:void(0);" class="minicart-close-link"><i class="icon icon-close"></i></a>
+                    <a id="minicart-link" href="javascript:void(0);" class="profile-links__link cart-link"><i
+                                class="icon icon-cart_fill"></i>
+
                         <?
-                        $basketItems = $basket->getBasketItems();
 
+                        use Bitrix\Sale;
 
-                        if (empty($countProdBasket)){
+                        Bitrix\Main\Loader::includeModule("sale");
+                        Bitrix\Main\Loader::includeModule("catalog");
+                        $basket = Sale\Basket::loadItemsForFUser(Sale\Fuser::getId(), Bitrix\Main\Context::getCurrent()->getSite());
 
-                            ?>
+                        $countProdBasket = count($basket->getQuantityList());
+                        if (!empty($countProdBasket)) {
 
-                            <div class="minicart-content__empty">
-                                <p>Ваша корзина пуста</p>
-                            </div>
-
-                            <?
-
-                        }
-
-                        else{
-                         ?>
-
-
-
-                            <div class="minicart-content__list">
-                                <div class="minicart-title">Корзина <span id="products-count"><?
-                                        echo num_word($countProdBasket,["Товар","Товара","Товаров"]);
-                                        ?></span></div>
-                                <div class="product-list">
-
-                                    <?
-
-                                    foreach ($basketItems as $basketItem){
-                                       $idItemBasket= $basketItem->getId();
-                                        $arSelect = array("ID", "IBLOCK_ID", "CODE", "NAME", "DETAIL_PICTURE", "PROPERTY_*");
-                                        $arFilter = array("IBLOCK_ID" => 3, "ACTIVE_DATE" => "Y", "ACTIVE" => "Y", "ID" => $basketItem->getProductId());
-                                        $resOffer = CIblockElement::GetList(array("DATE_CREATE" => "DESC"), $arFilter, false, [], $arSelect);
-                                        $Photo = "";
-                                        $sizesArr = [];
-                                        $article="";
-                                        $url="";
-
-
-                                        if  ($obOffer = $resOffer->GetNextElement()) {
-                                            $arFieldsOffer = $obOffer->GetFields();
-                                            $arProps = $obOffer->GetProperties();
-                                            $arSelect = array("ID", "IBLOCK_ID", "CODE", "NAME", "DETAIL_PAGE_URL", "PROPERTY_*");
-                                            $arFilter = array("IBLOCK_ID" => 2, "ACTIVE_DATE" => "Y", "ACTIVE" => "Y", "ID" => $arProps["CML2_LINK"]["VALUE"]);
-                                            $resProd = CIblockElement::GetList(array("DATE_CREATE" => "DESC"), $arFilter, false, [], $arSelect);
-                                            if ($obProd = $resProd->GetNextElement()) {
-                                                $arFieldsProd = $obProd->GetFields();
-                                                $arPropsProd = $obProd->GetProperties();
-                                                $url = $arFieldsProd["DETAIL_PAGE_URL"];
-                                                $article =  $arPropsProd['ARTNUMBER']['VALUE'];
-                                                $nameProd=$arFieldsProd['NAME'];
-                                                $idProd=$arFieldsProd['ID'];
-                                            }
-
-                                            if (empty($Photo)) {
-                                                $renderImage = CFile::ResizeImageGet($arFieldsOffer["DETAIL_PICTURE"], array("width" => 100, "height" => 140), BX_RESIZE_IMAGE_PROPORTIONAL);
-                                                $Photo = $renderImage["src"];
-                                            }
-                                            $BasketItemSize=$arProps['SIZES_CLOTHES']['VALUE'];
-                                            $allProductPrices = \Bitrix\Catalog\PriceTable::getList([
-                                                "select" => ["*"],
-                                                "filter" => [
-                                                    "=PRODUCT_ID" => $arFieldsOffer["ID"],
-                                                ],
-                                                "order" => ["CATALOG_GROUP_ID" => "ASC"]
-                                            ])->fetchAll();
-                                            $salePrice = "";
-                                            $retailPrice = "";
-                                            foreach ($allProductPrices as $itemPrice) {
-                                                if ($itemPrice['CATALOG_GROUP_ID'] == 1)
-                                                    $salePrice = round($itemPrice['PRICE']);
-                                                if ($itemPrice['CATALOG_GROUP_ID'] == 2)
-                                                    $retailPrice = round($itemPrice['PRICE']);
-                                            }
-                                                $resultColor = $hlDataClass::getList(array(
-                                                    "select" => array("ID", "UF_NAME", "UF_XML_ID", "UF_COLORCOD"), // Поля для выборки
-                                                    "order" => array(),
-                                                    "filter" => array("UF_XML_ID" => $arProps["COLOR_REF"]['VALUE']),
-                                                ));
-                                                if ($resp = $resultColor->fetch()) {
-                                                    $mainColor = $resp['UF_COLORCOD'];
-                                                    $mainColorName = $resp['UF_NAME'];
-                                                }
-                                            if (empty($mainColor)){
-                                                $mainColor="#8A8972";
-                                            }
-                                            ?>
-
-
-                                            <div class="minicart-content__item">
-                                                <div class="image-block">
-                                                    <a href="<?=$url?>" class="product-link">
-                                                        <img src="<?= $Photo ?>" alt="product-image" class="product-image">
-                                                    </a>
-                                                </div>
-                                                <div class="descr-block">
-                                                    <a href="<?=$url?>" class="product-name"><?=$nameProd?></a>
-                                                    <span class="article"><?=$article?></span>
-                                                    <div class="properties">
-                                                        <span class="properties__item"><?=$BasketItemSize?></span>
-                                                        <span class="properties__color"><span style="background-color: <?=$mainColor?>;"></span><?=$mainColorName?></span>
-                                                    </div>
-                                                    <div class="count-block">
-                                                        <div class="input-group count-group">
-                                                            <a href="javascript:void(0);" class="count-btn minus-btn"><i class="icon icon-count_arrow"></i></a>
-                                                            <input type="text" class="count-input" readonly value="<?=$basketItem->getQuantity()?>">
-                                                            <a href="javascript:void(0);" class="count-btn plus-btn"><i class="icon icon-count_arrow"></i></a>
-                                                        </div>
-                                                        <a style="cursor: pointer" class="product-btn favorite-link <? if (isset($favoritesAr[$idProd])){echo "active";}  ?>"><i class="icon icon-heart_fill"></i></a>
-                                                    </div>
-                                                </div>
-                                                <div class="price-block">
-                                                    <span class="oldprice"></span>
-                                                    <span class="price"><?=$basketItem->getPrice(); ?> ₽</span>
-                                                </div>
-                                                <div class="delete-block">
-                                                    <a style="cursor: pointer" data-idprod="<?=$idItemBasket?>" class="delete-product"><i class="icon icon-trash"></i></a>
-                                                </div>
-                                            </div>
-                                            <?
-                                        }
-                                    }
-                                    ?>
-                                </div>
-                                <div class="minicart-content__result">
-                                    <div class="price-group">Итого: <span id="result-total"><?=$priceBasket?> ₽</span></div>
-                                    <a href="/personal/order/make/" class="order-link btn-fill-style">Оформить заказ</a>
-                                </div>
-                            </div>
-                            <?
+                            ?> <span id="cart-value" class="cart-value"><?= $countProdBasket ?></span><?
                         }
                         ?>
+
+                    </a>
+                    <div id="minicart" class="minicart-content"
+                         style="transform: translateX(100vw); position: absolute;">
+                        <a id="minicart-close" href="javascript:void(0);" class="minicart-close-link"><i
+                                    class="icon icon-close"></i></a>
+                        <div id="sc-cart">
+                        <?
+
+                        $APPLICATION->IncludeComponent(
+                            "bitrix:sale.basket.basket",
+                            ".default",
+                            array(
+                                "ACTION_VARIABLE" => "basketAction",
+                                "ADDITIONAL_PICT_PROP_2" => "-",
+                                "ADDITIONAL_PICT_PROP_3" => "-",
+                                "AUTO_CALCULATION" => "Y",
+                                "BASKET_IMAGES_SCALING" => "adaptive",
+                                "COLUMNS_LIST_EXT" => array(
+                                    0 => "PREVIEW_PICTURE",
+                                    1 => "DISCOUNT",
+                                    2 => "DELETE",
+                                    3 => "DELAY",
+                                    4 => "TYPE",
+                                    5 => "SUM",
+                                ),
+                                "COLUMNS_LIST_MOBILE" => array(
+                                    0 => "PREVIEW_PICTURE",
+                                    1 => "DISCOUNT",
+                                    2 => "DELETE",
+                                    3 => "DELAY",
+                                    4 => "TYPE",
+                                    5 => "SUM",
+                                ),
+                                "COMPATIBLE_MODE" => "Y",
+                                "CORRECT_RATIO" => "Y",
+                                "DEFERRED_REFRESH" => "N",
+                                "DISCOUNT_PERCENT_POSITION" => "bottom-center",
+                                "DISPLAY_MODE" => "extended",
+                                "EMPTY_BASKET_HINT_PATH" => "/",
+                                "GIFTS_BLOCK_TITLE" => "Выберите один из подарков",
+                                "GIFTS_CONVERT_CURRENCY" => "N",
+                                "GIFTS_HIDE_BLOCK_TITLE" => "N",
+                                "GIFTS_HIDE_NOT_AVAILABLE" => "N",
+                                "GIFTS_MESS_BTN_BUY" => "Выбрать",
+                                "GIFTS_MESS_BTN_DETAIL" => "Подробнее",
+                                "GIFTS_PAGE_ELEMENT_COUNT" => "4",
+                                "GIFTS_PLACE" => "BOTTOM",
+                                "GIFTS_PRODUCT_PROPS_VARIABLE" => "prop",
+                                "GIFTS_PRODUCT_QUANTITY_VARIABLE" => "quantity",
+                                "GIFTS_SHOW_DISCOUNT_PERCENT" => "Y",
+                                "GIFTS_SHOW_OLD_PRICE" => "N",
+                                "GIFTS_TEXT_LABEL_GIFT" => "Подарок",
+                                "HIDE_COUPON" => "Y",
+                                "LABEL_PROP" => array(),
+                                "PATH_TO_ORDER" => "/personal/order/make/",
+                                "PRICE_DISPLAY_MODE" => "Y",
+                                "PRICE_VAT_SHOW_VALUE" => "N",
+                                "PRODUCT_BLOCKS_ORDER" => "props,sku,columns",
+                                "QUANTITY_FLOAT" => "Y",
+                                "SET_TITLE" => "Y",
+                                "SHOW_DISCOUNT_PERCENT" => "Y",
+                                "SHOW_FILTER" => "N",
+                                "SHOW_RESTORE" => "Y",
+                                "TEMPLATE_THEME" => "blue",
+                                "TOTAL_BLOCK_DISPLAY" => array(
+                                    0 => "bottom",
+                                ),
+                                "USE_DYNAMIC_SCROLL" => "Y",
+                                "USE_ENHANCED_ECOMMERCE" => "N",
+                                "USE_GIFTS" => "N",
+                                "USE_PREPAYMENT" => "N",
+                                "USE_PRICE_ANIMATION" => "Y",
+                                "AJAX_MODE" => "Y",
+                                "COMPONENT_TEMPLATE" => ".default",
+                                "AJAX_OPTION_JUMP" => "N",
+                                "AJAX_OPTION_STYLE" => "Y",
+                                "AJAX_OPTION_HISTORY" => "N",
+                                "AJAX_OPTION_ADDITIONAL" => ""
+                            ),
+                            false
+                        ); ?></div>
+
                         <!-- if cart is not empty -->
 
                         <!-- if added to cart
@@ -708,7 +701,6 @@
                     <a href="<?
 
 
-
                     if (!$USER->IsAuthorized()) // Для неавторизованного
                     {
 
@@ -723,9 +715,12 @@
                     ?>" class="profile-links__link"><i class="icon icon-heart"></i></a>
                 </li>
                 <li class="profile-links__item">
-                    <a id="profile-link" href="javascript:void(0);" class="profile-links__link"><i class="icon icon-user"></i></a>
-                    <ul id="profile-menu" class="profile-menu" style="transform: translateX(100vw); position: absolute;">
-                        <li class="profile-menu__item"><a href="#" class="profile-menu__link active">Личные данные</a></li>
+                    <a id="profile-link" href="javascript:void(0);" class="profile-links__link"><i
+                                class="icon icon-user"></i></a>
+                    <ul id="profile-menu" class="profile-menu"
+                        style="transform: translateX(100vw); position: absolute;">
+                        <li class="profile-menu__item"><a href="#" class="profile-menu__link active">Личные данные</a>
+                        </li>
                         <li class="profile-menu__item"><a href="#" class="profile-menu__link">Заказы</a></li>
                         <li class="profile-menu__item"><a href="#" class="profile-menu__link">Избранное</a></li>
                         <li class="profile-menu__item"><a href="#" class="profile-menu__link exit-link">Выйти</a></li>
@@ -736,13 +731,33 @@
     </div>
 </header>
 
-<main class="catalog-page">
-    <div class="breadcrumbs">
-        <div class="container">
-            <ul class="breadcrumbs__list">
-                <li class="breadcrumbs__item"><a href="#" class="breadcrumbs__link">Главная</a></li>
-                <li class="breadcrumbs__item"><span class="breadcrumbs__current">FAQ</span></li>
-            </ul>
-        </div>
-    </div>
+<script>
+
+    $('#minicart-link').on('click', function (e) {
+        $('.updateblock').click();
+    })
+
+</script>
+
+<script type="text/javascript">
+    BX.ready(function () {
+        BX.addCustomEvent('onAjaxSuccess', function (e, dd) {
+            if (dd.url == "/bitrix/components/bitrix/sale.basket.basket/ajax.php") {
+//определяем текучий адрес страницы
+                var url = window.location.href.split('?')[0];
+                BX.ajax({
+                    url: url,
+                    method: 'POST',
+                    data: {'SCODER_AJAX': 'Y'},
+                    onsuccess: function (data) {
+                        $("#sc-cart").html(data);
+                    },
+                });
+            }
+        });
+    });
+
+</script>
+
+<div id="vue-separated-app-group"></div>
 

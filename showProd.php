@@ -98,8 +98,8 @@ if ($obProd = $resProd->GetNextElement()) {
             }
         }
     }
-    echo "<pre>";
-    print_r($favoritesAr);
+  //  echo "<pre>";
+   // print_r($favoritesAr);
     if (isset($favoritesAr[$productId])){
 
         $favorite=true;
