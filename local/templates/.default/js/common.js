@@ -34722,12 +34722,17 @@
                     type: "GET",
                     dataType: "html",
                     data: param,
-                    success: function (response) { },
+                    success: function (response) {
+                    },
                     error: function (jqXHR, textStatus, errorThrown) { // Ошибка
                         console.log('Error: ' + errorThrown);
                     }
                 });
             }
+
+
+
+
 
 //TO DO
             // Доделать вывод цен нормально.
@@ -34741,14 +34746,11 @@
                     let priceSale = idProdBlock.find('.swiper-slide-active').data("sale")
 
 
-
-
                     if (priceRetail.trim() == '') {
 
-                        priceRetail='';
+                        priceRetail = '';
 
-                    }
-                    else{
+                    } else {
 
                         priceRetail = priceRetail + ' ₽'
 
@@ -34787,25 +34789,7 @@
                 })
             });
 
-
-
-            $('.delete-product').on('click', function (e) {
-                let idProdBlock = $(this).data("idprod");
-                $(this).parent().parent().hide();
-                $.ajax({
-                    url: '/dellbasket.php',
-                    type: 'POST',
-                    data: {prod: idProdBlock},
-                    success: (res) => {
-                        console.log(res);
-                    }
-                })
-            });
-
-
-
             $(".addBasket").click(function () {
-
                 let addProdBasket = $(this).data("idprod");
                 prodStop.push(addProdBasket);
                 //  console.log(prodStop);
@@ -34824,54 +34808,6 @@
 
 
 
-
-
-
-            $(".plus-btn").click(function () {
-
-
-                let addProdBasket = $(this).data("basketid");
-                let newPricePlus = $(this).data("price");
-                newPricePlus= Number(newPricePlus)
-                let oldprice=  $("#result-total").text().replace(/[^0-9]/g,"");
-                oldprice =  Number(oldprice)
-                let newPrice= oldprice+newPricePlus;
-
-                $("#result-total").text(newPrice + " ₽");
-
-
-                $.ajax({
-                    url: '/addbasket.php',
-                    type: 'POST',
-                    data: {prod: addProdBasket},
-                    success: (res) => {
-                        console.log(res);
-                    }
-                })
-
-            });
-
-
-            $(".minus-btn").click(function () {
-
-                let addProdBasket = $(this).data("basketid");
-                let newPriceMinus = $(this).data("price");
-                newPriceMinus=Number(newPriceMinus)
-              let oldprice=  $("#result-total").text().replace(/[^0-9]/g,"");
-                oldprice =  Number(oldprice)
-              let newPrice= oldprice-newPriceMinus;
-
-              $("#result-total").text(newPrice + " ₽");
-                $.ajax({
-                    url: '/dellbasketItem.php',
-                    type: 'POST',
-                    data: {prod: addProdBasket},
-                    success: (res) => {
-                        console.log(res);
-                    }
-                })
-
-            });
 
 
 

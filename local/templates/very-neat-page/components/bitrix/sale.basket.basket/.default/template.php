@@ -279,6 +279,134 @@ if (empty($arResult['ERROR_MESSAGE']))
             <a href="/personal/order/make/" class="order-link btn-fill-style">Оформить заказ</a>
         </div>
     </div>
+
+
+<script>
+
+    $(document).ready(function () {
+
+
+
+        $('.favorite-link').on('click', function (e) {
+            let doAction
+            var favorID = $(this).attr('data-item');
+            if ($(this).hasClass('active')) {
+                doAction = 'delete';
+                $(this).removeClass('active');
+            } else {
+                doAction = 'add';
+                $(this).addClass('active');
+            }
+
+
+            addFavorite(favorID, doAction);
+
+        });
+
+        function addFavorite(id, action) {
+            var param = 'id=' + id + "&action=" + action;
+            $.ajax({
+                url: '/favorites.php', // URL отправки запроса
+                type: "GET",
+                dataType: "html",
+                data: param,
+                success: function (response) {
+                },
+                error: function (jqXHR, textStatus, errorThrown) { // Ошибка
+                    console.log('Error: ' + errorThrown);
+                }
+            });
+        }
+
+
+        function format(str) {
+            const s = str.length;
+            const chars = str.split('');
+            const strWithSpaces = chars.reduceRight((acc, char, i) => {
+                const spaceOrNothing = ((((s - i) % 3) === 0) ? ' ' : '');
+                return (spaceOrNothing + char + acc);
+            }, '');
+
+            return ((strWithSpaces[0] === ' ') ? strWithSpaces.slice(1) : strWithSpaces);
+        }
+
+
+        $('.delete-product').on('click', function (e) {
+            let idProdBlock = $(this).data("idprod");
+            $(this).parent().parent().hide();
+            $.ajax({
+                url: '/dellbasket.php',
+                type: 'POST',
+                data: {prod: idProdBlock},
+                success: (res) => {
+                    console.log(res);
+                }
+            })
+        });
+
+        $(".plus-btn").click(function () {
+            let count = $(this).parent().find(".count-input").val();
+            let countINT=Number(count);
+            $(this).parent().find(".count-input").val(countINT+1);
+            let addProdBasket = $(this).data("basketid");
+            let newPricePlus = $(this).data("price");
+            newPricePlus = Number(newPricePlus)
+            let oldprice = $("#result-total").text().replace(/[^0-9]/g, "");
+            oldprice = Number(oldprice)
+            let newPrice = oldprice + newPricePlus;
+
+            let newPriceString = String(newPrice);
+            newPriceString=  format(newPriceString)
+
+            $("#result-total").text(newPriceString + " ₽");
+            $.ajax({
+                url: '/addbasket.php',
+                type: 'POST',
+                data: {prod: addProdBasket},
+                success: (res) => {
+                    console.log(res);
+                }
+            })
+        });
+
+
+        $(".minus-btn").click(function () {
+            let count = $(this).parent().find(".count-input").val();
+            let countINT=Number(count);
+            $(this).parent().find(".count-input").val(countINT-1);
+            if (count == 1) {
+                return false;
+            }
+            let addProdBasket = $(this).data("basketid");
+            let newPriceMinus = $(this).data("price");
+            newPriceMinus = Number(newPriceMinus)
+            let oldprice = $("#result-total").text().replace(/[^0-9]/g, "");
+            oldprice = Number(oldprice)
+            let newPrice = oldprice - newPriceMinus;
+
+            let newPriceString = String(newPrice);
+            newPriceString=  format(newPriceString)
+
+
+            $("#result-total").text(newPriceString + " ₽");
+            $.ajax({
+                url: '/dellbasketItem.php',
+                type: 'POST',
+                data: {prod: addProdBasket},
+                success: (res) => {
+                    console.log(res);
+                }
+            })
+        });
+
+
+
+
+    })
+
+
+</script>
+
     <?php
 
 //elseif ($arResult['EMPTY_BASKET'])

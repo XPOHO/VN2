@@ -99,3 +99,4 @@ use Bitrix\Main\Localization\Loc;
 		?>
 	</div>
 </script>
+

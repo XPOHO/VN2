@@ -28,3 +28,4 @@ if ($item = $basket->getExistsItem('catalog', $productId)) {
     ));
 }
 $basket->save();
+echo '{ "resault": "success" }';

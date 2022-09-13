@@ -172,7 +172,7 @@ if (!$USER->IsAuthorized()) // Для неавторизованного
                             </div>
                             <div class="btn-block">
                                 <a style="cursor: pointer" data-item="<?=$idProd?>"  class="remove-link favorite-link"><i class="icon-close"></i></a>
-                                <a style="cursor: pointer" class="addcart-link btn-fill-style"><i
+                                <a style="cursor: pointer" data-item="<?=$idProd?>" class="addcart-link btn-fill-style"><i
                                             class="icon icon-cart"></i><span>Добавить в корзину</span></a>
                             </div>
                         </div>
@@ -185,6 +185,7 @@ if (!$USER->IsAuthorized()) // Для неавторизованного
         </div>
     </div>
 </main>
+
 <script>
     $('.remove-link').on('click', function (e) {
         let doAction
@@ -195,7 +196,7 @@ if (!$USER->IsAuthorized()) // Для неавторизованного
             doAction = 'add';
         }
         $(this).parent().parent().remove()
-       // addFavorite(favorID, doAction);
+        // addFavorite(favorID, doAction);
     });
     function addFavorite(id, action) {
         var param = 'id=' + id + "&action=" + action;
@@ -212,20 +213,28 @@ if (!$USER->IsAuthorized()) // Для неавторизованного
     }
     $('.addcart-link').on('click', function (e) {
         let idProdBlock = $(this).parent().parent().find('.choices__input').val();
-let button=$(this);
-        let addProdBasket = $(this).data("idprod");
+
+        let addProdBasket = $(this).data("item");
+        console.log(addProdBasket);
         $.ajax({
             url: '/addbasket.php',
             type: 'POST',
             data: {prod: idProdBlock, quantity: 1},
-            success: (res) => {
-             //   button.text("Добавлено")
-                console.log(res);
+            success: (resul) => {
+                console.log(resul);
+                let test=$('.updateblock').text();
+                console.log(test);
                 $('.updateblock').click();
             }
         })
     });
+    $('#minicart-link').on('click', function (e) {
+
+        $('.updateblock').click();
+
+    })
 </script>
+
 <!--<section class="recently-products favorite-last">-->
 <!--    <div class="container">-->
 <!--        <h2 class="recently-products__title section-title">Недавно просмотренные</h2>-->
