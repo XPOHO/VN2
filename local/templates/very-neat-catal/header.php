@@ -730,9 +730,7 @@
         </div>
     </div>
 </header>
-
 <script>
-
     $('#minicart-link').on('click', function (e) {
         console.log("test3");
 //определяем текучий адрес страницы
@@ -746,6 +744,5 @@
         });
     })
 </script>
-
 <div id="vue-separated-app-group"></div>
 
