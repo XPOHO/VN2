@@ -10,8 +10,7 @@ use Bitrix\Sale;
 \Bitrix\Main\Loader::includeModule("catalog");
 //header('Content-Type: application/json');
 $request = \Bitrix\Main\Application::getInstance()->getContext()->getRequest();
-$productId = $request->getPost("prod");
-$productId = 1196;
+$productId = $request->get("prod");
 $IDHighload = 2;
 
 
@@ -49,6 +48,7 @@ $arFilter = array("IBLOCK_ID" => 2, "ACTIVE_DATE" => "Y", "ACTIVE" => "Y", "ID" 
 $resProd = CIblockElement::GetList(array("DATE_CREATE" => "DESC"), $arFilter, false, [], $arSelect);
 if ($obProd = $resProd->GetNextElement()) {
     $arFieldsProd = $obProd->GetFields();
+    $title=$arFieldsProd['NAME'];
     $arPropsProd = $obProd->GetProperties();
     $idProd = $arFieldsProd["ID"];
     $code = $arFieldsProd["CODE"];
@@ -60,7 +60,10 @@ if ($obProd = $resProd->GetNextElement()) {
     $sizesArr = [];
     while ($obOffer = $resOffer->GetNextElement()) {
         $arFieldsOffer = $obOffer->GetFields();
-        /// print_r($arFieldsOffer);
+      //  echo "<pre>";
+        // print_r($arFieldsOffer);
+       $test= CFile::GetPath($arFieldsOffer["DETAIL_PICTURE"]);
+      // var_dump($test);
         if (empty($Photo)) {
             $renderImage = CFile::ResizeImageGet($arFieldsOffer["DETAIL_PICTURE"], array("width" => 400, "height" => 700), BX_RESIZE_IMAGE_PROPORTIONAL);
             $Photo = $renderImage["src"];
@@ -110,6 +113,7 @@ if ($obProd = $resProd->GetNextElement()) {
  }
     $arCart[] = [
         "id" => $idProd,
+        "title" => $title,
         "art" => $arPropsProd['ARTNUMBER']['VALUE'],
         "year" => $arPropsProd['YEAR']['VALUE'],
         "polotno" => $arPropsProd['POLOTNO']['VALUE'],

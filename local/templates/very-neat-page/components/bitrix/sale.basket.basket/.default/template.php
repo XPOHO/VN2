@@ -257,7 +257,7 @@ if (empty($arResult['ERROR_MESSAGE']))
                                         <input type="text" class="count-input" readonly value="<?=$basketItem['QUANTITY']?>">
                                         <a href="javascript:void(0);" data-price="<?=$basketItem['PRICE']?>" data-basketid="<?=$basketItem['PRODUCT_ID']?>" class="count-btn plus-btn"><i class="icon icon-count_arrow"></i></a>
                                     </div>
-                                    <a style="cursor: pointer"  data-item="<?=$idProd?>" class="favorite-link <? if (isset($favoritesAr[$idProd])){echo "active";}  ?>"><i class="icon icon-heart_fill"></i></a>
+                                    <a style="cursor: pointer"  data-item="<?=$idProd?>" class="favorite-link-basket favorite-link<? if (isset($favoritesAr[$idProd])){echo "active";}  ?>"><i class="icon icon-heart_fill"></i></a>
                                 </div>
                             </div>
                             <div class="price-block">
@@ -286,9 +286,9 @@ if (empty($arResult['ERROR_MESSAGE']))
 
     $(document).ready(function () {
 
+        const stop = true;
 
-
-        $('.favorite-link').on('click', function (e) {
+        $('.favorite-link-basket').on('click', function (e) {
             let doAction
             var favorID = $(this).attr('data-item');
             if ($(this).hasClass('active')) {

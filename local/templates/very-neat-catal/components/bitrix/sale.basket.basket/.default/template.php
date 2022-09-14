@@ -163,6 +163,33 @@ $displayModeClass = $arParams['DISPLAY_MODE'] === 'compact' ? ' basket-items-lis
 if (empty($arResult['ERROR_MESSAGE']))
 {
     $countProdBasket=count($arResult['GRID']['ROWS']);
+
+
+    if (!$USER->IsAuthorized()) // Для неавторизованного
+    {
+
+        $request = \Bitrix\Main\Application::getInstance()->getContext()->getRequest();
+        $favCookie = $request->getCookie('favorites');
+
+        $arFavorites = unserialize($favCookie);
+        $favoritesAr = [];
+        foreach ($arFavorites as $itemFav) {
+            $favoritesAr[$itemFav] = true;
+        }
+    } else {
+
+        $idUser = $USER->GetID();
+        $rsUser = CUser::GetByID($idUser);
+        $arUser = $rsUser->Fetch();
+        $arFavorites = $arUser['UF_FAVORITES'];  // Достаём избранное пользователя
+
+        $favoritesAr = [];
+        foreach ($arFavorites as $itemFav) {
+            $favoritesAr[$itemFav] = true;
+        }
+
+    }
+
     ?>
 
 
@@ -287,7 +314,7 @@ if (empty($arResult['ERROR_MESSAGE']))
 
 
 
-        $('.favorite-link').on('click', function (e) {
+        $('.favorite-link-basket').on('click', function (e) {
             let doAction
             var favorID = $(this).attr('data-item');
             if ($(this).hasClass('active')) {

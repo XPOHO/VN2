@@ -25,28 +25,27 @@ use \Bitrix\Main\Localization\Loc;
  */
 
 
-if(!$USER->IsAuthorized()) // Для неавторизованного
-	    {
+if (!$USER->IsAuthorized()) // Для неавторизованного
+{
 
-            $request = \Bitrix\Main\Application::getInstance()->getContext()->getRequest();
-            $favCookie=    $request->getCookie('favorites');
+    $request = \Bitrix\Main\Application::getInstance()->getContext()->getRequest();
+    $favCookie = $request->getCookie('favorites');
 
-            $arFavorites=  unserialize($favCookie);
-            $favoritesAr=[];
-            foreach ($arFavorites as $itemFav){
-                $favoritesAr[$itemFav]=true;
-            }
-        }
-else{
+    $arFavorites = unserialize($favCookie);
+    $favoritesAr = [];
+    foreach ($arFavorites as $itemFav) {
+        $favoritesAr[$itemFav] = true;
+    }
+} else {
 
     $idUser = $USER->GetID();
     $rsUser = CUser::GetByID($idUser);
     $arUser = $rsUser->Fetch();
     $arFavorites = $arUser['UF_FAVORITES'];  // Достаём избранное пользователя
 
-    $favoritesAr=[];
-    foreach ($arFavorites as $itemFav){
-        $favoritesAr[$itemFav]=true;
+    $favoritesAr = [];
+    foreach ($arFavorites as $itemFav) {
+        $favoritesAr[$itemFav] = true;
     }
 
 }
@@ -103,31 +102,31 @@ $arCart[] = [
     "id" => $item["ID"],
     "code" => $item["CODE"],
     "img" => "$Photo",
-    "sale"=>$salePrice,
-    "retail"=>$retailPrice,
+    "sale" => $salePrice,
+    "retail" => $retailPrice,
     "color" => "$mainColor",
     "href" => $item['DETAIL_PAGE_URL'],
 ];
 //print_r($arCart);
 //print_r($morePhoto);
 $articl = $item["PROPERTIES"]["ARTNUMBER"];
-$maxCart=5;
-$totalCart=0;
-$plusColor=0;
+$maxCart = 5;
+$totalCart = 0;
+$plusColor = 0;
 $arSelect = array("ID", "IBLOCK_ID", "CODE", "NAME", "DETAIL_PAGE_URL", "PROPERTY_*");
 $arFilter = array("IBLOCK_ID" => 2, "ACTIVE_DATE" => "Y", "ACTIVE" => "Y", "PROPERTY_ARTNUMBER" => $articl);
 $resProd = CIblockElement::GetList(array("DATE_CREATE" => "DESC"), $arFilter, false, [], $arSelect);
 while ($obProd = $resProd->GetNextElement()) {
     $totalCart++;
-if ($totalCart>$maxCart){
-    $plusColor++;
-    continue;
-}
+    if ($totalCart > $maxCart) {
+        $plusColor++;
+        continue;
+    }
     $arFieldsProd = $obProd->GetFields();
     if ($arFieldsProd["ID"] == $idSkeep) {
         continue;
     }
-    $idProd=$arFieldsProd["ID"];
+    $idProd = $arFieldsProd["ID"];
     $code = $arFieldsProd["CODE"];
     $url = $arFieldsProd["DETAIL_PAGE_URL"];
     $arSelect = array("ID", "IBLOCK_ID", "CODE", "NAME", "DETAIL_PICTURE", "PROPERTY_*");
@@ -164,7 +163,6 @@ if ($totalCart>$maxCart){
         }
 
 
-
         if ($resp = $resultColor->fetch()) {
             $mainColor = $resp['UF_COLORCOD'];
 
@@ -172,8 +170,8 @@ if ($totalCart>$maxCart){
                 "id" => $idProd,
                 "code" => $code,
                 "img" => "$Photo",
-                "sale"=>$salePrice,
-                "retail"=>$retailPrice,
+                "sale" => $salePrice,
+                "retail" => $retailPrice,
                 "color" => "$mainColor",
                 "href" => $url,
             ];
@@ -205,12 +203,14 @@ if ($totalCart>$maxCart){
             <?
             foreach ($arCart as $itemCart) {
                 ?>
-                <a data-idProd="<?=$itemCart['id']?>" data-sale="<?=$itemCart['sale']?>" data-retail="<?=$itemCart['retail']?>" href="<?= $itemCart['href'] ?>" class="product-link swiper-slide chengeColor"
+                <a data-idProd="<?= $itemCart['id'] ?>" data-sale="<?= $itemCart['sale'] ?>"
+                   data-retail="<?= $itemCart['retail'] ?>" href="<?= $itemCart['href'] ?>"
+                   class="product-link swiper-slide chengeColor"
                    data-color="<?
-                   if (empty( $itemCart['color'])){
+                   if (empty($itemCart['color'])) {
                        echo "#bdbdbd";
-                   }else{
-                       echo  $itemCart['color'];
+                   } else {
+                       echo $itemCart['color'];
                    }
                    ?>">
                     <img src="<?= $itemCart['img'] ?>" alt="<?= $itemCart['code'] ?>" class="product-image">
@@ -226,12 +226,15 @@ if ($totalCart>$maxCart){
     </div>
 
     <div class="product-btns">
-        <a style="cursor: pointer" data-item="<?=$item['ID']?>" class="product-btn favorite-link <?
+        <a style="cursor: pointer" data-item="<?= $item['ID'] ?>" class="product-btn favorite-link <?
 
-        if (isset($favoritesAr[$item['ID']])){echo "active";}
+        if (isset($favoritesAr[$item['ID']])) {
+            echo "active";
+        }
 
         ?>"><i class="icon icon-heart"></i></a>
-        <a style="cursor: pointer" data-idProd="<?=$item["ID"]?>" data-micromodal-trigger="modal-product" class="product-btn addcart-link addBasket"><i class="icon icon-cart"></i><span>Подробнее</span></a>
+        <a onclick="window._$productModal.showProductById('<?= $item["ID"] ?>');" style="cursor: pointer" data-idProd="<?= $item["ID"] ?>"
+           class="product-btn addcart-link"><i class="icon icon-cart"></i><span>Подробнее</span></a>
     </div>
 </div>
 <div class="descr-block">
@@ -239,7 +242,7 @@ if ($totalCart>$maxCart){
     <span class="product-price">
                         <span class="oldprice"><?
 
-                            if (!empty($retailPrice)){
+                            if (!empty($retailPrice)) {
 
                                 echo "$retailPrice ₽";
 
@@ -250,7 +253,7 @@ if ($totalCart>$maxCart){
 
                             <?
 
-                            if (!empty($salePrice)){
+                            if (!empty($salePrice)) {
 
                                 echo "$salePrice ₽";
 
@@ -263,10 +266,10 @@ if ($totalCart>$maxCart){
         <div class="colors-pagination"></div>
 
         <?
-        if (!empty($plusColor)){
+        if (!empty($plusColor)) {
             ?>
             <span class="product-colors__all">+ <?
-                echo num_word($plusColor,["Цвет","Цвета","Цветов"]);
+                echo num_word($plusColor, ["Цвет", "Цвета", "Цветов"]);
                 ?></span>
             <?
         }

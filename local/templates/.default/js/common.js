@@ -34766,6 +34766,7 @@
 
                     let test = idProdBlock.find('.addcart-link');
                     $(test).data("idprod", idProd);
+                    $(test).attr('onclick', "window._$productModal.showProductById('"+idProd+"');" )
                     $(test).attr('data-idprod', idProd);
 
 
@@ -34777,16 +34778,6 @@
                     $(blockSale).text(priceSale);
                 }, 1100);
 
-
-                $(".addBasket").click(function () {
-                    let addProdBasket = $(this).data("idprod");
-                    let stp = prodStop.indexOf(addProdBasket);
-                    if (stp > 0) {
-                        return false;
-                    }
-                    prodStop.push(addProdBasket);
-                    //console.log(prodStop);
-                })
             });
 
             $(".clean-favlist").click(function () {
