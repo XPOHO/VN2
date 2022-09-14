@@ -734,29 +734,17 @@
 <script>
 
     $('#minicart-link').on('click', function (e) {
-        $('.updateblock').click();
-    })
-
-</script>
-
-<script type="text/javascript">
-    BX.ready(function () {
-        BX.addCustomEvent('onAjaxSuccess', function (e, dd) {
-            if (dd.url == "/bitrix/components/bitrix/sale.basket.basket/ajax.php") {
+        console.log("test3");
 //определяем текучий адрес страницы
-                var url = window.location.href.split('?')[0];
-                BX.ajax({
-                    url: url,
-                    method: 'POST',
-                    data: {'SCODER_AJAX': 'Y'},
-                    onsuccess: function (data) {
-                        $("#sc-cart").html(data);
-                    },
-                });
-            }
+        BX.ajax({
+            url: '/basket-ajax.php',
+            method: 'POST',
+            data: {'SCODER_AJAX': 'Y'},
+            onsuccess: function (data) {
+                $("#sc-cart").html(data);
+            },
         });
-    });
-
+    })
 </script>
 
 <div id="vue-separated-app-group"></div>
