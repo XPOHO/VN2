@@ -442,6 +442,6 @@
 </div>
 <!-- styles -->
 <!-- js -->
-
+<div id="vue-separated-app-group"></div>
 </body>
 </html>

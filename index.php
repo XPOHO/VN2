@@ -1,144 +1,144 @@
-<?php require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");?>
-       <!-- main content -->
+<?php require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php"); ?>
+    <!-- main content -->
 
-<?$APPLICATION->IncludeComponent(
-	"bitrix:news.list", 
-	"mainSlider", 
-	array(
-		"ACTIVE_DATE_FORMAT" => "d.m.Y",
-		"ADD_SECTIONS_CHAIN" => "Y",
-		"AJAX_MODE" => "N",
-		"AJAX_OPTION_ADDITIONAL" => "",
-		"AJAX_OPTION_HISTORY" => "N",
-		"AJAX_OPTION_JUMP" => "N",
-		"AJAX_OPTION_STYLE" => "Y",
-		"CACHE_FILTER" => "N",
-		"CACHE_GROUPS" => "Y",
-		"CACHE_TIME" => "36000000",
-		"CACHE_TYPE" => "A",
-		"CHECK_DATES" => "Y",
-		"DETAIL_URL" => "",
-		"DISPLAY_BOTTOM_PAGER" => "Y",
-		"DISPLAY_DATE" => "Y",
-		"DISPLAY_NAME" => "Y",
-		"DISPLAY_PICTURE" => "Y",
-		"DISPLAY_PREVIEW_TEXT" => "Y",
-		"DISPLAY_TOP_PAGER" => "N",
-		"FIELD_CODE" => array(
-			0 => "ID",
-			1 => "NAME",
-			2 => "PREVIEW_TEXT",
-			3 => "",
-		),
-		"FILTER_NAME" => "",
-		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
-		"IBLOCK_ID" => "4",
-		"IBLOCK_TYPE" => "BANNERS",
-		"INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
-		"INCLUDE_SUBSECTIONS" => "Y",
-		"MESSAGE_404" => "",
-		"NEWS_COUNT" => "20",
-		"PAGER_BASE_LINK_ENABLE" => "N",
-		"PAGER_DESC_NUMBERING" => "N",
-		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
-		"PAGER_SHOW_ALL" => "N",
-		"PAGER_SHOW_ALWAYS" => "N",
-		"PAGER_TEMPLATE" => "",
-		"PAGER_TITLE" => "Слайдер",
-		"PARENT_SECTION" => "",
-		"PARENT_SECTION_CODE" => "",
-		"PREVIEW_TRUNCATE_LEN" => "",
-		"PROPERTY_CODE" => array(
-			0 => "",
-			1 => "",
-		),
-		"SET_BROWSER_TITLE" => "Y",
-		"SET_LAST_MODIFIED" => "N",
-		"SET_META_DESCRIPTION" => "Y",
-		"SET_META_KEYWORDS" => "Y",
-		"SET_STATUS_404" => "N",
-		"SET_TITLE" => "Y",
-		"SHOW_404" => "N",
-		"SORT_BY1" => "ACTIVE_FROM",
-		"SORT_BY2" => "SORT",
-		"SORT_ORDER1" => "DESC",
-		"SORT_ORDER2" => "ASC",
-		"STRICT_SECTION_CHECK" => "N",
-		"COMPONENT_TEMPLATE" => "mainSlider"
-	),
-	false
-);?>
+<? $APPLICATION->IncludeComponent(
+    "bitrix:news.list",
+    "mainSlider",
+    array(
+        "ACTIVE_DATE_FORMAT" => "d.m.Y",
+        "ADD_SECTIONS_CHAIN" => "Y",
+        "AJAX_MODE" => "N",
+        "AJAX_OPTION_ADDITIONAL" => "",
+        "AJAX_OPTION_HISTORY" => "N",
+        "AJAX_OPTION_JUMP" => "N",
+        "AJAX_OPTION_STYLE" => "Y",
+        "CACHE_FILTER" => "N",
+        "CACHE_GROUPS" => "Y",
+        "CACHE_TIME" => "36000000",
+        "CACHE_TYPE" => "A",
+        "CHECK_DATES" => "Y",
+        "DETAIL_URL" => "",
+        "DISPLAY_BOTTOM_PAGER" => "Y",
+        "DISPLAY_DATE" => "Y",
+        "DISPLAY_NAME" => "Y",
+        "DISPLAY_PICTURE" => "Y",
+        "DISPLAY_PREVIEW_TEXT" => "Y",
+        "DISPLAY_TOP_PAGER" => "N",
+        "FIELD_CODE" => array(
+            0 => "ID",
+            1 => "NAME",
+            2 => "PREVIEW_TEXT",
+            3 => "",
+        ),
+        "FILTER_NAME" => "",
+        "HIDE_LINK_WHEN_NO_DETAIL" => "N",
+        "IBLOCK_ID" => "4",
+        "IBLOCK_TYPE" => "BANNERS",
+        "INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
+        "INCLUDE_SUBSECTIONS" => "Y",
+        "MESSAGE_404" => "",
+        "NEWS_COUNT" => "20",
+        "PAGER_BASE_LINK_ENABLE" => "N",
+        "PAGER_DESC_NUMBERING" => "N",
+        "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+        "PAGER_SHOW_ALL" => "N",
+        "PAGER_SHOW_ALWAYS" => "N",
+        "PAGER_TEMPLATE" => "",
+        "PAGER_TITLE" => "Слайдер",
+        "PARENT_SECTION" => "",
+        "PARENT_SECTION_CODE" => "",
+        "PREVIEW_TRUNCATE_LEN" => "",
+        "PROPERTY_CODE" => array(
+            0 => "",
+            1 => "",
+        ),
+        "SET_BROWSER_TITLE" => "Y",
+        "SET_LAST_MODIFIED" => "N",
+        "SET_META_DESCRIPTION" => "Y",
+        "SET_META_KEYWORDS" => "Y",
+        "SET_STATUS_404" => "N",
+        "SET_TITLE" => "Y",
+        "SHOW_404" => "N",
+        "SORT_BY1" => "ACTIVE_FROM",
+        "SORT_BY2" => "SORT",
+        "SORT_ORDER1" => "DESC",
+        "SORT_ORDER2" => "ASC",
+        "STRICT_SECTION_CHECK" => "N",
+        "COMPONENT_TEMPLATE" => "mainSlider"
+    ),
+    false
+); ?>
 
 
-<?$APPLICATION->IncludeComponent(
-	"bitrix:news.list", 
-	"MainBanners", 
-	array(
-		"ACTIVE_DATE_FORMAT" => "d.m.Y",
-		"ADD_SECTIONS_CHAIN" => "N",
-		"AJAX_MODE" => "N",
-		"AJAX_OPTION_ADDITIONAL" => "",
-		"AJAX_OPTION_HISTORY" => "N",
-		"AJAX_OPTION_JUMP" => "N",
-		"AJAX_OPTION_STYLE" => "Y",
-		"CACHE_FILTER" => "N",
-		"CACHE_GROUPS" => "Y",
-		"CACHE_TIME" => "36000000",
-		"CACHE_TYPE" => "A",
-		"CHECK_DATES" => "Y",
-		"DETAIL_URL" => "",
-		"DISPLAY_BOTTOM_PAGER" => "Y",
-		"DISPLAY_DATE" => "N",
-		"DISPLAY_NAME" => "N",
-		"DISPLAY_PICTURE" => "N",
-		"DISPLAY_PREVIEW_TEXT" => "N",
-		"DISPLAY_TOP_PAGER" => "N",
-		"FIELD_CODE" => array(
-			0 => "",
-			1 => "",
-		),
-		"FILTER_NAME" => "",
-		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
-		"IBLOCK_ID" => "5",
-		"IBLOCK_TYPE" => "BANNERS",
-		"INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
-		"INCLUDE_SUBSECTIONS" => "N",
-		"MESSAGE_404" => "",
-		"NEWS_COUNT" => "20",
-		"PAGER_BASE_LINK_ENABLE" => "N",
-		"PAGER_DESC_NUMBERING" => "N",
-		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
-		"PAGER_SHOW_ALL" => "N",
-		"PAGER_SHOW_ALWAYS" => "N",
-		"PAGER_TEMPLATE" => "",
-		"PAGER_TITLE" => "Баннеры ",
-		"PARENT_SECTION" => "",
-		"PARENT_SECTION_CODE" => "",
-		"PREVIEW_TRUNCATE_LEN" => "",
-		"PROPERTY_CODE" => array(
-			0 => "TEXT_FORMAT",
-			1 => "BIG_TEXT",
-			2 => "SMOLL_TEXT",
-			3 => "FORMAT_FOTO",
-			4 => "COLOR_TEXT",
-			5 => "",
-		),
-		"SET_BROWSER_TITLE" => "N",
-		"SET_LAST_MODIFIED" => "N",
-		"SET_META_DESCRIPTION" => "N",
-		"SET_META_KEYWORDS" => "N",
-		"SET_STATUS_404" => "N",
-		"SET_TITLE" => "N",
-		"SHOW_404" => "N",
-		"SORT_BY1" => "ACTIVE_FROM",
-		"SORT_BY2" => "SORT",
-		"SORT_ORDER1" => "DESC",
-		"SORT_ORDER2" => "ASC",
-		"STRICT_SECTION_CHECK" => "N",
-		"COMPONENT_TEMPLATE" => "MainBanners"
-	),
-	false
-);?>
+<? $APPLICATION->IncludeComponent(
+    "bitrix:news.list",
+    "MainBanners",
+    array(
+        "ACTIVE_DATE_FORMAT" => "d.m.Y",
+        "ADD_SECTIONS_CHAIN" => "N",
+        "AJAX_MODE" => "N",
+        "AJAX_OPTION_ADDITIONAL" => "",
+        "AJAX_OPTION_HISTORY" => "N",
+        "AJAX_OPTION_JUMP" => "N",
+        "AJAX_OPTION_STYLE" => "Y",
+        "CACHE_FILTER" => "N",
+        "CACHE_GROUPS" => "Y",
+        "CACHE_TIME" => "36000000",
+        "CACHE_TYPE" => "A",
+        "CHECK_DATES" => "Y",
+        "DETAIL_URL" => "",
+        "DISPLAY_BOTTOM_PAGER" => "Y",
+        "DISPLAY_DATE" => "N",
+        "DISPLAY_NAME" => "N",
+        "DISPLAY_PICTURE" => "N",
+        "DISPLAY_PREVIEW_TEXT" => "N",
+        "DISPLAY_TOP_PAGER" => "N",
+        "FIELD_CODE" => array(
+            0 => "",
+            1 => "",
+        ),
+        "FILTER_NAME" => "",
+        "HIDE_LINK_WHEN_NO_DETAIL" => "N",
+        "IBLOCK_ID" => "5",
+        "IBLOCK_TYPE" => "BANNERS",
+        "INCLUDE_IBLOCK_INTO_CHAIN" => "Y",
+        "INCLUDE_SUBSECTIONS" => "N",
+        "MESSAGE_404" => "",
+        "NEWS_COUNT" => "20",
+        "PAGER_BASE_LINK_ENABLE" => "N",
+        "PAGER_DESC_NUMBERING" => "N",
+        "PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+        "PAGER_SHOW_ALL" => "N",
+        "PAGER_SHOW_ALWAYS" => "N",
+        "PAGER_TEMPLATE" => "",
+        "PAGER_TITLE" => "Баннеры ",
+        "PARENT_SECTION" => "",
+        "PARENT_SECTION_CODE" => "",
+        "PREVIEW_TRUNCATE_LEN" => "",
+        "PROPERTY_CODE" => array(
+            0 => "TEXT_FORMAT",
+            1 => "BIG_TEXT",
+            2 => "SMOLL_TEXT",
+            3 => "FORMAT_FOTO",
+            4 => "COLOR_TEXT",
+            5 => "",
+        ),
+        "SET_BROWSER_TITLE" => "N",
+        "SET_LAST_MODIFIED" => "N",
+        "SET_META_DESCRIPTION" => "N",
+        "SET_META_KEYWORDS" => "N",
+        "SET_STATUS_404" => "N",
+        "SET_TITLE" => "N",
+        "SHOW_404" => "N",
+        "SORT_BY1" => "ACTIVE_FROM",
+        "SORT_BY2" => "SORT",
+        "SORT_ORDER1" => "DESC",
+        "SORT_ORDER2" => "ASC",
+        "STRICT_SECTION_CHECK" => "N",
+        "COMPONENT_TEMPLATE" => "MainBanners"
+    ),
+    false
+); ?>
 
     <section class="mpage-catalog catalog-section">
         <h2 class="catalog-section__title section-title">Повседневная одежда</h2>
@@ -148,384 +148,283 @@
                     <!-- if colors-slider -->
 
 
-
-
-
-
-                   <?
-
-
-                   CModule::IncludeModule("iblock");
-                   CModule::IncludeModule("catalog");
-                   CModule::IncludeModule('sale');
-$IDHighload = 2;
-$hldata = Bitrix\Highloadblock\HighloadBlockTable::getById($IDHighload)->fetch();
-$hlentity = Bitrix\Highloadblock\HighloadBlockTable::compileEntity($hldata);
-$hlDataClass = $hldata["NAME"] . "Table";
-$mainColor = "";
-$arSelect = array("ID", "IBLOCK_ID", "CODE", "NAME", "DETAIL_PAGE_URL", "PROPERTY_*");
-$arFilter = array("IBLOCK_ID" => 2, "ACTIVE_DATE" => "Y", "ACTIVE" => "Y", "PROPERTY_CATAL_BLOCK1" => 58);
-$resProd = CIblockElement::GetList(array("DATE_CREATE" => "DESC"), $arFilter, false, [], $arSelect);
-while ($obProdMain = $resProd->GetNextElement()) {
-
-
-    $item=$obProdMain->GetFields();
-    $productTitle=$item["ID"];
-    $arSelect = array("ID", "IBLOCK_ID", "CODE", "NAME", "DETAIL_PICTURE", "PROPERTY_*");
-    $arFilter = array("IBLOCK_ID" => 3, "ACTIVE_DATE" => "Y", "ACTIVE" => "Y", "PROPERTY_CML2_LINK" => $item["ID"]);
-    $resOfferMain = CIblockElement::GetList(array("DATE_CREATE" => "DESC"), $arFilter, false, [], $arSelect);
-    if ($obOfferMain = $resOfferMain->GetNextElement()) {
-
-        $arFieldsOfferMain = $obOfferMain->GetFields();
-        //  print_r($arFieldsOfferMain);
-        //  $foto=CFile::GetPath($arFieldsOfferMain["DETAIL_PICTURE"]);
-        // var_dump($foto);
-
-        $allProductPrices = \Bitrix\Catalog\PriceTable::getList([
-            "select" => ["*"],
-            "filter" => [
-                "=PRODUCT_ID" => $arFieldsOfferMain["ID"],
-            ],
-            "order" => ["CATALOG_GROUP_ID" => "ASC"]
-        ])->fetchAll();
-        $salePrice = "";
-        $retailPrice = "";
-        foreach ($allProductPrices as $itemPrice) {
-            if ($itemPrice['CATALOG_GROUP_ID'] == 1)
-                $salePrice = round($itemPrice['PRICE']);
-            if ($itemPrice['CATALOG_GROUP_ID'] == 2)
-                $retailPrice = round($itemPrice['PRICE']);
-        }
-        $renderImage = CFile::ResizeImageGet($arFieldsOfferMain["DETAIL_PICTURE"], array("width" => 372, "height" => 600), BX_RESIZE_IMAGE_PROPORTIONAL);
-        $Photo = $renderImage["src"];
-
-        $arPropsOfferMain = $obOfferMain->GetProperties();
-
-        $resultColor = $hlDataClass::getList(array(
-            "select" => array("ID", "UF_NAME", "UF_XML_ID", "UF_COLORCOD"), // Поля для выборки
-            "order" => array(),
-            "filter" => array("UF_XML_ID" => $arPropsOfferMain["COLOR_REF"]['VALUE']),
-        ));
-
-        if ($resp = $resultColor->fetch()) {
-            $mainColor = $resp['UF_COLORCOD'];
-        }
-    }
-
-    $idSkeep = $item["ID"];
-    $arCart[] = [
-        "id" => $item["ID"],
-        "code" => $item["CODE"],
-        "img" => "$Photo",
-        "sale" => $salePrice,
-        "retail" => $retailPrice,
-        "color" => "$mainColor",
-        "href" => $item['DETAIL_PAGE_URL'],
-    ];
-//print_r($arCart);
-//print_r($morePhoto);
-    $articl = $item["PROPERTIES"]["ARTNUMBER"];
-    $maxCart = 5;
-    $totalCart = 0;
-    $plusColor = 0;
-    $arSelect = array("ID", "IBLOCK_ID", "CODE", "NAME", "DETAIL_PAGE_URL", "PROPERTY_*");
-    $arFilter = array("IBLOCK_ID" => 2, "ACTIVE_DATE" => "Y", "ACTIVE" => "Y", "PROPERTY_ARTNUMBER" => $articl);
-    $resProd = CIblockElement::GetList(array("DATE_CREATE" => "DESC"), $arFilter, false, [], $arSelect);
-    while ($obProd = $resProd->GetNextElement()) {
-        $totalCart++;
-        if ($totalCart > $maxCart) {
-            $plusColor++;
-            continue;
-        }
-        $arFieldsProd = $obProd->GetFields();
-        if ($arFieldsProd["ID"] == $idSkeep) {
-            continue;
-        }
-        $idProd = $arFieldsProd["ID"];
-        $code = $arFieldsProd["CODE"];
-        $url = $arFieldsProd["DETAIL_PAGE_URL"];
-        $arSelect = array("ID", "IBLOCK_ID", "CODE", "NAME", "DETAIL_PICTURE", "PROPERTY_*");
-        $arFilter = array("IBLOCK_ID" => 3, "ACTIVE_DATE" => "Y", "ACTIVE" => "Y", "PROPERTY_CML2_LINK" => $arFieldsProd["ID"]);
-        $resOffer = CIblockElement::GetList(array("DATE_CREATE" => "DESC"), $arFilter, false, [], $arSelect);
-        if ($obOffer = $resOffer->GetNextElement()) {
-            $arFieldsOffer = $obOffer->GetFields();
-            /// print_r($arFieldsOffer);
-            $renderImage = CFile::ResizeImageGet($arFieldsOffer["DETAIL_PICTURE"], array("width" => 372, "height" => 600), BX_RESIZE_IMAGE_PROPORTIONAL);
-            $Photo = $renderImage["src"];
-            $arProps = $obOffer->GetProperties();
-
-            $resultColor = $hlDataClass::getList(array(
-                "select" => array("ID", "UF_NAME", "UF_XML_ID", "UF_COLORCOD"), // Поля для выборки
-                "order" => array(),
-                "filter" => array("UF_XML_ID" => $arProps["COLOR_REF"]['VALUE']),
-            ));
-
-
-            $allProductPrices = \Bitrix\Catalog\PriceTable::getList([
-                "select" => ["*"],
-                "filter" => [
-                    "=PRODUCT_ID" => $arFieldsOffer["ID"],
-                ],
-                "order" => ["CATALOG_GROUP_ID" => "ASC"]
-            ])->fetchAll();
-            $salePrice = "";
-            $retailPrice = "";
-            foreach ($allProductPrices as $itemPrice) {
-                if ($itemPrice['CATALOG_GROUP_ID'] == 1)
-                    $salePrice = round($itemPrice['PRICE']);
-                if ($itemPrice['CATALOG_GROUP_ID'] == 2)
-                    $retailPrice = round($itemPrice['PRICE']);
-            }
-
-
-            if ($resp = $resultColor->fetch()) {
-                $mainColor = $resp['UF_COLORCOD'];
-
-                $arCart[] = [
-                    "id" => $idProd,
-                    "code" => $code,
-                    "img" => "$Photo",
-                    "sale" => $salePrice,
-                    "retail" => $retailPrice,
-                    "color" => "$mainColor",
-                    "href" => $url,
-                ];
-
-
-            }
-        }
-    }
-    ?>
-    <div class="image-block">
-        <div class="colors-slider-catalog swiper">
-            <div class="product-tags">
-                <?
-
-                if ($item['PROPERTIES']['SPECIALOFFER']['VALUE'] == "да") {
-
-                    ?>
-                    <div class="product-tags__item sale-item">Спец пред.!</div>
                     <?
-                }
-                if ($item['PROPERTIES']['NEWPRODUCT']['VALUE'] == "да") {
-                    ?>
-                    <div class="product-tags__item new-item">New</div>
-                    <?
-                }
-                ?>
-            </div>
-            <div class="swiper-wrapper">
-                <?
-                foreach ($arCart as $itemCart) {
-                    ?>
-                    <a data-idProd="<?= $itemCart['id'] ?>" data-sale="<?= $itemCart['sale'] ?>"
-                       data-retail="<?= $itemCart['retail'] ?>" href="<?= $itemCart['href'] ?>"
-                       class="product-link swiper-slide chengeColor"
-                       data-color="<?
-                       if (empty($itemCart['color'])) {
-                           echo "#bdbdbd";
-                       } else {
-                           echo $itemCart['color'];
-                       }
-                       ?>">
-                        <img src="<?= $itemCart['img'] ?>" alt="<?= $itemCart['code'] ?>" class="product-image">
-                    </a>
-                    <?
-                }
-                ?>
-            </div>
-            <div class="colors-navigation">
-                <div class="colors-btn color-prev"><i class="icon icon-slider_arrow"></i></div>
-                <div class="colors-btn color-next"><i class="icon icon-slider_arrow"></i></div>
-            </div>
-        </div>
 
-        <div class="product-btns">
-            <a style="cursor: pointer" data-item="<?= $item['ID'] ?>" class="product-btn favorite-link <?
+                    if (!$USER->IsAuthorized()) // Для неавторизованного
+                    {
 
-            if (isset($favoritesAr[$item['ID']])) {
-                echo "active";
-            }
+                        $request = \Bitrix\Main\Application::getInstance()->getContext()->getRequest();
+                        $favCookie = $request->getCookie('favorites');
 
-            ?>"><i class="icon icon-heart"></i></a>
-            <a onclick="window._$productModal.showProductById('<?= $item["ID"] ?>');" style="cursor: pointer" data-idProd="<?= $item["ID"] ?>"
-               class="product-btn addcart-link"><i class="icon icon-cart"></i><span>Подробнее</span></a>
-        </div>
-    </div>
-    <div class="descr-block">
-        <a href="#" class="product-name"><?= $productTitle ?></a>
-        <span class="product-price">
-                        <span class="oldprice"><?
+                        $arFavorites = unserialize($favCookie);
+                        $favoritesAr = [];
+                        foreach ($arFavorites as $itemFav) {
+                            $favoritesAr[$itemFav] = true;
+                        }
+                    } else {
 
-                            if (!empty($retailPrice)) {
+                        $idUser = $USER->GetID();
+                        $rsUser = CUser::GetByID($idUser);
+                        $arUser = $rsUser->Fetch();
+                        $arFavorites = $arUser['UF_FAVORITES'];  // Достаём избранное пользователя
 
-                                echo "$retailPrice ₽";
+                        $favoritesAr = [];
+                        foreach ($arFavorites as $itemFav) {
+                            $favoritesAr[$itemFav] = true;
+                        }
 
+                    }
+
+
+
+                    CModule::IncludeModule("iblock");
+                    CModule::IncludeModule("catalog");
+                    CModule::IncludeModule('sale');
+                    $IDHighload = 2;
+                    $hldata = Bitrix\Highloadblock\HighloadBlockTable::getById($IDHighload)->fetch();
+                    $hlentity = Bitrix\Highloadblock\HighloadBlockTable::compileEntity($hldata);
+                    $hlDataClass = $hldata["NAME"] . "Table";
+                    $mainColor = "";
+                    $arSelect = array("ID", "IBLOCK_ID", "CODE", "NAME", "DETAIL_PAGE_URL", "PROPERTY_*");
+                    $arFilter = array("IBLOCK_ID" => 2, "ACTIVE_DATE" => "Y", "ACTIVE" => "Y", "PROPERTY_CATAL_BLOCK1" => 58);
+                    $resProdblock = CIblockElement::GetList(array("DATE_CREATE" => "DESC"), $arFilter, false, [], $arSelect);
+                    while ($obProdMain = $resProdblock->GetNextElement()) {
+                        $arCart = [];
+                        $item = $obProdMain->GetFields();
+                        $itemProp = $obProdMain->GetProperties();
+
+                        $productTitle = $item["NAME"];
+                        $arSelect = array("ID", "IBLOCK_ID", "CODE", "NAME", "DETAIL_PICTURE", "PROPERTY_*");
+                        $arFilter = array("IBLOCK_ID" => 3, "ACTIVE_DATE" => "Y", "ACTIVE" => "Y", "PROPERTY_CML2_LINK" => $item["ID"]);
+                        $resOfferMain = CIblockElement::GetList(array("DATE_CREATE" => "DESC"), $arFilter, false, [], $arSelect);
+                        if ($obOfferMain = $resOfferMain->GetNextElement()) {
+
+                            $arFieldsOfferMain = $obOfferMain->GetFields();
+                            //  print_r($arFieldsOfferMain);
+                            //  $foto=CFile::GetPath($arFieldsOfferMain["DETAIL_PICTURE"]);
+                            // var_dump($foto);
+
+                            $allProductPrices = \Bitrix\Catalog\PriceTable::getList([
+                                "select" => ["*"],
+                                "filter" => [
+                                    "=PRODUCT_ID" => $arFieldsOfferMain["ID"],
+                                ],
+                                "order" => ["CATALOG_GROUP_ID" => "ASC"]
+                            ])->fetchAll();
+                            $salePrice = "";
+                            $retailPrice = "";
+                            foreach ($allProductPrices as $itemPrice) {
+                                if ($itemPrice['CATALOG_GROUP_ID'] == 1)
+                                    $salePrice = round($itemPrice['PRICE']);
+                                if ($itemPrice['CATALOG_GROUP_ID'] == 2)
+                                    $retailPrice = round($itemPrice['PRICE']);
                             }
+                            $renderImage = CFile::ResizeImageGet($arFieldsOfferMain["DETAIL_PICTURE"], array("width" => 372, "height" => 600), BX_RESIZE_IMAGE_PROPORTIONAL);
+                            $Photo = $renderImage["src"];
 
-                            ?></span>
-                        <span class="price">
+                            $arPropsOfferMain = $obOfferMain->GetProperties();
 
-                            <?
+                            $resultColor = $hlDataClass::getList(array(
+                                "select" => array("ID", "UF_NAME", "UF_XML_ID", "UF_COLORCOD"), // Поля для выборки
+                                "order" => array(),
+                                "filter" => array("UF_XML_ID" => $arPropsOfferMain["COLOR_REF"]['VALUE']),
+                            ));
 
-                            if (!empty($salePrice)) {
-
-                                echo "$salePrice ₽";
-
+                            if ($resp = $resultColor->fetch()) {
+                                $mainColor = $resp['UF_COLORCOD'];
                             }
+                        }
 
-                            ?>
-                        </span>
-                        </span>
-        <div class="product-colors">
-            <div class="colors-pagination"></div>
+                        $idSkeep = $item["ID"];
+                        $arCart[] = [
+                            "id" => $item["ID"],
+                            "code" => $item["CODE"],
+                            "img" => "$Photo",
+                            "sale" => $salePrice,
+                            "retail" => $retailPrice,
+                            "color" => "$mainColor",
+                            "href" => $item['DETAIL_PAGE_URL'],
+                        ];
 
-            <?
-            if (!empty($plusColor)) {
-                ?>
-                <span class="product-colors__all">+ <?
-                    echo num_word($plusColor, ["Цвет", "Цвета", "Цветов"]);
-                    ?></span>
-                <?
-            }
-            ?>
-        </div>
-    </div>
+                        $articl = $itemProp["ARTNUMBER"]["VALUE"];
+                        $maxCart = 5;
+                        $totalCart = 0;
+                        $plusColor = 0;
+                        $arSelect = array("ID", "IBLOCK_ID", "CODE", "NAME", "DETAIL_PAGE_URL", "PROPERTY_*");
+                        $arFilter = array("IBLOCK_ID" => 2, "ACTIVE_DATE" => "Y", "ACTIVE" => "Y", "PROPERTY_ARTNUMBER" => $articl);
+                        $resProd = CIblockElement::GetList(array("DATE_CREATE" => "DESC"), $arFilter, false, [], $arSelect);
+                        while ($obProd = $resProd->GetNextElement()) {
+                            $totalCart++;
+                            if ($totalCart > $maxCart) {
+                                $plusColor++;
+                                continue;
+                            }
+                            $arFieldsProd = $obProd->GetFields();
+                            if ($arFieldsProd["ID"] == $idSkeep) {
+                                continue;
+                            }
+                            $idProd = $arFieldsProd["ID"];
+                            $code = $arFieldsProd["CODE"];
+                            $url = $arFieldsProd["DETAIL_PAGE_URL"];
+                            $arSelect = array("ID", "IBLOCK_ID", "CODE", "NAME", "DETAIL_PICTURE", "PROPERTY_*");
+                            $arFilter = array("IBLOCK_ID" => 3, "ACTIVE_DATE" => "Y", "ACTIVE" => "Y", "PROPERTY_CML2_LINK" => $arFieldsProd["ID"]);
+                            $resOffer = CIblockElement::GetList(array("DATE_CREATE" => "DESC"), $arFilter, false, [], $arSelect);
+                            if ($obOffer = $resOffer->GetNextElement()) {
+                                $arFieldsOffer = $obOffer->GetFields();
+                                /// print_r($arFieldsOffer);
+                                $renderImage = CFile::ResizeImageGet($arFieldsOffer["DETAIL_PICTURE"], array("width" => 372, "height" => 600), BX_RESIZE_IMAGE_PROPORTIONAL);
+                                $Photo = $renderImage["src"];
+                                $arProps = $obOffer->GetProperties();
+
+                                $resultColor = $hlDataClass::getList(array(
+                                    "select" => array("ID", "UF_NAME", "UF_XML_ID", "UF_COLORCOD"), // Поля для выборки
+                                    "order" => array(),
+                                    "filter" => array("UF_XML_ID" => $arProps["COLOR_REF"]['VALUE']),
+                                ));
 
 
+                                $allProductPrices = \Bitrix\Catalog\PriceTable::getList([
+                                    "select" => ["*"],
+                                    "filter" => [
+                                        "=PRODUCT_ID" => $arFieldsOffer["ID"],
+                                    ],
+                                    "order" => ["CATALOG_GROUP_ID" => "ASC"]
+                                ])->fetchAll();
+                                $salePrice = "";
+                                $retailPrice = "";
+                                foreach ($allProductPrices as $itemPrice) {
+                                    if ($itemPrice['CATALOG_GROUP_ID'] == 1)
+                                        $salePrice = round($itemPrice['PRICE']);
+                                    if ($itemPrice['CATALOG_GROUP_ID'] == 2)
+                                        $retailPrice = round($itemPrice['PRICE']);
+                                }
 
 
-<?
-}
+                                if ($resp = $resultColor->fetch()) {
+                                    $mainColor = $resp['UF_COLORCOD'];
 
-                   ?>
+                                    $arCart[] = [
+                                        "id" => $idProd,
+                                        "code" => $code,
+                                        "img" => "$Photo",
+                                        "sale" => $salePrice,
+                                        "retail" => $retailPrice,
+                                        "color" => "$mainColor",
+                                        "href" => $url,
+                                    ];
 
 
+                                }
+                            }
+                        }
+                        ?>
+                        <div class="slide-item swiper-slide colors-item">
+                            <div class="image-block">
+                                <div class="product-tags">
+                                    <?
 
+                                    if ($item['PROPERTIES']['SPECIALOFFER']['VALUE'] == "да") {
 
-
-
-                    <div class="slide-item swiper-slide colors-item">
-                        <div class="image-block">
-                            <div class="colors-slider swiper">
-                                <div class="swiper-wrapper">
-                                    <a href="#" class="product-link swiper-slide" data-color="#AEB9A9">
-                                        <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image1.jpg" alt="product" class="product-image">
-                                    </a>
-                                    <a href="#" class="product-link swiper-slide" data-color="#8ACAFF">
-                                        <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image2.jpg" alt="product" class="product-image">
-                                    </a>
-                                    <a href="#" class="product-link swiper-slide" data-color="#252426">
-                                        <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image3.jpg" alt="product" class="product-image">
-                                    </a>
+                                        ?>
+                                        <div class="product-tags__item sale-item">Спец пред.!</div>
+                                        <?
+                                    }
+                                    if ($item['PROPERTIES']['NEWPRODUCT']['VALUE'] == "да") {
+                                        ?>
+                                        <div class="product-tags__item new-item">New</div>
+                                        <?
+                                    }
+                                    ?>
                                 </div>
-                                <div class="colors-navigation">
-                                    <div class="colors-btn color-prev"><i class="icon icon-slider_arrow"></i></div>
-                                    <div class="colors-btn color-next"><i class="icon icon-slider_arrow"></i></div>
+                                <div class="colors-slider swiper">
+                                    <div class="swiper-wrapper">
+
+                                        <?
+                                        foreach ($arCart as $itemCart) {
+                                            ?>
+                                            <a data-idProd="<?= $itemCart['id'] ?>" data-sale="<?= $itemCart['sale'] ?>"
+                                               data-retail="<?= $itemCart['retail'] ?>" href="<?= $itemCart['href'] ?>"
+                                               class="product-link swiper-slide chengeColor"
+                                               data-color="<?
+                                               if (empty($itemCart['color'])) {
+                                                   echo "#bdbdbd";
+                                               } else {
+                                                   echo $itemCart['color'];
+                                               }
+                                               ?>">
+                                                <img src="<?= $itemCart['img'] ?>" alt="<?= $itemCart['code'] ?>"
+                                                     class="product-image">
+                                            </a>
+                                            <?
+                                        }
+                                        ?>
+                                    </div>
+                                    <div class="colors-navigation">
+                                        <div class="colors-btn color-prev"><i class="icon icon-slider_arrow"></i></div>
+                                        <div class="colors-btn color-next"><i class="icon icon-slider_arrow"></i></div>
+                                    </div>
+                                </div>
+                                <div class="product-btns">
+                                    <a style="cursor: pointer; z-index: 99999;" data-item="<?= $item['ID'] ?>"
+                                       class="product-btn favorite-link <?
+
+                                       if (isset($favoritesAr[$item['ID']])) {
+                                           echo "active";
+                                       }
+
+                                       ?>"><i class="icon icon-heart"></i></a>
+                                    <a style="cursor: pointer;" data-idProd="<?= $item["ID"] ?>"
+                                       onclick="window._$productModal.showProductById('<?= $item["ID"] ?>');"
+                                       class="product-btn addcart-link"><i
+                                                class="icon icon-cart"></i><span>Подробнее</span></a>
                                 </div>
                             </div>
-                            <div class="product-btns">
-                                <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
-                                <a href="#" class="product-btn addcart-link"><i class="icon icon-cart"></i><span>В корзину</span></a>
-                            </div>
-                        </div>
-                        <div class="descr-block">
-                            <a href="#" class="product-name">Жакет женский</a>
-                            <span class="product-price">
-                                <span class="oldprice">1 749 ₽</span>
-                            <span class="price">1 749 ₽</span>
+                            <div class="descr-block">
+                                <a href="#" class="product-name"><?= $productTitle ?></a>
+                                <span class="product-price">
+                                <span class="oldprice"><?
+
+
+                                    if (!empty($retailPrice)) {
+
+                                        echo "$retailPrice ₽";
+
+                                    }
+
+                                    ?></span>
+                            <span class="price"><?
+
+
+                                if (!empty($salePrice)) {
+
+                                    echo "$salePrice ₽";
+
+                                }
+
+
+                                ?></span>
                             </span>
-                            <div class="product-colors">
-                                <div class="colors-pagination"></div>
-                                <span class="product-colors__all">+19 цветов</span>
+                                <div class="product-colors">
+                                    <div class="colors-pagination"></div>
+                                    <span class="product-colors__all"><?
+                                        if (!empty($plusColor)) {
+                                            ?>
+                                            <span class="product-colors__all">+ <?
+                                                echo num_word($plusColor, ["Цвет", "Цвета", "Цветов"]);
+                                                ?></span>
+                                            <?
+                                        }
+                                        ?></span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- end colors-slider -->
-                    <div class="slide-item swiper-slide">
-                        <div class="image-block">
-                            <div class="product-tags">
-                                <div class="product-tags__item sale-item">M, S — 20%</div>
-                                <div class="product-tags__item new-item">New</div>
-                            </div>
-                            <a href="#" class="product-link">
-                                <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image1.jpg" alt="product" class="product-image">
-                            </a>
-                            <div class="product-btns">
-                                <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
-                                <a href="#" class="product-btn addcart-link"><i class="icon icon-cart"></i><span>В корзину</span></a>
-                            </div>
-                        </div>
-                        <div class="descr-block">
-                            <a href="#" class="product-name">Жакет женский</a>
-                            <span class="product-price">
-                                <span class="oldprice">1 749 ₽</span>
-                            <span class="price">1 749 ₽</span>
-                            </span>
-                            <div class="product-colors"></div>
-                        </div>
-                    </div>
-                    <div class="slide-item swiper-slide">
-                        <div class="image-block">
-                            <a href="#" class="product-link">
-                                <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image3.jpg" alt="product" class="product-image">
-                            </a>
-                            <div class="product-btns">
-                                <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
-                                <a href="#" class="product-btn addcart-link"><i class="icon icon-cart"></i><span>В корзину</span></a>
-                            </div>
-                        </div>
-                        <div class="descr-block">
-                            <a href="#" class="product-name">Жакет женский</a>
-                            <span class="product-price">
-                                <span class="oldprice">1 749 ₽</span>
-                            <span class="price">1 749 ₽</span>
-                            </span>
-                            <div class="product-colors">
-                                <span class="product-colors__all">+19 цветов</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="slide-item swiper-slide">
-                        <div class="image-block">
-                            <a href="#" class="product-link">
-                                <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image2.jpg" alt="product" class="product-image">
-                            </a>
-                            <div class="product-btns">
-                                <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
-                                <a href="#" class="product-btn addcart-link"><i class="icon icon-cart"></i><span>В корзину</span></a>
-                            </div>
-                        </div>
-                        <div class="descr-block">
-                            <a href="#" class="product-name">Жакет женский</a>
-                            <span class="product-price">
-                                <span class="oldprice">1 749 ₽</span>
-                            <span class="price">1 749 ₽</span>
-                            </span>
-                            <div class="product-colors"></div>
-                        </div>
-                    </div>
-                    <div class="slide-item swiper-slide">
-                        <div class="image-block">
-                            <a href="#" class="product-link">
-                                <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image4.jpg" alt="product" class="product-image">
-                            </a>
-                            <div class="product-btns">
-                                <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
-                                <a href="#" class="product-btn addcart-link"><i class="icon icon-cart"></i><span>В корзину</span></a>
-                            </div>
-                        </div>
-                        <div class="descr-block">
-                            <a href="#" class="product-name">Жакет женский</a>
-                            <span class="product-price">
-                                <span class="oldprice">1 749 ₽</span>
-                            <span class="price">1 749 ₽</span>
-                            </span>
-                            <div class="product-colors">
-                                <span class="product-colors__all">+19 цветов</span>
-                            </div>
-                        </div>
-                    </div>
+
+                        <?
+                    }
+
+                    ?>
+
+
                 </div>
                 <div class="swiper-navigation">
                     <div class="nav-btn btn-prev"><i class="icon icon-slider_arrow"></i></div>
@@ -543,7 +442,8 @@ while ($obProdMain = $resProd->GetNextElement()) {
                     <h2 class="banner-title">Black and white graphic</h2>
                     <a href="#" class="banner-link btn-fill-style white-style">Перейти в каталог</a>
                 </div>
-                <div class="banner-slide__image lazyload" data-bgset="<?=DEFAULT_TEMPLATE_PATH?>/images/main//main_page/banners/mobile/sidebanner_image2.jpg [(max-width: 575px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/pad/sidebanner_image2.jpg [(max-width: 1024px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/sidebanner_image2.jpg [(min-width: 1025px)]"></div>
+                <div class="banner-slide__image lazyload"
+                     data-bgset="<?= DEFAULT_TEMPLATE_PATH ?>/images/main//main_page/banners/mobile/sidebanner_image2.jpg [(max-width: 575px)] | <?= DEFAULT_TEMPLATE_PATH ?>/images/main/main_page/banners/pad/sidebanner_image2.jpg [(max-width: 1024px)] | <?= DEFAULT_TEMPLATE_PATH ?>/images/main/main_page/banners/sidebanner_image2.jpg [(min-width: 1025px)]"></div>
             </div>
         </div>
     </section>
@@ -553,167 +453,255 @@ while ($obProdMain = $resProd->GetNextElement()) {
             <div class="catalog-slider swiper">
                 <div class="swiper-wrapper">
                     <!-- if colors-slider -->
-                    <div class="slide-item swiper-slide colors-item">
-                        <div class="image-block">
-                            <div class="colors-slider swiper">
-                                <div class="swiper-wrapper">
-                                    <a href="#" class="product-link swiper-slide" data-color="#AEB9A9">
-                                        <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image21.jpg" alt="product" class="product-image">
-                                    </a>
-                                    <a href="#" class="product-link swiper-slide" data-color="#8ACAFF">
-                                        <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image22.jpg" alt="product" class="product-image">
-                                    </a>
-                                    <a href="#" class="product-link swiper-slide" data-color="#252426">
-                                        <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image23.jpg" alt="product" class="product-image">
-                                    </a>
+
+                    <?
+
+
+                    $mainColor = "";
+                    $arSelect = array("ID", "IBLOCK_ID", "CODE", "NAME", "DETAIL_PAGE_URL", "PROPERTY_*");
+                    $arFilter = array("IBLOCK_ID" => 2, "ACTIVE_DATE" => "Y", "ACTIVE" => "Y", "PROPERTY_CATAL_BLOCK2" => 59);
+                    $resProdblock = CIblockElement::GetList(array("DATE_CREATE" => "DESC"), $arFilter, false, [], $arSelect);
+                    while ($obProdMain = $resProdblock->GetNextElement()) {
+                        $arCart = [];
+                        $item = $obProdMain->GetFields();
+                        $itemProp = $obProdMain->GetProperties();
+
+                        $productTitle = $item["NAME"];
+                        $arSelect = array("ID", "IBLOCK_ID", "CODE", "NAME", "DETAIL_PICTURE", "PROPERTY_*");
+                        $arFilter = array("IBLOCK_ID" => 3, "ACTIVE_DATE" => "Y", "ACTIVE" => "Y", "PROPERTY_CML2_LINK" => $item["ID"]);
+                        $resOfferMain = CIblockElement::GetList(array("DATE_CREATE" => "DESC"), $arFilter, false, [], $arSelect);
+                        if ($obOfferMain = $resOfferMain->GetNextElement()) {
+
+                            $arFieldsOfferMain = $obOfferMain->GetFields();
+                            //  print_r($arFieldsOfferMain);
+                            //  $foto=CFile::GetPath($arFieldsOfferMain["DETAIL_PICTURE"]);
+                            // var_dump($foto);
+
+                            $allProductPrices = \Bitrix\Catalog\PriceTable::getList([
+                                "select" => ["*"],
+                                "filter" => [
+                                    "=PRODUCT_ID" => $arFieldsOfferMain["ID"],
+                                ],
+                                "order" => ["CATALOG_GROUP_ID" => "ASC"]
+                            ])->fetchAll();
+                            $salePrice = "";
+                            $retailPrice = "";
+                            foreach ($allProductPrices as $itemPrice) {
+                                if ($itemPrice['CATALOG_GROUP_ID'] == 1)
+                                    $salePrice = round($itemPrice['PRICE']);
+                                if ($itemPrice['CATALOG_GROUP_ID'] == 2)
+                                    $retailPrice = round($itemPrice['PRICE']);
+                            }
+                            $renderImage = CFile::ResizeImageGet($arFieldsOfferMain["DETAIL_PICTURE"], array("width" => 372, "height" => 600), BX_RESIZE_IMAGE_PROPORTIONAL);
+                            $Photo = $renderImage["src"];
+
+                            $arPropsOfferMain = $obOfferMain->GetProperties();
+
+                            $resultColor = $hlDataClass::getList(array(
+                                "select" => array("ID", "UF_NAME", "UF_XML_ID", "UF_COLORCOD"), // Поля для выборки
+                                "order" => array(),
+                                "filter" => array("UF_XML_ID" => $arPropsOfferMain["COLOR_REF"]['VALUE']),
+                            ));
+
+                            if ($resp = $resultColor->fetch()) {
+                                $mainColor = $resp['UF_COLORCOD'];
+                            }
+                        }
+
+                        $idSkeep = $item["ID"];
+                        $arCart[] = [
+                            "id" => $item["ID"],
+                            "code" => $item["CODE"],
+                            "img" => "$Photo",
+                            "sale" => $salePrice,
+                            "retail" => $retailPrice,
+                            "color" => "$mainColor",
+                            "href" => $item['DETAIL_PAGE_URL'],
+                        ];
+
+                        $articl = $itemProp["ARTNUMBER"]["VALUE"];
+                        $maxCart = 5;
+                        $totalCart = 0;
+                        $plusColor = 0;
+                        $arSelect = array("ID", "IBLOCK_ID", "CODE", "NAME", "DETAIL_PAGE_URL", "PROPERTY_*");
+                        $arFilter = array("IBLOCK_ID" => 2, "ACTIVE_DATE" => "Y", "ACTIVE" => "Y", "PROPERTY_ARTNUMBER" => $articl);
+                        $resProd = CIblockElement::GetList(array("DATE_CREATE" => "DESC"), $arFilter, false, [], $arSelect);
+                        while ($obProd = $resProd->GetNextElement()) {
+                            $totalCart++;
+                            if ($totalCart > $maxCart) {
+                                $plusColor++;
+                                continue;
+                            }
+                            $arFieldsProd = $obProd->GetFields();
+                            if ($arFieldsProd["ID"] == $idSkeep) {
+                                continue;
+                            }
+                            $idProd = $arFieldsProd["ID"];
+                            $code = $arFieldsProd["CODE"];
+                            $url = $arFieldsProd["DETAIL_PAGE_URL"];
+                            $arSelect = array("ID", "IBLOCK_ID", "CODE", "NAME", "DETAIL_PICTURE", "PROPERTY_*");
+                            $arFilter = array("IBLOCK_ID" => 3, "ACTIVE_DATE" => "Y", "ACTIVE" => "Y", "PROPERTY_CML2_LINK" => $arFieldsProd["ID"]);
+                            $resOffer = CIblockElement::GetList(array("DATE_CREATE" => "DESC"), $arFilter, false, [], $arSelect);
+                            if ($obOffer = $resOffer->GetNextElement()) {
+                                $arFieldsOffer = $obOffer->GetFields();
+                                /// print_r($arFieldsOffer);
+                                $renderImage = CFile::ResizeImageGet($arFieldsOffer["DETAIL_PICTURE"], array("width" => 372, "height" => 600), BX_RESIZE_IMAGE_PROPORTIONAL);
+                                $Photo = $renderImage["src"];
+                                $arProps = $obOffer->GetProperties();
+
+                                $resultColor = $hlDataClass::getList(array(
+                                    "select" => array("ID", "UF_NAME", "UF_XML_ID", "UF_COLORCOD"), // Поля для выборки
+                                    "order" => array(),
+                                    "filter" => array("UF_XML_ID" => $arProps["COLOR_REF"]['VALUE']),
+                                ));
+
+
+                                $allProductPrices = \Bitrix\Catalog\PriceTable::getList([
+                                    "select" => ["*"],
+                                    "filter" => [
+                                        "=PRODUCT_ID" => $arFieldsOffer["ID"],
+                                    ],
+                                    "order" => ["CATALOG_GROUP_ID" => "ASC"]
+                                ])->fetchAll();
+                                $salePrice = "";
+                                $retailPrice = "";
+                                foreach ($allProductPrices as $itemPrice) {
+                                    if ($itemPrice['CATALOG_GROUP_ID'] == 1)
+                                        $salePrice = round($itemPrice['PRICE']);
+                                    if ($itemPrice['CATALOG_GROUP_ID'] == 2)
+                                        $retailPrice = round($itemPrice['PRICE']);
+                                }
+
+
+                                if ($resp = $resultColor->fetch()) {
+                                    $mainColor = $resp['UF_COLORCOD'];
+
+                                    $arCart[] = [
+                                        "id" => $idProd,
+                                        "code" => $code,
+                                        "img" => "$Photo",
+                                        "sale" => $salePrice,
+                                        "retail" => $retailPrice,
+                                        "color" => "$mainColor",
+                                        "href" => $url,
+                                    ];
+
+
+                                }
+                            }
+                        }
+                        ?>
+                        <div class="slide-item swiper-slide colors-item">
+                            <div class="image-block">
+                                <div class="product-tags">
+                                    <?
+
+                                    if ($item['PROPERTIES']['SPECIALOFFER']['VALUE'] == "да") {
+
+                                        ?>
+                                        <div class="product-tags__item sale-item">Спец пред.!</div>
+                                        <?
+                                    }
+                                    if ($item['PROPERTIES']['NEWPRODUCT']['VALUE'] == "да") {
+                                        ?>
+                                        <div class="product-tags__item new-item">New</div>
+                                        <?
+                                    }
+                                    ?>
                                 </div>
-                                <div class="colors-navigation">
-                                    <div class="colors-btn color-prev"><i class="icon icon-slider_arrow"></i></div>
-                                    <div class="colors-btn color-next"><i class="icon icon-slider_arrow"></i></div>
+                                <div class="colors-slider swiper">
+                                    <div class="swiper-wrapper">
+
+                                        <?
+                                        foreach ($arCart as $itemCart) {
+                                            ?>
+                                            <a data-idProd="<?= $itemCart['id'] ?>" data-sale="<?= $itemCart['sale'] ?>"
+                                               data-retail="<?= $itemCart['retail'] ?>" href="<?= $itemCart['href'] ?>"
+                                               class="product-link swiper-slide chengeColor"
+                                               data-color="<?
+                                               if (empty($itemCart['color'])) {
+                                                   echo "#bdbdbd";
+                                               } else {
+                                                   echo $itemCart['color'];
+                                               }
+                                               ?>">
+                                                <img src="<?= $itemCart['img'] ?>" alt="<?= $itemCart['code'] ?>"
+                                                     class="product-image">
+                                            </a>
+                                            <?
+                                        }
+                                        ?>
+                                    </div>
+                                    <div class="colors-navigation">
+                                        <div class="colors-btn color-prev"><i class="icon icon-slider_arrow"></i></div>
+                                        <div class="colors-btn color-next"><i class="icon icon-slider_arrow"></i></div>
+                                    </div>
+                                </div>
+                                <div class="product-btns">
+                                    <a style="cursor: pointer; z-index: 99999;" data-item="<?= $item['ID'] ?>"
+                                       class="product-btn favorite-link <?
+
+                                       if (isset($favoritesAr[$item['ID']])) {
+                                           echo "active";
+                                       }
+
+                                       ?>"><i class="icon icon-heart"></i></a>
+                                    <a style="cursor: pointer;" data-idProd="<?= $item["ID"] ?>"
+                                       onclick="window._$productModal.showProductById('<?= $item["ID"] ?>');"
+                                       class="product-btn addcart-link"><i
+                                                class="icon icon-cart"></i><span>Подробнее</span></a>
                                 </div>
                             </div>
-                            <div class="product-btns">
-                                <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
-                                <a href="#" class="product-btn addcart-link"><i class="icon icon-cart"></i><span>В корзину</span></a>
-                            </div>
-                        </div>
-                        <div class="descr-block">
-                            <a href="#" class="product-name">Жакет женский</a>
-                            <span class="product-price">
-                                <span class="oldprice">1 749 ₽</span>
-                            <span class="price">1 749 ₽</span>
+                            <div class="descr-block">
+                                <a href="#" class="product-name"><?= $productTitle ?></a>
+                                <span class="product-price">
+                                <span class="oldprice"><?
+
+
+                                    if (!empty($retailPrice)) {
+
+                                        echo "$retailPrice ₽";
+
+                                    }
+
+                                    ?></span>
+                            <span class="price"><?
+
+
+                                if (!empty($salePrice)) {
+
+                                    echo "$salePrice ₽";
+
+                                }
+
+
+                                ?></span>
                             </span>
-                            <div class="product-colors">
-                                <div class="colors-pagination"></div>
-                                <span class="product-colors__all">+19 цветов</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="slide-item swiper-slide colors-item">
-                        <div class="image-block">
-                            <div class="product-tags">
-                                <div class="product-tags__item sale-item">M, S — 20%</div>
-                                <div class="product-tags__item new-item">New</div>
-                            </div>
-                            <div class="colors-slider swiper">
-                                <div class="swiper-wrapper">
-                                    <a href="#" class="product-link swiper-slide" data-color="#AEB9A9">
-                                        <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image21.jpg" alt="product" class="product-image">
-                                    </a>
-                                    <a href="#" class="product-link swiper-slide" data-color="#8ACAFF">
-                                        <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image22.jpg" alt="product" class="product-image">
-                                    </a>
-                                    <a href="#" class="product-link swiper-slide" data-color="#252426">
-                                        <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image23.jpg" alt="product" class="product-image">
-                                    </a>
-                                </div>
-                                <div class="colors-navigation">
-                                    <div class="colors-btn color-prev"><i class="icon icon-slider_arrow"></i></div>
-                                    <div class="colors-btn color-next"><i class="icon icon-slider_arrow"></i></div>
+                                <div class="product-colors">
+                                    <div class="colors-pagination"></div>
+                                    <span class="product-colors__all"><?
+                                        if (!empty($plusColor)) {
+                                            ?>
+                                            <span class="product-colors__all">+ <?
+                                                echo num_word($plusColor, ["Цвет", "Цвета", "Цветов"]);
+                                                ?></span>
+                                            <?
+                                        }
+                                        ?></span>
                                 </div>
                             </div>
-                            <div class="product-btns">
-                                <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
-                                <a href="#" class="product-btn addcart-link"><i class="icon icon-cart"></i><span>В корзину</span></a>
-                            </div>
                         </div>
-                        <div class="descr-block">
-                            <a href="#" class="product-name">Жакет женский</a>
-                            <span class="product-price">
-                                <span class="oldprice">1 749 ₽</span>
-                            <span class="price">1 749 ₽</span>
-                            </span>
-                            <div class="product-colors">
-                                <div class="colors-pagination"></div>
-                                <span class="product-colors__all">+19 цветов</span>
-                            </div>
-                        </div>
-                    </div>
+
+                        <?
+                    }
+
+                    ?>
+
                     <!-- end colors-slider -->
-                    <div class="slide-item swiper-slide">
-                        <div class="image-block">
-                            <a href="#" class="product-link">
-                                <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image21.jpg" alt="product" class="product-image">
-                            </a>
-                            <div class="product-btns">
-                                <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
-                                <a href="#" class="product-btn addcart-link"><i class="icon icon-cart"></i><span>В корзину</span></a>
-                            </div>
-                        </div>
-                        <div class="descr-block">
-                            <a href="#" class="product-name">Жакет женский</a>
-                            <span class="product-price">
-                                <span class="oldprice">1 749 ₽</span>
-                            <span class="price">1 749 ₽</span>
-                            </span>
-                            <div class="product-colors"></div>
-                        </div>
-                    </div>
-                    <div class="slide-item swiper-slide">
-                        <div class="image-block">
-                            <a href="#" class="product-link">
-                                <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image23.jpg" alt="product" class="product-image">
-                            </a>
-                            <div class="product-btns">
-                                <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
-                                <a href="#" class="product-btn addcart-link"><i class="icon icon-cart"></i><span>В корзину</span></a>
-                            </div>
-                        </div>
-                        <div class="descr-block">
-                            <a href="#" class="product-name">Жакет женский</a>
-                            <span class="product-price">
-                                <span class="oldprice">1 749 ₽</span>
-                            <span class="price">1 749 ₽</span>
-                            </span>
-                            <div class="product-colors">
-                                <span class="product-colors__all">+19 цветов</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="slide-item swiper-slide">
-                        <div class="image-block">
-                            <div class="product-tags">
-                                <div class="product-tags__item sale-item">M, S — 20%</div>
-                                <div class="product-tags__item new-item">New</div>
-                            </div>
-                            <a href="#" class="product-link">
-                                <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image22.jpg" alt="product" class="product-image">
-                            </a>
-                            <div class="product-btns">
-                                <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
-                                <a href="#" class="product-btn addcart-link"><i class="icon icon-cart"></i><span>В корзину</span></a>
-                            </div>
-                        </div>
-                        <div class="descr-block">
-                            <a href="#" class="product-name">Жакет женский</a>
-                            <span class="product-price">
-                                <span class="oldprice">1 749 ₽</span>
-                            <span class="price">1 749 ₽</span>
-                            </span>
-                            <div class="product-colors"></div>
-                        </div>
-                    </div>
-                    <div class="slide-item swiper-slide">
-                        <div class="image-block">
-                            <a href="#" class="product-link">
-                                <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image21.jpg" alt="product" class="product-image">
-                            </a>
-                            <div class="product-btns">
-                                <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
-                                <a href="#" class="product-btn addcart-link"><i class="icon icon-cart"></i><span>В корзину</span></a>
-                            </div>
-                        </div>
-                        <div class="descr-block">
-                            <a href="#" class="product-name">Жакет женский</a>
-                            <span class="product-price">
-                                <span class="oldprice">1 749 ₽</span>
-                            <span class="price">1 749 ₽</span>
-                            </span>
-                            <div class="product-colors">
-                                <span class="product-colors__all">+19 цветов</span>
-                            </div>
-                        </div>
-                    </div>
+
+
+
+
                 </div>
                 <div class="swiper-navigation">
                     <div class="nav-btn btn-prev"><i class="icon icon-slider_arrow"></i></div>
@@ -724,7 +712,8 @@ while ($obProdMain = $resProd->GetNextElement()) {
         </div>
     </section>
     <section class="mpage-banner full-banner center-style">
-        <div class="banner-slide lazyload" data-bgset="<?=DEFAULT_TEMPLATE_PATH?>/images/main//main_page/banners/mobile/fullbanner_image3.jpg [(max-width: 575px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/pad/fullbanner_image3.jpg [(max-width: 1024px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/fullbanner_image3.jpg [(min-width: 1025px)]">
+        <div class="banner-slide lazyload"
+             data-bgset="<?= DEFAULT_TEMPLATE_PATH ?>/images/main//main_page/banners/mobile/fullbanner_image3.jpg [(max-width: 575px)] | <?= DEFAULT_TEMPLATE_PATH ?>/images/main/main_page/banners/pad/fullbanner_image3.jpg [(max-width: 1024px)] | <?= DEFAULT_TEMPLATE_PATH ?>/images/main/main_page/banners/fullbanner_image3.jpg [(min-width: 1025px)]">
             <div class="container">
                 <h3 class="banner-subtitle">Повседневная одежда</h3>
                 <h2 class="banner-title">Dusk in the valley</h2>
@@ -740,167 +729,257 @@ while ($obProdMain = $resProd->GetNextElement()) {
             <div class="catalog-slider swiper">
                 <div class="swiper-wrapper">
                     <!-- if colors-slider -->
-                    <div class="slide-item swiper-slide colors-item">
-                        <div class="image-block">
-                            <div class="product-tags">
-                                <div class="product-tags__item sale-item">M, S — 20%</div>
-                                <div class="product-tags__item new-item">New</div>
-                            </div>
-                            <div class="colors-slider swiper">
-                                <div class="swiper-wrapper">
-                                    <a href="#" class="product-link swiper-slide" data-color="#AEB9A9">
-                                        <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image21.jpg" alt="product" class="product-image">
-                                    </a>
-                                    <a href="#" class="product-link swiper-slide" data-color="#8ACAFF">
-                                        <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image22.jpg" alt="product" class="product-image">
-                                    </a>
-                                    <a href="#" class="product-link swiper-slide" data-color="#252426">
-                                        <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image23.jpg" alt="product" class="product-image">
-                                    </a>
+
+
+
+
+                    <?
+
+
+                    $mainColor = "";
+                    $arSelect = array("ID", "IBLOCK_ID", "CODE", "NAME", "DETAIL_PAGE_URL", "PROPERTY_*");
+                    $arFilter = array("IBLOCK_ID" => 2, "ACTIVE_DATE" => "Y", "ACTIVE" => "Y", "PROPERTY_CATAL_BLOCK3" => 60);
+                    $resProdblock = CIblockElement::GetList(array("DATE_CREATE" => "DESC"), $arFilter, false, [], $arSelect);
+                    while ($obProdMain = $resProdblock->GetNextElement()) {
+                        $arCart = [];
+                        $item = $obProdMain->GetFields();
+                        $itemProp = $obProdMain->GetProperties();
+
+                        $productTitle = $item["NAME"];
+                        $arSelect = array("ID", "IBLOCK_ID", "CODE", "NAME", "DETAIL_PICTURE", "PROPERTY_*");
+                        $arFilter = array("IBLOCK_ID" => 3, "ACTIVE_DATE" => "Y", "ACTIVE" => "Y", "PROPERTY_CML2_LINK" => $item["ID"]);
+                        $resOfferMain = CIblockElement::GetList(array("DATE_CREATE" => "DESC"), $arFilter, false, [], $arSelect);
+                        if ($obOfferMain = $resOfferMain->GetNextElement()) {
+
+                            $arFieldsOfferMain = $obOfferMain->GetFields();
+                            //  print_r($arFieldsOfferMain);
+                            //  $foto=CFile::GetPath($arFieldsOfferMain["DETAIL_PICTURE"]);
+                            // var_dump($foto);
+
+                            $allProductPrices = \Bitrix\Catalog\PriceTable::getList([
+                                "select" => ["*"],
+                                "filter" => [
+                                    "=PRODUCT_ID" => $arFieldsOfferMain["ID"],
+                                ],
+                                "order" => ["CATALOG_GROUP_ID" => "ASC"]
+                            ])->fetchAll();
+                            $salePrice = "";
+                            $retailPrice = "";
+                            foreach ($allProductPrices as $itemPrice) {
+                                if ($itemPrice['CATALOG_GROUP_ID'] == 1)
+                                    $salePrice = round($itemPrice['PRICE']);
+                                if ($itemPrice['CATALOG_GROUP_ID'] == 2)
+                                    $retailPrice = round($itemPrice['PRICE']);
+                            }
+                            $renderImage = CFile::ResizeImageGet($arFieldsOfferMain["DETAIL_PICTURE"], array("width" => 372, "height" => 600), BX_RESIZE_IMAGE_PROPORTIONAL);
+                            $Photo = $renderImage["src"];
+
+                            $arPropsOfferMain = $obOfferMain->GetProperties();
+
+                            $resultColor = $hlDataClass::getList(array(
+                                "select" => array("ID", "UF_NAME", "UF_XML_ID", "UF_COLORCOD"), // Поля для выборки
+                                "order" => array(),
+                                "filter" => array("UF_XML_ID" => $arPropsOfferMain["COLOR_REF"]['VALUE']),
+                            ));
+
+                            if ($resp = $resultColor->fetch()) {
+                                $mainColor = $resp['UF_COLORCOD'];
+                            }
+                        }
+
+                        $idSkeep = $item["ID"];
+                        $arCart[] = [
+                            "id" => $item["ID"],
+                            "code" => $item["CODE"],
+                            "img" => "$Photo",
+                            "sale" => $salePrice,
+                            "retail" => $retailPrice,
+                            "color" => "$mainColor",
+                            "href" => $item['DETAIL_PAGE_URL'],
+                        ];
+
+                        $articl = $itemProp["ARTNUMBER"]["VALUE"];
+                        $maxCart = 5;
+                        $totalCart = 0;
+                        $plusColor = 0;
+                        $arSelect = array("ID", "IBLOCK_ID", "CODE", "NAME", "DETAIL_PAGE_URL", "PROPERTY_*");
+                        $arFilter = array("IBLOCK_ID" => 2, "ACTIVE_DATE" => "Y", "ACTIVE" => "Y", "PROPERTY_ARTNUMBER" => $articl);
+                        $resProd = CIblockElement::GetList(array("DATE_CREATE" => "DESC"), $arFilter, false, [], $arSelect);
+                        while ($obProd = $resProd->GetNextElement()) {
+                            $totalCart++;
+                            if ($totalCart > $maxCart) {
+                                $plusColor++;
+                                continue;
+                            }
+                            $arFieldsProd = $obProd->GetFields();
+                            if ($arFieldsProd["ID"] == $idSkeep) {
+                                continue;
+                            }
+                            $idProd = $arFieldsProd["ID"];
+                            $code = $arFieldsProd["CODE"];
+                            $url = $arFieldsProd["DETAIL_PAGE_URL"];
+                            $arSelect = array("ID", "IBLOCK_ID", "CODE", "NAME", "DETAIL_PICTURE", "PROPERTY_*");
+                            $arFilter = array("IBLOCK_ID" => 3, "ACTIVE_DATE" => "Y", "ACTIVE" => "Y", "PROPERTY_CML2_LINK" => $arFieldsProd["ID"]);
+                            $resOffer = CIblockElement::GetList(array("DATE_CREATE" => "DESC"), $arFilter, false, [], $arSelect);
+                            if ($obOffer = $resOffer->GetNextElement()) {
+                                $arFieldsOffer = $obOffer->GetFields();
+                                /// print_r($arFieldsOffer);
+                                $renderImage = CFile::ResizeImageGet($arFieldsOffer["DETAIL_PICTURE"], array("width" => 372, "height" => 600), BX_RESIZE_IMAGE_PROPORTIONAL);
+                                $Photo = $renderImage["src"];
+                                $arProps = $obOffer->GetProperties();
+
+                                $resultColor = $hlDataClass::getList(array(
+                                    "select" => array("ID", "UF_NAME", "UF_XML_ID", "UF_COLORCOD"), // Поля для выборки
+                                    "order" => array(),
+                                    "filter" => array("UF_XML_ID" => $arProps["COLOR_REF"]['VALUE']),
+                                ));
+
+
+                                $allProductPrices = \Bitrix\Catalog\PriceTable::getList([
+                                    "select" => ["*"],
+                                    "filter" => [
+                                        "=PRODUCT_ID" => $arFieldsOffer["ID"],
+                                    ],
+                                    "order" => ["CATALOG_GROUP_ID" => "ASC"]
+                                ])->fetchAll();
+                                $salePrice = "";
+                                $retailPrice = "";
+                                foreach ($allProductPrices as $itemPrice) {
+                                    if ($itemPrice['CATALOG_GROUP_ID'] == 1)
+                                        $salePrice = round($itemPrice['PRICE']);
+                                    if ($itemPrice['CATALOG_GROUP_ID'] == 2)
+                                        $retailPrice = round($itemPrice['PRICE']);
+                                }
+
+
+                                if ($resp = $resultColor->fetch()) {
+                                    $mainColor = $resp['UF_COLORCOD'];
+
+                                    $arCart[] = [
+                                        "id" => $idProd,
+                                        "code" => $code,
+                                        "img" => "$Photo",
+                                        "sale" => $salePrice,
+                                        "retail" => $retailPrice,
+                                        "color" => "$mainColor",
+                                        "href" => $url,
+                                    ];
+
+
+                                }
+                            }
+                        }
+                        ?>
+                        <div class="slide-item swiper-slide colors-item">
+                            <div class="image-block">
+                                <div class="product-tags">
+                                    <?
+
+                                    if ($item['PROPERTIES']['SPECIALOFFER']['VALUE'] == "да") {
+
+                                        ?>
+                                        <div class="product-tags__item sale-item">Спец пред.!</div>
+                                        <?
+                                    }
+                                    if ($item['PROPERTIES']['NEWPRODUCT']['VALUE'] == "да") {
+                                        ?>
+                                        <div class="product-tags__item new-item">New</div>
+                                        <?
+                                    }
+                                    ?>
                                 </div>
-                                <div class="colors-navigation">
-                                    <div class="colors-btn color-prev"><i class="icon icon-slider_arrow"></i></div>
-                                    <div class="colors-btn color-next"><i class="icon icon-slider_arrow"></i></div>
+                                <div class="colors-slider swiper">
+                                    <div class="swiper-wrapper">
+
+                                        <?
+                                        foreach ($arCart as $itemCart) {
+                                            ?>
+                                            <a data-idProd="<?= $itemCart['id'] ?>" data-sale="<?= $itemCart['sale'] ?>"
+                                               data-retail="<?= $itemCart['retail'] ?>" href="<?= $itemCart['href'] ?>"
+                                               class="product-link swiper-slide chengeColor"
+                                               data-color="<?
+                                               if (empty($itemCart['color'])) {
+                                                   echo "#bdbdbd";
+                                               } else {
+                                                   echo $itemCart['color'];
+                                               }
+                                               ?>">
+                                                <img src="<?= $itemCart['img'] ?>" alt="<?= $itemCart['code'] ?>"
+                                                     class="product-image">
+                                            </a>
+                                            <?
+                                        }
+                                        ?>
+                                    </div>
+                                    <div class="colors-navigation">
+                                        <div class="colors-btn color-prev"><i class="icon icon-slider_arrow"></i></div>
+                                        <div class="colors-btn color-next"><i class="icon icon-slider_arrow"></i></div>
+                                    </div>
+                                </div>
+                                <div class="product-btns">
+                                    <a style="cursor: pointer; z-index: 99999;" data-item="<?= $item['ID'] ?>"
+                                       class="product-btn favorite-link <?
+
+                                       if (isset($favoritesAr[$item['ID']])) {
+                                           echo "active";
+                                       }
+
+                                       ?>"><i class="icon icon-heart"></i></a>
+                                    <a style="cursor: pointer;" data-idProd="<?= $item["ID"] ?>"
+                                       onclick="window._$productModal.showProductById('<?= $item["ID"] ?>');"
+                                       class="product-btn addcart-link"><i
+                                                class="icon icon-cart"></i><span>Подробнее</span></a>
                                 </div>
                             </div>
-                            <div class="product-btns">
-                                <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
-                                <a href="#" class="product-btn addcart-link"><i class="icon icon-cart"></i><span>В корзину</span></a>
-                            </div>
-                        </div>
-                        <div class="descr-block">
-                            <a href="#" class="product-name">Жакет женский</a>
-                            <span class="product-price">
-                                <span class="oldprice">1 749 ₽</span>
-                            <span class="price">1 749 ₽</span>
+                            <div class="descr-block">
+                                <a href="#" class="product-name"><?= $productTitle ?></a>
+                                <span class="product-price">
+                                <span class="oldprice"><?
+
+
+                                    if (!empty($retailPrice)) {
+
+                                        echo "$retailPrice ₽";
+
+                                    }
+
+                                    ?></span>
+                            <span class="price"><?
+
+
+                                if (!empty($salePrice)) {
+
+                                    echo "$salePrice ₽";
+
+                                }
+
+
+                                ?></span>
                             </span>
-                            <div class="product-colors">
-                                <div class="colors-pagination"></div>
-                                <span class="product-colors__all">+19 цветов</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="slide-item swiper-slide colors-item">
-                        <div class="image-block">
-                            <div class="colors-slider swiper">
-                                <div class="swiper-wrapper">
-                                    <a href="#" class="product-link swiper-slide" data-color="#AEB9A9">
-                                        <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image21.jpg" alt="product" class="product-image">
-                                    </a>
-                                    <a href="#" class="product-link swiper-slide" data-color="#8ACAFF">
-                                        <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image22.jpg" alt="product" class="product-image">
-                                    </a>
-                                    <a href="#" class="product-link swiper-slide" data-color="#252426">
-                                        <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image23.jpg" alt="product" class="product-image">
-                                    </a>
-                                </div>
-                                <div class="colors-navigation">
-                                    <div class="colors-btn color-prev"><i class="icon icon-slider_arrow"></i></div>
-                                    <div class="colors-btn color-next"><i class="icon icon-slider_arrow"></i></div>
+                                <div class="product-colors">
+                                    <div class="colors-pagination"></div>
+                                    <span class="product-colors__all"><?
+                                        if (!empty($plusColor)) {
+                                            ?>
+                                            <span class="product-colors__all">+ <?
+                                                echo num_word($plusColor, ["Цвет", "Цвета", "Цветов"]);
+                                                ?></span>
+                                            <?
+                                        }
+                                        ?></span>
                                 </div>
                             </div>
-                            <div class="product-btns">
-                                <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
-                                <a href="#" class="product-btn addcart-link"><i class="icon icon-cart"></i><span>В корзину</span></a>
-                            </div>
                         </div>
-                        <div class="descr-block">
-                            <a href="#" class="product-name">Жакет женский</a>
-                            <span class="product-price">
-                                <span class="oldprice">1 749 ₽</span>
-                            <span class="price">1 749 ₽</span>
-                            </span>
-                            <div class="product-colors">
-                                <div class="colors-pagination"></div>
-                                <span class="product-colors__all">+19 цветов</span>
-                            </div>
-                        </div>
-                    </div>
+
+                        <?
+                    }
+
+                    ?>
+
+
+
+
                     <!-- end colors-slider -->
-                    <div class="slide-item swiper-slide">
-                        <div class="image-block">
-                            <a href="#" class="product-link">
-                                <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image21.jpg" alt="product" class="product-image">
-                            </a>
-                            <div class="product-btns">
-                                <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
-                                <a href="#" class="product-btn addcart-link"><i class="icon icon-cart"></i><span>В корзину</span></a>
-                            </div>
-                        </div>
-                        <div class="descr-block">
-                            <a href="#" class="product-name">Жакет женский</a>
-                            <span class="product-price">
-                                <span class="oldprice">1 749 ₽</span>
-                            <span class="price">1 749 ₽</span>
-                            </span>
-                            <div class="product-colors"></div>
-                        </div>
-                    </div>
-                    <div class="slide-item swiper-slide">
-                        <div class="image-block">
-                            <div class="product-tags">
-                                <div class="product-tags__item sale-item">M, S — 20%</div>
-                                <div class="product-tags__item new-item">New</div>
-                            </div>
-                            <a href="#" class="product-link">
-                                <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image23.jpg" alt="product" class="product-image">
-                            </a>
-                            <div class="product-btns">
-                                <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
-                                <a href="#" class="product-btn addcart-link"><i class="icon icon-cart"></i><span>В корзину</span></a>
-                            </div>
-                        </div>
-                        <div class="descr-block">
-                            <a href="#" class="product-name">Жакет женский</a>
-                            <span class="product-price">
-                                <span class="oldprice">1 749 ₽</span>
-                            <span class="price">1 749 ₽</span>
-                            </span>
-                            <div class="product-colors">
-                                <span class="product-colors__all">+19 цветов</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="slide-item swiper-slide">
-                        <div class="image-block">
-                            <a href="#" class="product-link">
-                                <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image22.jpg" alt="product" class="product-image">
-                            </a>
-                            <div class="product-btns">
-                                <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
-                                <a href="#" class="product-btn addcart-link"><i class="icon icon-cart"></i><span>В корзину</span></a>
-                            </div>
-                        </div>
-                        <div class="descr-block">
-                            <a href="#" class="product-name">Жакет женский</a>
-                            <span class="product-price">
-                                <span class="oldprice">1 749 ₽</span>
-                            <span class="price">1 749 ₽</span>
-                            </span>
-                            <div class="product-colors"></div>
-                        </div>
-                    </div>
-                    <div class="slide-item swiper-slide">
-                        <div class="image-block">
-                            <a href="#" class="product-link">
-                                <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image21.jpg" alt="product" class="product-image">
-                            </a>
-                            <div class="product-btns">
-                                <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
-                                <a href="#" class="product-btn addcart-link"><i class="icon icon-cart"></i><span>В корзину</span></a>
-                            </div>
-                        </div>
-                        <div class="descr-block">
-                            <a href="#" class="product-name">Жакет женский</a>
-                            <span class="product-price">
-                                <span class="oldprice">1 749 ₽</span>
-                            <span class="price">1 749 ₽</span>
-                            </span>
-                            <div class="product-colors">
-                                <span class="product-colors__all">+19 цветов</span>
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 <div class="swiper-navigation">
                     <div class="nav-btn btn-prev"><i class="icon icon-slider_arrow"></i></div>
@@ -911,7 +990,8 @@ while ($obProdMain = $resProd->GetNextElement()) {
         </div>
     </section>
     <section class="mpage-banner full-banner left-center-style">
-        <div class="banner-slide lazyload" data-bgset="<?=DEFAULT_TEMPLATE_PATH?>/images/main//main_page/banners/mobile/fullbanner_image4.jpg [(max-width: 575px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/pad/fullbanner_image4.jpg [(max-width: 1024px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/fullbanner_image4.jpg [(min-width: 1025px)]">
+        <div class="banner-slide lazyload"
+             data-bgset="<?= DEFAULT_TEMPLATE_PATH ?>/images/main//main_page/banners/mobile/fullbanner_image4.jpg [(max-width: 575px)] | <?= DEFAULT_TEMPLATE_PATH ?>/images/main/main_page/banners/pad/fullbanner_image4.jpg [(max-width: 1024px)] | <?= DEFAULT_TEMPLATE_PATH ?>/images/main/main_page/banners/fullbanner_image4.jpg [(min-width: 1025px)]">
             <div class="container">
                 <h3 class="banner-subtitle">Новый сезон</h3>
                 <h2 class="banner-title">Irses flowers</h2>
@@ -922,7 +1002,8 @@ while ($obProdMain = $resProd->GetNextElement()) {
         </div>
     </section>
     <section class="mpage-banner full-banner center-style">
-        <div class="banner-slide lazyload" data-bgset="<?=DEFAULT_TEMPLATE_PATH?>/images/main//main_page/banners/mobile/fullbanner_image5.jpg [(max-width: 575px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/pad/fullbanner_image5.jpg [(max-width: 1024px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/fullbanner_image5.jpg [(min-width: 1025px)]">
+        <div class="banner-slide lazyload"
+             data-bgset="<?= DEFAULT_TEMPLATE_PATH ?>/images/main//main_page/banners/mobile/fullbanner_image5.jpg [(max-width: 575px)] | <?= DEFAULT_TEMPLATE_PATH ?>/images/main/main_page/banners/pad/fullbanner_image5.jpg [(max-width: 1024px)] | <?= DEFAULT_TEMPLATE_PATH ?>/images/main/main_page/banners/fullbanner_image5.jpg [(min-width: 1025px)]">
             <div class="container">
                 <h3 class="banner-subtitle">Повседневная одежда</h3>
                 <h2 class="banner-title">Coffee with mint</h2>
@@ -941,7 +1022,8 @@ while ($obProdMain = $resProd->GetNextElement()) {
                     <h2 class="banner-title">Tropical mood</h2>
                     <a href="#" class="banner-link btn-fill-style white-style">Перейти в каталог</a>
                 </div>
-                <div class="banner-slide__image lazyload" data-bgset="<?=DEFAULT_TEMPLATE_PATH?>/images/main//main_page/banners/mobile/sidebanner_image3.jpg [(max-width: 575px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/pad/sidebanner_image3.jpg [(max-width: 1024px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/sidebanner_image3.jpg [(min-width: 1025px)]"></div>
+                <div class="banner-slide__image lazyload"
+                     data-bgset="<?= DEFAULT_TEMPLATE_PATH ?>/images/main//main_page/banners/mobile/sidebanner_image3.jpg [(max-width: 575px)] | <?= DEFAULT_TEMPLATE_PATH ?>/images/main/main_page/banners/pad/sidebanner_image3.jpg [(max-width: 1024px)] | <?= DEFAULT_TEMPLATE_PATH ?>/images/main/main_page/banners/sidebanner_image3.jpg [(min-width: 1025px)]"></div>
             </div>
         </div>
     </section>
@@ -953,7 +1035,8 @@ while ($obProdMain = $resProd->GetNextElement()) {
                     <h2 class="banner-title">Night garden</h2>
                     <a href="#" class="banner-link btn-fill-style white-style">Перейти в каталог</a>
                 </div>
-                <div class="banner-slide__image lazyload" data-bgset="<?=DEFAULT_TEMPLATE_PATH?>/images/main//main_page/banners/mobile/sidebanner_image4.jpg [(max-width: 575px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/pad/sidebanner_image4.jpg [(max-width: 1024px)] | <?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/banners/sidebanner_image4.jpg [(min-width: 1025px)]"></div>
+                <div class="banner-slide__image lazyload"
+                     data-bgset="<?= DEFAULT_TEMPLATE_PATH ?>/images/main//main_page/banners/mobile/sidebanner_image4.jpg [(max-width: 575px)] | <?= DEFAULT_TEMPLATE_PATH ?>/images/main/main_page/banners/pad/sidebanner_image4.jpg [(max-width: 1024px)] | <?= DEFAULT_TEMPLATE_PATH ?>/images/main/main_page/banners/sidebanner_image4.jpg [(min-width: 1025px)]"></div>
             </div>
         </div>
     </section>
@@ -963,167 +1046,249 @@ while ($obProdMain = $resProd->GetNextElement()) {
             <div class="catalog-slider swiper">
                 <div class="swiper-wrapper">
                     <!-- if colors-slider -->
-                    <div class="slide-item swiper-slide colors-item">
-                        <div class="image-block">
-                            <div class="product-tags">
-                                <div class="product-tags__item sale-item">M, S — 20%</div>
-                                <div class="product-tags__item new-item">New</div>
-                            </div>
-                            <div class="colors-slider swiper">
-                                <div class="swiper-wrapper">
-                                    <a href="#" class="product-link swiper-slide" data-color="#AEB9A9">
-                                        <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image31.jpg" alt="product" class="product-image">
-                                    </a>
-                                    <a href="#" class="product-link swiper-slide" data-color="#8ACAFF">
-                                        <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image32.jpg" alt="product" class="product-image">
-                                    </a>
-                                    <a href="#" class="product-link swiper-slide" data-color="#252426">
-                                        <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image33.jpg" alt="product" class="product-image">
-                                    </a>
+                    <?
+
+
+                    $mainColor = "";
+                    $arSelect = array("ID", "IBLOCK_ID", "CODE", "NAME", "DETAIL_PAGE_URL", "PROPERTY_*");
+                    $arFilter = array("IBLOCK_ID" => 2, "ACTIVE_DATE" => "Y", "ACTIVE" => "Y", "PROPERTY_CATAL_BLOCK4" => 61);
+                    $resProdblock = CIblockElement::GetList(array("DATE_CREATE" => "DESC"), $arFilter, false, [], $arSelect);
+                    while ($obProdMain = $resProdblock->GetNextElement()) {
+                        $arCart = [];
+                        $item = $obProdMain->GetFields();
+                        $itemProp = $obProdMain->GetProperties();
+
+                        $productTitle = $item["NAME"];
+                        $arSelect = array("ID", "IBLOCK_ID", "CODE", "NAME", "DETAIL_PICTURE", "PROPERTY_*");
+                        $arFilter = array("IBLOCK_ID" => 3, "ACTIVE_DATE" => "Y", "ACTIVE" => "Y", "PROPERTY_CML2_LINK" => $item["ID"]);
+                        $resOfferMain = CIblockElement::GetList(array("DATE_CREATE" => "DESC"), $arFilter, false, [], $arSelect);
+                        if ($obOfferMain = $resOfferMain->GetNextElement()) {
+
+                            $arFieldsOfferMain = $obOfferMain->GetFields();
+                            //  print_r($arFieldsOfferMain);
+                            //  $foto=CFile::GetPath($arFieldsOfferMain["DETAIL_PICTURE"]);
+                            // var_dump($foto);
+
+                            $allProductPrices = \Bitrix\Catalog\PriceTable::getList([
+                                "select" => ["*"],
+                                "filter" => [
+                                    "=PRODUCT_ID" => $arFieldsOfferMain["ID"],
+                                ],
+                                "order" => ["CATALOG_GROUP_ID" => "ASC"]
+                            ])->fetchAll();
+                            $salePrice = "";
+                            $retailPrice = "";
+                            foreach ($allProductPrices as $itemPrice) {
+                                if ($itemPrice['CATALOG_GROUP_ID'] == 1)
+                                    $salePrice = round($itemPrice['PRICE']);
+                                if ($itemPrice['CATALOG_GROUP_ID'] == 2)
+                                    $retailPrice = round($itemPrice['PRICE']);
+                            }
+                            $renderImage = CFile::ResizeImageGet($arFieldsOfferMain["DETAIL_PICTURE"], array("width" => 372, "height" => 600), BX_RESIZE_IMAGE_PROPORTIONAL);
+                            $Photo = $renderImage["src"];
+
+                            $arPropsOfferMain = $obOfferMain->GetProperties();
+
+                            $resultColor = $hlDataClass::getList(array(
+                                "select" => array("ID", "UF_NAME", "UF_XML_ID", "UF_COLORCOD"), // Поля для выборки
+                                "order" => array(),
+                                "filter" => array("UF_XML_ID" => $arPropsOfferMain["COLOR_REF"]['VALUE']),
+                            ));
+
+                            if ($resp = $resultColor->fetch()) {
+                                $mainColor = $resp['UF_COLORCOD'];
+                            }
+                        }
+
+                        $idSkeep = $item["ID"];
+                        $arCart[] = [
+                            "id" => $item["ID"],
+                            "code" => $item["CODE"],
+                            "img" => "$Photo",
+                            "sale" => $salePrice,
+                            "retail" => $retailPrice,
+                            "color" => "$mainColor",
+                            "href" => $item['DETAIL_PAGE_URL'],
+                        ];
+
+                        $articl = $itemProp["ARTNUMBER"]["VALUE"];
+                        $maxCart = 5;
+                        $totalCart = 0;
+                        $plusColor = 0;
+                        $arSelect = array("ID", "IBLOCK_ID", "CODE", "NAME", "DETAIL_PAGE_URL", "PROPERTY_*");
+                        $arFilter = array("IBLOCK_ID" => 2, "ACTIVE_DATE" => "Y", "ACTIVE" => "Y", "PROPERTY_ARTNUMBER" => $articl);
+                        $resProd = CIblockElement::GetList(array("DATE_CREATE" => "DESC"), $arFilter, false, [], $arSelect);
+                        while ($obProd = $resProd->GetNextElement()) {
+                            $totalCart++;
+                            if ($totalCart > $maxCart) {
+                                $plusColor++;
+                                continue;
+                            }
+                            $arFieldsProd = $obProd->GetFields();
+                            if ($arFieldsProd["ID"] == $idSkeep) {
+                                continue;
+                            }
+                            $idProd = $arFieldsProd["ID"];
+                            $code = $arFieldsProd["CODE"];
+                            $url = $arFieldsProd["DETAIL_PAGE_URL"];
+                            $arSelect = array("ID", "IBLOCK_ID", "CODE", "NAME", "DETAIL_PICTURE", "PROPERTY_*");
+                            $arFilter = array("IBLOCK_ID" => 3, "ACTIVE_DATE" => "Y", "ACTIVE" => "Y", "PROPERTY_CML2_LINK" => $arFieldsProd["ID"]);
+                            $resOffer = CIblockElement::GetList(array("DATE_CREATE" => "DESC"), $arFilter, false, [], $arSelect);
+                            if ($obOffer = $resOffer->GetNextElement()) {
+                                $arFieldsOffer = $obOffer->GetFields();
+                                /// print_r($arFieldsOffer);
+                                $renderImage = CFile::ResizeImageGet($arFieldsOffer["DETAIL_PICTURE"], array("width" => 372, "height" => 600), BX_RESIZE_IMAGE_PROPORTIONAL);
+                                $Photo = $renderImage["src"];
+                                $arProps = $obOffer->GetProperties();
+
+                                $resultColor = $hlDataClass::getList(array(
+                                    "select" => array("ID", "UF_NAME", "UF_XML_ID", "UF_COLORCOD"), // Поля для выборки
+                                    "order" => array(),
+                                    "filter" => array("UF_XML_ID" => $arProps["COLOR_REF"]['VALUE']),
+                                ));
+
+
+                                $allProductPrices = \Bitrix\Catalog\PriceTable::getList([
+                                    "select" => ["*"],
+                                    "filter" => [
+                                        "=PRODUCT_ID" => $arFieldsOffer["ID"],
+                                    ],
+                                    "order" => ["CATALOG_GROUP_ID" => "ASC"]
+                                ])->fetchAll();
+                                $salePrice = "";
+                                $retailPrice = "";
+                                foreach ($allProductPrices as $itemPrice) {
+                                    if ($itemPrice['CATALOG_GROUP_ID'] == 1)
+                                        $salePrice = round($itemPrice['PRICE']);
+                                    if ($itemPrice['CATALOG_GROUP_ID'] == 2)
+                                        $retailPrice = round($itemPrice['PRICE']);
+                                }
+
+
+                                if ($resp = $resultColor->fetch()) {
+                                    $mainColor = $resp['UF_COLORCOD'];
+
+                                    $arCart[] = [
+                                        "id" => $idProd,
+                                        "code" => $code,
+                                        "img" => "$Photo",
+                                        "sale" => $salePrice,
+                                        "retail" => $retailPrice,
+                                        "color" => "$mainColor",
+                                        "href" => $url,
+                                    ];
+
+
+                                }
+                            }
+                        }
+                        ?>
+                        <div class="slide-item swiper-slide colors-item">
+                            <div class="image-block">
+                                <div class="product-tags">
+                                    <?
+
+                                    if ($item['PROPERTIES']['SPECIALOFFER']['VALUE'] == "да") {
+
+                                        ?>
+                                        <div class="product-tags__item sale-item">Спец пред.!</div>
+                                        <?
+                                    }
+                                    if ($item['PROPERTIES']['NEWPRODUCT']['VALUE'] == "да") {
+                                        ?>
+                                        <div class="product-tags__item new-item">New</div>
+                                        <?
+                                    }
+                                    ?>
                                 </div>
-                                <div class="colors-navigation">
-                                    <div class="colors-btn color-prev"><i class="icon icon-slider_arrow"></i></div>
-                                    <div class="colors-btn color-next"><i class="icon icon-slider_arrow"></i></div>
+                                <div class="colors-slider swiper">
+                                    <div class="swiper-wrapper">
+
+                                        <?
+                                        foreach ($arCart as $itemCart) {
+                                            ?>
+                                            <a data-idProd="<?= $itemCart['id'] ?>" data-sale="<?= $itemCart['sale'] ?>"
+                                               data-retail="<?= $itemCart['retail'] ?>" href="<?= $itemCart['href'] ?>"
+                                               class="product-link swiper-slide chengeColor"
+                                               data-color="<?
+                                               if (empty($itemCart['color'])) {
+                                                   echo "#bdbdbd";
+                                               } else {
+                                                   echo $itemCart['color'];
+                                               }
+                                               ?>">
+                                                <img src="<?= $itemCart['img'] ?>" alt="<?= $itemCart['code'] ?>"
+                                                     class="product-image">
+                                            </a>
+                                            <?
+                                        }
+                                        ?>
+                                    </div>
+                                    <div class="colors-navigation">
+                                        <div class="colors-btn color-prev"><i class="icon icon-slider_arrow"></i></div>
+                                        <div class="colors-btn color-next"><i class="icon icon-slider_arrow"></i></div>
+                                    </div>
+                                </div>
+                                <div class="product-btns">
+                                    <a style="cursor: pointer; z-index: 99999;" data-item="<?= $item['ID'] ?>"
+                                       class="product-btn favorite-link <?
+
+                                       if (isset($favoritesAr[$item['ID']])) {
+                                           echo "active";
+                                       }
+
+                                       ?>"><i class="icon icon-heart"></i></a>
+                                    <a style="cursor: pointer;" data-idProd="<?= $item["ID"] ?>"
+                                       onclick="window._$productModal.showProductById('<?= $item["ID"] ?>');"
+                                       class="product-btn addcart-link"><i
+                                                class="icon icon-cart"></i><span>Подробнее</span></a>
                                 </div>
                             </div>
-                            <div class="product-btns">
-                                <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
-                                <a href="#" class="product-btn addcart-link"><i class="icon icon-cart"></i><span>В корзину</span></a>
-                            </div>
-                        </div>
-                        <div class="descr-block">
-                            <a href="#" class="product-name">Жакет женский</a>
-                            <span class="product-price">
-                                <span class="oldprice">1 749 ₽</span>
-                            <span class="price">1 749 ₽</span>
+                            <div class="descr-block">
+                                <a href="#" class="product-name"><?= $productTitle ?></a>
+                                <span class="product-price">
+                                <span class="oldprice"><?
+
+
+                                    if (!empty($retailPrice)) {
+
+                                        echo "$retailPrice ₽";
+
+                                    }
+
+                                    ?></span>
+                            <span class="price"><?
+
+
+                                if (!empty($salePrice)) {
+
+                                    echo "$salePrice ₽";
+
+                                }
+
+
+                                ?></span>
                             </span>
-                            <div class="product-colors">
-                                <div class="colors-pagination"></div>
-                                <span class="product-colors__all">+19 цветов</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="slide-item swiper-slide colors-item">
-                        <div class="image-block">
-                            <div class="colors-slider swiper">
-                                <div class="swiper-wrapper">
-                                    <a href="#" class="product-link swiper-slide" data-color="#AEB9A9">
-                                        <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image31.jpg" alt="product" class="product-image">
-                                    </a>
-                                    <a href="#" class="product-link swiper-slide" data-color="#8ACAFF">
-                                        <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image32.jpg" alt="product" class="product-image">
-                                    </a>
-                                    <a href="#" class="product-link swiper-slide" data-color="#252426">
-                                        <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image33.jpg" alt="product" class="product-image">
-                                    </a>
-                                </div>
-                                <div class="colors-navigation">
-                                    <div class="colors-btn color-prev"><i class="icon icon-slider_arrow"></i></div>
-                                    <div class="colors-btn color-next"><i class="icon icon-slider_arrow"></i></div>
+                                <div class="product-colors">
+                                    <div class="colors-pagination"></div>
+                                    <span class="product-colors__all"><?
+                                        if (!empty($plusColor)) {
+                                            ?>
+                                            <span class="product-colors__all">+ <?
+                                                echo num_word($plusColor, ["Цвет", "Цвета", "Цветов"]);
+                                                ?></span>
+                                            <?
+                                        }
+                                        ?></span>
                                 </div>
                             </div>
-                            <div class="product-btns">
-                                <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
-                                <a href="#" class="product-btn addcart-link"><i class="icon icon-cart"></i><span>В корзину</span></a>
-                            </div>
                         </div>
-                        <div class="descr-block">
-                            <a href="#" class="product-name">Жакет женский</a>
-                            <span class="product-price">
-                                <span class="oldprice">1 749 ₽</span>
-                            <span class="price">1 749 ₽</span>
-                            </span>
-                            <div class="product-colors">
-                                <div class="colors-pagination"></div>
-                                <span class="product-colors__all">+19 цветов</span>
-                            </div>
-                        </div>
-                    </div>
+
+                        <?
+                    }
+
+                    ?>
                     <!-- end colors-slider -->
-                    <div class="slide-item swiper-slide">
-                        <div class="image-block">
-                            <a href="#" class="product-link">
-                                <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image31.jpg" alt="product" class="product-image">
-                            </a>
-                            <div class="product-btns">
-                                <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
-                                <a href="#" class="product-btn addcart-link"><i class="icon icon-cart"></i><span>В корзину</span></a>
-                            </div>
-                        </div>
-                        <div class="descr-block">
-                            <a href="#" class="product-name">Жакет женский</a>
-                            <span class="product-price">
-                                <span class="oldprice">1 749 ₽</span>
-                            <span class="price">1 749 ₽</span>
-                            </span>
-                            <div class="product-colors"></div>
-                        </div>
-                    </div>
-                    <div class="slide-item swiper-slide">
-                        <div class="image-block">
-                            <div class="product-tags">
-                                <div class="product-tags__item sale-item">M, S — 20%</div>
-                                <div class="product-tags__item new-item">New</div>
-                            </div>
-                            <a href="#" class="product-link">
-                                <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image33.jpg" alt="product" class="product-image">
-                            </a>
-                            <div class="product-btns">
-                                <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
-                                <a href="#" class="product-btn addcart-link"><i class="icon icon-cart"></i><span>В корзину</span></a>
-                            </div>
-                        </div>
-                        <div class="descr-block">
-                            <a href="#" class="product-name">Жакет женский</a>
-                            <span class="product-price">
-                                <span class="oldprice">1 749 ₽</span>
-                            <span class="price">1 749 ₽</span>
-                            </span>
-                            <div class="product-colors">
-                                <span class="product-colors__all">+19 цветов</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="slide-item swiper-slide">
-                        <div class="image-block">
-                            <a href="#" class="product-link">
-                                <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image32.jpg" alt="product" class="product-image">
-                            </a>
-                            <div class="product-btns">
-                                <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
-                                <a href="#" class="product-btn addcart-link"><i class="icon icon-cart"></i><span>В корзину</span></a>
-                            </div>
-                        </div>
-                        <div class="descr-block">
-                            <a href="#" class="product-name">Жакет женский</a>
-                            <span class="product-price">
-                                <span class="oldprice">1 749 ₽</span>
-                            <span class="price">1 749 ₽</span>
-                            </span>
-                            <div class="product-colors"></div>
-                        </div>
-                    </div>
-                    <div class="slide-item swiper-slide">
-                        <div class="image-block">
-                            <a href="#" class="product-link">
-                                <img src="<?=DEFAULT_TEMPLATE_PATH?>/images/main/main_page/catalogs/product_image31.jpg" alt="product" class="product-image">
-                            </a>
-                            <div class="product-btns">
-                                <a href="#" class="product-btn favorite-link"><i class="icon icon-heart"></i></a>
-                                <a href="#" class="product-btn addcart-link"><i class="icon icon-cart"></i><span>В корзину</span></a>
-                            </div>
-                        </div>
-                        <div class="descr-block">
-                            <a href="#" class="product-name">Жакет женский</a>
-                            <span class="product-price">
-                                <span class="oldprice">1 749 ₽</span>
-                            <span class="price">1 749 ₽</span>
-                            </span>
-                            <div class="product-colors">
-                                <span class="product-colors__all">+19 цветов</span>
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 <div class="swiper-navigation">
                     <div class="nav-btn btn-prev"><i class="icon icon-slider_arrow"></i></div>
@@ -1144,7 +1309,8 @@ while ($obProdMain = $resProd->GetNextElement()) {
                     <div class="input-group check-group">
                         <label>
                             <input type="checkbox" name="check" required>
-                            <span>СОГЛАСЕН НА ОБРАБОТКУ ПЕРСОНАЛЬНЫХ ДАННЫХ, С <a href="#">ДОГОВОРОМ ПУБЛИЧНОЙ ОФЕРТЫ</a> И <a href="#">ПОЛИТИКОЙ КОНФИДЕНЦИАЛЬНОСТИ</a> ОЗНАКОМЛЕН И ПРИНИМАЮ</span>
+                            <span>СОГЛАСЕН НА ОБРАБОТКУ ПЕРСОНАЛЬНЫХ ДАННЫХ, С <a
+                                        href="#">ДОГОВОРОМ ПУБЛИЧНОЙ ОФЕРТЫ</a> И <a href="#">ПОЛИТИКОЙ КОНФИДЕНЦИАЛЬНОСТИ</a> ОЗНАКОМЛЕН И ПРИНИМАЮ</span>
                         </label>
                     </div>
                     <div class="input-group btn-group">
@@ -1154,12 +1320,15 @@ while ($obProdMain = $resProd->GetNextElement()) {
             </div>
             <div class="subscribe-section__social">
                 <ul class="social-list">
-                    <li class="social-list__item"><a href="#" target="_blank" class="social-list__link"><i class="icon icon-youtube"></i></a></li>
-                    <li class="social-list__item"><a href="#" target="_blank" class="social-list__link"><i class="icon icon-vk"></i></a></li>
-                    <li class="social-list__item"><a href="#" target="_blank" class="social-list__link"><i class="icon icon-tg"></i></a></li>
+                    <li class="social-list__item"><a href="#" target="_blank" class="social-list__link"><i
+                                    class="icon icon-youtube"></i></a></li>
+                    <li class="social-list__item"><a href="#" target="_blank" class="social-list__link"><i
+                                    class="icon icon-vk"></i></a></li>
+                    <li class="social-list__item"><a href="#" target="_blank" class="social-list__link"><i
+                                    class="icon icon-tg"></i></a></li>
                 </ul>
             </div>
         </div>
     </section>
     <!-- main end content -->
-<?php require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+<?php require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>

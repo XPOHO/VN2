@@ -61,7 +61,19 @@
     Asset::getInstance()->addCss(DEFAULT_TEMPLATE_PATH . "/css/styles.css");
     Asset::getInstance()->addJs(DEFAULT_TEMPLATE_PATH . "/js/common.js");
     CJSCore::Init(["jquery"]);
+
+
+
+
+    Asset::getInstance()->addString('<link rel="stylesheet" href="' . DEFAULT_TEMPLATE_PATH . '/css/flaticon.css">');
+    Asset::getInstance()->addString('<link rel="stylesheet" href="' . DEFAULT_TEMPLATE_PATH . '/css/icofont.css">');
+    Asset::getInstance()->addString('<script defer="defer" src="' . DEFAULT_TEMPLATE_PATH . '/js/sag-vendors.js"></script>');
+    Asset::getInstance()->addString('<script defer="defer" src="' . DEFAULT_TEMPLATE_PATH . '/js/sag.js"></script>');
+    Asset::getInstance()->addString('<link href="' . DEFAULT_TEMPLATE_PATH . '/css/sag.css" rel="stylesheet">');
+
     ?>
+
+
 
 
 </head>

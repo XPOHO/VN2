@@ -34731,9 +34731,6 @@
             }
 
 
-
-
-
 //TO DO
             // Доделать вывод цен нормально.
             var prodStop = [];
@@ -34744,36 +34741,23 @@
                     let idProd = idProdBlock.find('.swiper-slide-active').data("idprod")
                     let priceRetail = idProdBlock.find('.swiper-slide-active').data("retail")
                     let priceSale = idProdBlock.find('.swiper-slide-active').data("sale")
-
-
-                    if (priceRetail.trim() == '') {
-
+                    console.log(idProdBlock);
+                    console.log(idProd);
+                    console.log(priceRetail);
+                    console.log(priceSale);
+                    if (priceRetail == '') {
                         priceRetail = '';
-
                     } else {
-
                         priceRetail = priceRetail + ' ₽'
 
                     }
-
                     priceSale = priceSale + ' ₽'
-
-                    if (priceSale.trim() == '') {
-                        priceSale = priceRetail + ' ₽';
-                        priceRetail = "";
-                    }
-
-
                     let test = idProdBlock.find('.addcart-link');
                     $(test).data("idprod", idProd);
-                    $(test).attr('onclick', "window._$productModal.showProductById('"+idProd+"');" )
+                    $(test).attr('onclick', "window._$productModal.showProductById('" + idProd + "');")
                     $(test).attr('data-idprod', idProd);
-
-
                     let blockRetail = idProdBlock.find('.oldprice');
                     $(blockRetail).text(priceRetail);
-
-
                     let blockSale = idProdBlock.find('.price');
                     $(blockSale).text(priceSale);
                 }, 1100);
@@ -34811,8 +34795,6 @@
             })
 
         });
-
-
 
 
     })();
