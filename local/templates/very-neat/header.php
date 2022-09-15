@@ -63,8 +63,6 @@
     CJSCore::Init(["jquery"]);
 
 
-
-
     Asset::getInstance()->addString('<link rel="stylesheet" href="' . DEFAULT_TEMPLATE_PATH . '/css/flaticon.css">');
     Asset::getInstance()->addString('<link rel="stylesheet" href="' . DEFAULT_TEMPLATE_PATH . '/css/icofont.css">');
     Asset::getInstance()->addString('<script defer="defer" src="' . DEFAULT_TEMPLATE_PATH . '/js/sag-vendors.js"></script>');
@@ -72,8 +70,6 @@
     Asset::getInstance()->addString('<link href="' . DEFAULT_TEMPLATE_PATH . '/css/sag.css" rel="stylesheet">');
 
     ?>
-
-
 
 
 </head>
@@ -95,16 +91,16 @@
             </button>
             <a href="/" class="logo-link">
 
-                <?$APPLICATION->IncludeComponent(
+                <? $APPLICATION->IncludeComponent(
                     "bitrix:main.include",
                     "",
-                    Array(
+                    array(
                         "AREA_FILE_SHOW" => "file",
                         "AREA_FILE_SUFFIX" => "inc",
                         "EDIT_TEMPLATE" => "",
                         "PATH" => "/include/logo.php"
                     )
-                );?>
+                ); ?>
 
             </a>
             <a href="javascript:void(0);" class="city-link" data-micromodal-trigger="modal-cities"
@@ -181,43 +177,48 @@
                     echo $telefonHref; ?>
 
 
-            ?>" class="phone-link"><?$APPLICATION->IncludeComponent(
+            ?>" class="phone-link"><? $APPLICATION->IncludeComponent(
                             "bitrix:main.include",
                             "",
-                            Array(
+                            array(
                                 "AREA_FILE_SHOW" => "file",
                                 "AREA_FILE_SUFFIX" => "inc",
                                 "EDIT_TEMPLATE" => "",
                                 "PATH" => "/include/telefon.php"
                             )
-                        );?></a>
+                        ); ?></a>
                     <a href="javascript:void(0);" data-micromodal-trigger="modal-cities" class="city-link">Москва</a>
                 </div>
             </nav>
             <a href="tel:<?
             echo $telefonHref;
-            ?>" class="phone-link" style="display: none;"><?$APPLICATION->IncludeComponent(
+            ?>" class="phone-link" style="display: none;"><? $APPLICATION->IncludeComponent(
                     "bitrix:main.include",
                     "",
-                    Array(
+                    array(
                         "AREA_FILE_SHOW" => "file",
                         "AREA_FILE_SUFFIX" => "inc",
                         "EDIT_TEMPLATE" => "",
                         "PATH" => "/include/telefon.php"
                     )
-                );?></a>
+                ); ?></a>
+
+
+
+
+
             <div class="search-block">
                 <a id="search-open" href="javascript:void(0);" class="search-link"><i class="icon icon-search"></i></a>
                 <div id="search-result" class="search-block__result"
                      style="transform: translateX(100vw); position: absolute;">
-                    <form action="" class="search-block__form">
-                        <div class="input-group">
-                            <button type="submit"><i class="icon icon-search"></i></button>
-                            <input type="text" placeholder="Категория, товар или артикуль">
-                        </div>
-                        <a id="search-close" href="javascript:void(0);" class="close-link"><i
-                                    class="icon icon-close"></i></a>
-                    </form>
+                    <? $APPLICATION->IncludeComponent(
+                        "bitrix:search.form",
+                        "",
+                        Array(
+                            "PAGE" => "#SITE_DIR#search/index.php",
+                            "USE_SUGGEST" => "N"
+                        )
+                    );?>
                     <div class="result-catalog">
                         <!-- test item
                     <div class="products-wrapper">
@@ -367,17 +368,20 @@
             </div>
             <ul class="profile-links">
                 <li class="profile-links__item">
-                    <a id="minicart-link" href="javascript:void(0);" class="profile-links__link cart-link"><i class="icon icon-cart_fill"></i>
+                    <a id="minicart-link" href="javascript:void(0);" class="profile-links__link cart-link"><i
+                                class="icon icon-cart_fill"></i>
                         <?
+
                         use Bitrix\Sale;
+
                         Bitrix\Main\Loader::includeModule("sale");
                         Bitrix\Main\Loader::includeModule("catalog");
                         $basket = Sale\Basket::loadItemsForFUser(Sale\Fuser::getId(), Bitrix\Main\Context::getCurrent()->getSite());
 
-                        $countProdBasket= count($basket->getQuantityList());
-                        if (!empty($countProdBasket)){
+                        $countProdBasket = count($basket->getQuantityList());
+                        if (!empty($countProdBasket)) {
 
-                            ?> <span id="cart-value" class="cart-value"><?=$countProdBasket?></span><?
+                            ?> <span id="cart-value" class="cart-value"><?= $countProdBasket ?></span><?
                         }
                         ?>
                     </a>
@@ -391,7 +395,7 @@
                     </div>
                     -->
                         <!-- if cart is not empty -->
-                        <?$APPLICATION->IncludeComponent(
+                        <? $APPLICATION->IncludeComponent(
                             "bitrix:sale.basket.basket",
                             ".default",
                             array(
@@ -436,8 +440,7 @@
                                 "GIFTS_SHOW_OLD_PRICE" => "N",
                                 "GIFTS_TEXT_LABEL_GIFT" => "Подарок",
                                 "HIDE_COUPON" => "Y",
-                                "LABEL_PROP" => array(
-                                ),
+                                "LABEL_PROP" => array(),
                                 "PATH_TO_ORDER" => "/personal/order/make/",
                                 "PRICE_DISPLAY_MODE" => "Y",
                                 "PRICE_VAT_SHOW_VALUE" => "N",
@@ -464,7 +467,7 @@
                                 "AJAX_OPTION_ADDITIONAL" => ""
                             ),
                             false
-                        );?>
+                        ); ?>
                         <!-- if added to cart
                     <div class="minicart-content__added">
                         <div class="minicart-title">Корзина <span id="products-count">5 товаров</span></div>

@@ -210,8 +210,19 @@
                 ); ?></a>
             <div class="search-block">
                 <a id="search-open" href="javascript:void(0);" class="search-link"><i class="icon icon-search"></i></a>
+
+
+
+
+
+
+
                 <div id="search-result" class="search-block__result"
                      style="transform: translateX(100vw); position: absolute;">
+
+
+
+
                     <form action="" class="search-block__form">
                         <div class="input-group">
                             <button type="submit"><i class="icon icon-search"></i></button>
