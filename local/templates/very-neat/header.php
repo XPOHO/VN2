@@ -220,64 +220,6 @@
                         )
                     );?>
                     <div class="result-catalog">
-                        <!-- test item
-                    <div class="products-wrapper">
-                        <div class="product-item">
-                        <div class="image-block">
-                            <a href="#" class="product-link">
-                                <img src="<?= DEFAULT_TEMPLATE_PATH ?>/images/main/main_page/search/item_image.jpg" alt="product-image" class="product-image">
-                            </a>
-                        </div>
-                        <div class="descr-block">
-                            <a href="#" class="product-name">Сорочка</a>
-                            <span class="article">АРТ 7002950M</span>
-                            <div class="properties">
-                                <span class="properties__item">XL</span>
-                                <span class="properties__color"><span style="background-color: #8A8972;"></span>Хаки</span>
-                            </div>
-                        </div>
-                        <div class="price-block">
-                            <span class="price">1 749 ₽</span>
-                        </div>
-                    </div>
-                        <div class="product-item">
-                        <div class="image-block">
-                            <a href="#" class="product-link">
-                                <img src="<?= DEFAULT_TEMPLATE_PATH ?>/images/main/main_page/search/item_image.jpg" alt="product-image" class="product-image">
-                            </a>
-                        </div>
-                        <div class="descr-block">
-                            <a href="#" class="product-name">Сорочка</a>
-                            <span class="article">АРТ 7002950M</span>
-                            <div class="properties">
-                                <span class="properties__item">XL</span>
-                                <span class="properties__color"><span style="background-color: #8A8972;"></span>Хаки</span>
-                            </div>
-                        </div>
-                        <div class="price-block">
-                            <span class="price">1 749 ₽</span>
-                        </div>
-                    </div>
-                        <div class="product-item">
-                        <div class="image-block">
-                            <a href="#" class="product-link">
-                                <img src="<?= DEFAULT_TEMPLATE_PATH ?>/images/main/main_page/search/item_image.jpg" alt="product-image" class="product-image">
-                            </a>
-                        </div>
-                        <div class="descr-block">
-                            <a href="#" class="product-name">Сорочка</a>
-                            <span class="article">АРТ 7002950M</span>
-                            <div class="properties">
-                                <span class="properties__item">XL</span>
-                                <span class="properties__color"><span style="background-color: #8A8972;"></span>Хаки</span>
-                            </div>
-                        </div>
-                        <div class="price-block">
-                            <span class="price">1 749 ₽</span>
-                        </div>
-                    </div>
-                    </div>
-                    -->
                     </div>
                     <div class="result-info">
                         <div class="result-info__actual">
@@ -354,27 +296,6 @@
                                         "USE_PRODUCT_QUANTITY" => "N"
                                     )
                                 );?>
-
-                                <div class="product-item">
-                                    <div class="image-block">
-                                        <a href="#" class="product-link">
-                                            <img src="<?= DEFAULT_TEMPLATE_PATH ?>/images/main/main_page/search/item_image.jpg"
-                                                 alt="product-image" class="product-image">
-                                        </a>
-                                    </div>
-                                    <div class="descr-block">
-                                        <a href="#" class="product-name">Сорочка</a>
-                                        <span class="article">АРТ 7002950M</span>
-                                        <div class="properties">
-                                            <span class="properties__item">XL</span>
-                                            <span class="properties__color"><span
-                                                        style="background-color: #8A8972;"></span>Хаки</span>
-                                        </div>
-                                    </div>
-                                    <div class="price-block">
-                                        <span class="price">1 749 ₽</span>
-                                    </div>
-                                </div>
                             </div>
                             <a href="#" class="see-all"><i class="icon icon-slider_arrow"></i>Смотреть все товары</a>
                         </div>
