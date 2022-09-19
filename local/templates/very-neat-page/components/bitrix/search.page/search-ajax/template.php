@@ -13,8 +13,6 @@
 ?>
 <?
 ?><div class="products-wrapper"><?php
-echo "<pre>";
-print_r($arResult["SEARCH"]);
     CModule::IncludeModule("iblock");
     CModule::IncludeModule("catalog");
     CModule::IncludeModule('sale');
@@ -25,15 +23,8 @@ print_r($arResult["SEARCH"]);
     $request = \Bitrix\Main\Application::getInstance()->getContext()->getRequest();
     $IDHighload = 2;
 
-
-
 foreach ($arResult["SEARCH"] as $searchItem) {
-
-
 //header('Content-Type: application/json');
-
-
-
     if(!$USER->IsAuthorized()) // Для неавторизованного
     {
 
@@ -85,7 +76,7 @@ foreach ($arResult["SEARCH"] as $searchItem) {
             $test= CFile::GetPath($arFieldsOffer["DETAIL_PICTURE"]);
             // var_dump($test);
             if (empty($Photo)) {
-                $renderImage = CFile::ResizeImageGet($arFieldsOffer["DETAIL_PICTURE"], array("width" => 400, "height" => 700), BX_RESIZE_IMAGE_PROPORTIONAL);
+                $renderImage = CFile::ResizeImageGet($arFieldsOffer["DETAIL_PICTURE"], array("width" => 71, "height" => 100), BX_RESIZE_IMAGE_PROPORTIONAL);
                 $Photo = $renderImage["src"];
             }
             $arProps = $obOffer->GetProperties();
@@ -109,7 +100,6 @@ foreach ($arResult["SEARCH"] as $searchItem) {
             }
             $sizesArr[$arProps['SIZES_CLOTHES']['VALUE']]["price"]["retail"] = $retailPrice;
             $sizesArr[$arProps['SIZES_CLOTHES']['VALUE']]["price"]["sale"] = $salePrice;
-            if (empty($mainColor)) {
                 $resultColor = $hlDataClass::getList(array(
                     "select" => array("ID", "UF_NAME", "UF_XML_ID", "UF_COLORCOD"), // Поля для выборки
                     "order" => array(),
@@ -119,7 +109,6 @@ foreach ($arResult["SEARCH"] as $searchItem) {
                     $mainColor = $resp['UF_COLORCOD'];
                     $mainColorName = $resp['UF_NAME'];
                 }
-            }
         }
         //  echo "<pre>";
         // print_r($favoritesAr);
@@ -140,34 +129,40 @@ foreach ($arResult["SEARCH"] as $searchItem) {
             "sizes" => $sizesArr,
             "href" => $url
         ];
-    }
-echo "<pre>";
-print_r($arCart);
 
-    ?>
-    <div class="product-item">
-        <div class="image-block">
-            <a href="<?=$searchItem['URL']?>" class="product-link">
-                <img src="<?= DEFAULT_TEMPLATE_PATH ?>/images/main/main_page/search/item_image.jpg" alt="product-image"
-                     class="product-image">
-            </a>
-        </div>
-        <div class="descr-block">
-            <a href="#" class="product-name">Сорочка</a>
-            <span class="article">АРТ 7002950M</span>
-            <div class="properties">
-                <span class="properties__item">XL</span>
-                <span class="properties__color"><span style="background-color: #8A8972;"></span>Хаки</span>
+if (empty($mainColor)){
+    $mainColor="#bdbdbd";
+
+}
+
+        ?>
+        <div class="product-item">
+            <div class="image-block">
+                <a href="<?=$searchItem['URL']?>" class="product-link">
+                    <img src="<?= $Photo?>" alt="product-image"
+                         class="product-image">
+                </a>
+            </div>
+            <div class="descr-block">
+                <a href="<?=$searchItem['URL']?>" class="product-name"><?=$title?></a>
+                <span class="article"><?=$arPropsProd['ARTNUMBER']['VALUE']?></span>
+                <div class="properties">
+                    <span class="properties__item"></span>
+                    <span class="properties__color"><span style="background-color: <?=$mainColor?>;"></span><?=$mainColorName?></span>
+                </div>
+            </div>
+            <div class="price-block">
+                <span class="price">1 749 ₽</span>
             </div>
         </div>
-        <div class="price-block">
-            <span class="price">1 749 ₽</span>
-        </div>
-    </div>
-    <?php
+        <?php
+
+    }
 }
 ?>
 </div>
+
+
 
 
 
