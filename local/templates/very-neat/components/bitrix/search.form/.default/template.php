@@ -14,7 +14,7 @@ $this->setFrameMode(true);?>
 <form action="<?=$arResult["FORM_ACTION"]?>" class="search-block__form">
     <div class="input-group">
         <button name="s" type="submit"><i class="icon icon-search"></i></button>
-        <input type="text" name="q" placeholder="Категория, товар или артикуль">
+        <input class="ajax-search" type="text" name="q" placeholder="Категория, товар или артикуль">
     </div>
     <a id="search-close" href="javascript:void(0);" class="close-link"><i
                 class="icon icon-close"></i></a>

@@ -345,7 +345,7 @@ if (empty($arResult['ERROR_MESSAGE']))
             })
         });
 
-        $(".plus-btn").click(function () {
+        $(".count-block .count-group .plus-btn").click(function () {
             let count = $(this).parent().find(".count-input").val();
             let countINT=Number(count);
             $(this).parent().find(".count-input").val(countINT+1);

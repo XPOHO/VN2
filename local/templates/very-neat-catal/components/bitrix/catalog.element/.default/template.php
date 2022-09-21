@@ -13,11 +13,6 @@ use Bitrix\Main\Localization\Loc;
  * @var string $componentPath
  * @var string $templateFolder
  */
-
-$this->setFrameMode(true);
-$this->addExternalCss('/bitrix/css/main/bootstrap.css');
-
-$templateLibrary = array('popup', 'fx');
 $currencyList = '';
 
 if (!empty($arResult['CURRENCIES'])) {
@@ -217,13 +212,35 @@ if (!empty($arParams['LABEL_PROP_POSITION'])) {
                         false
                     );?>
 
-                    <h1 class="product-page__title page-title">Футболка из органического хлопка с круглым вырезом
-                        и принтом</h1>
+                    <h1 class="product-page__title page-title"><?=$arResult["NAME"]?></h1>
                     <div class="product-info">
-                        <span class="article">АРТ 7002950M</span>
+                        <span class="article"><?=$arResult["PROPERTIES"]['ARTNUMBER']['VALUE']?></span>
                         <div class="tags-list">
-                            <div class="tags-list__item sale">SALE — 20%</div>
-                            <div class="tags-list__item new">NEW</div>
+
+
+                            <?
+
+                            if(!empty($arResult["PROPERTIES"]['SALELEADER']['VALUE'])){
+                                ?>
+                                <div class="tags-list__item sale">Лидер продаж</div>
+                                <?
+                            }
+                            ?>
+
+
+
+                            <?
+
+                            if(!empty($arResult["PROPERTIES"]['NEWPRODUCT']['VALUE'])){
+                                ?>
+
+                                <div class="tags-list__item new">NEW</div>
+
+                                <?
+
+                            }
+                            ?>
+
                         </div>
                         <div class="product-price">
                             <div class="price-title">Цена</div>
@@ -231,9 +248,9 @@ if (!empty($arParams['LABEL_PROP_POSITION'])) {
                             <span class="oldprice">1 749 ₽</span>
                         </div>
                         <div class="product-addcart">
-                            <form action="" class="addcart-form">
+                            <form action="javascript:void(0);" class="addcart-form">
                                 <div class="input-group btn-group">
-                                    <button type="submit" class="btn-fill-style">В корзину</button>
+                                    <button type="submit" class="btn-fill-style addBasketCart">В корзину</button>
                                 </div>
                                 <div class="input-group count-group">
                                     <a href="javascript:void(0);" class="count-btn minus-btn"><i
