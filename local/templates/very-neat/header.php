@@ -615,10 +615,8 @@
         </div>
     </div>
     <script>
-
         $('#minicart-link').on('click', function (e) {
             $('.updateblock').click();
         })
-
     </script>
 </header>

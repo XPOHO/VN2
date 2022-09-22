@@ -1,5 +1,5 @@
 <?php
-if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
+if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 
 /**
  * @global CMain $APPLICATION
@@ -8,7 +8,9 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 global $APPLICATION;
 
 //delayed function must return a string
-if(empty($arResult)){return "";}
+if (empty($arResult)) {
+    return "";
+}
 
 
 $strReturn = '';
@@ -24,31 +26,29 @@ $itemSize = count($arResult);
 //$strReturn .= '<div style="clear:both"></div></div><ul>';
 
 
-$arResult[0]["TITLE"]="Главная";
-foreach ($arResult as $item){
+$arResult[0]["TITLE"] = "Главная";
+foreach ($arResult as $item) {
 
 
-if ($item['LINK']=="/catalog/"){continue;}
+    if ($item['LINK'] == "/catalog/") {
+        continue;
+    }
 
-if (!empty($item['LINK'])) {
-    $strReturn .= '<li class="breadcrumbs__item"><a href="' . $item['LINK'] . '" class="breadcrumbs__link">' . $item['TITLE'] . '</a></li>';
+    if (!empty($item['LINK'])) {
+        $strReturn .= '<li class="breadcrumbs__item"><a href="' . $item['LINK'] . '" class="breadcrumbs__link">' . $item['TITLE'] . '</a></li>';
+    } else {
+
+        $strReturn .= '<li class="breadcrumbs__item"><a class="breadcrumbs__link">' . $item['TITLE'] . '</a></li>';
+
+    }
 }
-else{
 
-    $strReturn .= '<li class="breadcrumbs__item"><a class="breadcrumbs__link">' . $item['TITLE'] . '</a></li>';
-
-}
-}
-
-$strReturn.='
+$strReturn .= '
             </ul>
         </div>
     </div>
 ';
 ?>
-
-
-
 
 
 <?php

@@ -34795,24 +34795,30 @@
             })
 
             var timeout;
-            $('.ajax-search').keyup(function(){
+            $('.ajax-search').keyup(function () {
                 clearTimeout(timeout);
-                timeout = setTimeout(() =>
-                    {
+                timeout = setTimeout(() => {
                         let Value = $(this).val();
                         console.log(Value);
                         $.ajax({
-                                url: '/search-ajax.php',
-                                method: 'GET',
-                                data: {q: Value},
-                                success: function (data) {
-                                    $(".result-catalog").html(data);
-                                },
-                            });
-                        }
+                            url: '/search-ajax.php',
+                            method: 'GET',
+                            data: {q: Value},
+                            success: function (data) {
+                                $(".result-catalog").html(data);
+                            },
+                        });
+                    }
                     , 1200);
             });
         });
+
+
+        $(".addBasketCart").click(function () {
+
+
+            }
+        )
 
 
     })();

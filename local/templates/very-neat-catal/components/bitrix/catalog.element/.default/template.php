@@ -153,6 +153,31 @@ if (!empty($arParams['LABEL_PROP_POSITION'])) {
         $labelPositionClass .= isset($positionClassMap[$pos]) ? ' ' . $positionClassMap[$pos] : '';
     }
 }
+if (!$USER->IsAuthorized()) // Для неавторизованного
+{
+
+    $request = \Bitrix\Main\Application::getInstance()->getContext()->getRequest();
+    $favCookie = $request->getCookie('favorites');
+
+    $arFavorites = unserialize($favCookie);
+    $favoritesAr = [];
+    foreach ($arFavorites as $itemFav) {
+        $favoritesAr[$itemFav] = true;
+    }
+} else {
+
+    $idUser = $USER->GetID();
+    $rsUser = CUser::GetByID($idUser);
+    $arUser = $rsUser->Fetch();
+    $arFavorites = $arUser['UF_FAVORITES'];  // Достаём избранное пользователя
+
+    $favoritesAr = [];
+    foreach ($arFavorites as $itemFav) {
+        $favoritesAr[$itemFav] = true;
+    }
+
+}
+$idProd=$arResult['ID'];
 ?>
     <main class="product-page">
         <div class="container">
@@ -227,8 +252,6 @@ if (!empty($arParams['LABEL_PROP_POSITION'])) {
                             }
                             ?>
 
-
-
                             <?
 
                             if(!empty($arResult["PROPERTIES"]['NEWPRODUCT']['VALUE'])){
@@ -259,11 +282,61 @@ if (!empty($arParams['LABEL_PROP_POSITION'])) {
                                     <a href="javascript:void(0);" class="count-btn plus-btn"><i
                                                 class="icon icon-count_arrow"></i></a>
                                 </div>
-                                <a href="#" class="favorite-link"><i class="icon icon-heart_fill"></i></a>
+                                <a href="#"  data-item="<?=$idProd?>" class="favorite-link <? if (isset($favoritesAr[$idProd])){echo "active";}  ?> "><i class="icon icon-heart_fill"></i></a>
                             </form>
                         </div>
                     </div>
                     <div class="product-properties">
+
+                        <?
+
+                        if (!empty($arResult["PROPERTIES"]["MANUFACTURER"]["VALUE"])){
+
+
+                            ?><div class="product-properties__item">
+                            <span class="property-name">Производитель</span>
+                            <span class="property-value"><?=$arResult["PROPERTIES"]['MANUFACTURER']["VALUE"]?></span>
+                            </div><?
+
+
+                        }
+
+                        ?>
+
+                        <?
+
+                        if (!empty($arResult["PROPERTIES"]["MATERIAL"]["VALUE"])){
+
+
+                            ?> <div class="product-properties__item">
+                                <span class="property-name">Материал</span>
+                                <span class="property-value"><?=$arResult["PROPERTIES"]['MATERIAL']["VALUE"][0]?></span> </div>
+                            <?
+
+
+                        }
+
+                        ?>
+                           <?
+
+                        if (!empty($arResult["PROPERTIES"]["M"]["VALUE"])){
+
+
+                            ?><?
+
+
+                        }
+
+                           if (!empty($arResult["PROPERTIES"]["M"]["VALUE"])){
+
+
+                               ?><?
+
+
+                           }
+
+                        ?>
+
                         <div class="product-properties__item">
                             <span class="property-name">Стиль</span>
                             <span class="property-value">Платье</span>
