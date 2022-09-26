@@ -13,9 +13,20 @@ $arrAll = \Bitrix\Main\Web\Json::decode($json);
 
 echo "<pre>";
 
-//print_r($arrAll);
-
 foreach ($arrAll['goods'] as $itemProd) {
+
+
+    $mystring = $itemProd["good"]["article"];
+    $findme   = 'ОЕВ';
+    $pos = strpos($mystring, $findme);
+
+    if ($pos === false) {
+        echo "";
+    } else {
+        continue;
+    }
+
+
     $nameProd=$itemProd["good"]["nameSite"];
     if (empty($itemProd["good"]["nameSite"])){
 
@@ -58,6 +69,29 @@ foreach ($arrAll['goods'] as $itemProd) {
 $code=translit($itemProd["good"]["article"]);
     $code = str_replace("/", "-", "$code");
     $code = str_replace(" ", "-", "$code");
+    $realColorTrans=translit($itemProd["good"]["realColor"]);
+    $colorTrans=translit($itemProd["good"]["color"]);
+    $artnameTrans=translit($itemProd["good"]["artname"]);
+    $code="$artnameTrans-$realColorTrans-$code-$colorTrans";
+
+
+   // $itemProd["good"]["parentCategory"] = preg_replace('$\женс[^\[]+\$', '', $itemProd["good"]["parentCategory"]);
+
+   // $itemProd["good"]["CategorySite"] = preg_replace('$\женс[^\[]+\$', '', $itemProd["good"]["CategorySite"]);
+    $itemProd["good"]["parentCategory"] = str_replace("женская", "",  $itemProd["good"]["parentCategory"]);
+    $itemProd["good"]["parentCategory"] = str_replace("женское", "",  $itemProd["good"]["parentCategory"]);
+    $itemProd["good"]["parentCategory"] = str_replace("женские", "",  $itemProd["good"]["parentCategory"]);
+
+    $itemProd["good"]["CategorySite"] = str_replace("женская", "",  $itemProd["good"]["CategorySite"]);
+    $itemProd["good"]["CategorySite"] = str_replace("женское", "",  $itemProd["good"]["CategorySite"]);
+    $itemProd["good"]["CategorySite"] = str_replace("женские", "",  $itemProd["good"]["CategorySite"]);
+
+
+    $nameProd = str_replace("женская", "",  $nameProd);
+    $nameProd = str_replace("женское", "",  $nameProd);
+    $nameProd = str_replace("женские", "",  $nameProd);
+    $nameProd = str_replace("женский", "",  $nameProd);
+
     $arrProd[] = [
         "section" => [
             $itemProd["good"]["parentCategory"],
@@ -85,7 +119,7 @@ $code=translit($itemProd["good"]["article"]);
         "offers" => $offers
     ];
 }
-//print_r($arrProd);
+print_r($arrProd);
 $logJson = [];
 $IDHighload = 2;
 $hldata = Bitrix\Highloadblock\HighloadBlockTable::getById($IDHighload)->fetch();
@@ -116,7 +150,7 @@ foreach ($arrAll as $arr) {
     //определение раздела для товара. Если не найдено, создаёт
     $SECTION_ID = false;
     foreach ($arr['section'] as $sectionName) {
-        if ($sectionName=="Футболки женские"){
+        if ($sectionName=="Футболки "){
             $addTest=true;
         }
         $arFilter = array('IBLOCK_ID' => $IBLOCK_ID, 'NAME' => $sectionName, "SECTION_ID" => $SECTION_ID);
@@ -596,7 +630,7 @@ foreach ($arrAll as $arr) {
                 $offer['SIZE'] = "Без размера";
             }
 
-            print_r($offer);
+            //print_r($offer);
             $sizeValue = "";
 //определение Размеров (это же поле выбора из списка, и нужны id значений размеров)
             $property_enums = CIBlockPropertyEnum::GetList(array("DEF" => "DESC", "SORT" => "ASC"), array("IBLOCK_ID" => $IBLOCK_OFFERS_ID, "CODE" => "SIZES_CLOTHES"));
@@ -724,18 +758,7 @@ foreach ($arrAll as $arr) {
                         ),
                     )
                 );
-//                CPrice::Add(
-//                    array(
-//                        "CURRENCY" => "RUB",
-//                        "PRICE" => $offer["ORT"],
-//                        'PROPERTY_VALUES' => array(
-//                            'CML2_LINK' => $product_id,
-//                           // 'TP_Code77' => $offer['Code_77'],
-//                        ),
-//                        "CATALOG_GROUP_ID" => 2,
-//                        "PRODUCT_ID" => $product_offer_id,
-//                    )
-//                );
+
                 CPrice::Add(
                     array(
                         "CURRENCY" => "RUB",
@@ -748,18 +771,7 @@ foreach ($arrAll as $arr) {
                         "PRODUCT_ID" => $product_offer_id,
                     )
                 );
-//                CPrice::Add(
-//                    array(
-//                        "CURRENCY" => "RUB",
-//                        "PRICE" => $offer["PRICE"],
-//                        'PROPERTY_VALUES' => array(
-//                            'CML2_LINK' => $product_id,
-//                       //     'TP_Code77' => $offer['RETAIL'],
-//                        ),
-//                        "CATALOG_GROUP_ID" => 4,
-//                        "PRODUCT_ID" => $product_offer_id,
-//                    )
- //               );
+
         }
     }
 }
