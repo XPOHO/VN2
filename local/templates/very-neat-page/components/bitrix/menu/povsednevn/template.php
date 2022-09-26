@@ -30,7 +30,7 @@
                                 <?
                                 foreach ($arItem["CHILDREN"] as $item){
                                    ?>
-                                    <li class="submenu-list__item"><a href="<?=$item["LINK"]?>" class="submenu-list__link"><?= $item["TEXT"] ?></a></li>
+                                    <li class="submenu-list__item"><a href="<?=$item["LINK"]?>/" class="submenu-list__link"><?= $item["TEXT"] ?></a></li>
                                     <?
                                 }
                               ?>

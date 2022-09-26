@@ -87,6 +87,8 @@ $code=translit($itemProd["good"]["article"]);
     $itemProd["good"]["CategorySite"] = str_replace("женские", "",  $itemProd["good"]["CategorySite"]);
 
 
+
+
     $nameProd = str_replace("женская", "",  $nameProd);
     $nameProd = str_replace("женское", "",  $nameProd);
     $nameProd = str_replace("женские", "",  $nameProd);
